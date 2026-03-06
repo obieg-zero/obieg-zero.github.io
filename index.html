@@ -1,208 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>obieg-zero</title>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5/full.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <style>
-  :root {
-    --bg: #0a0a0a;
-    --fg: #e0e0e0;
-    --dim: #666;
-    --accent: #3b82f6;
-    --border: #1a1a1a;
-    --code-bg: #111;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-    background: var(--bg);
-    color: var(--fg);
-    line-height: 1.6;
-    font-size: 14px;
-  }
-  .container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem; }
-
-  header { margin-bottom: 3rem; }
-  h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; }
-  h1 span { color: var(--accent); }
-  .tagline { color: var(--dim); margin-top: 0.5rem; font-size: 0.9rem; }
-
-  .badges { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
-  .badge {
-    display: inline-block;
-    padding: 0.15rem 0.5rem;
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    font-size: 0.75rem;
-    color: var(--dim);
-  }
-
-  section { margin-bottom: 2.5rem; }
-  h2 {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--dim);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .pkg-grid { display: grid; gap: 0.5rem; }
-  .pkg {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 1rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .pkg:last-child { border-bottom: none; }
-  .pkg-name { color: var(--accent); }
-  .pkg-name::before { content: 'npm i '; color: var(--dim); }
-  .pkg-desc { color: var(--dim); }
-  .pkg-size { font-size: 0.75rem; color: #444; }
-
-  pre {
-    background: var(--code-bg);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 1rem;
-    overflow-x: auto;
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-  .kw { color: #c792ea; }
-  .str { color: #c3e88d; }
-  .fn { color: #82aaff; }
-  .cm { color: #444; }
-  .vr { color: #f78c6c; }
-
-  .zero-list { list-style: none; }
-  .zero-list li {
-    padding: 0.4rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .zero-list li:last-child { border-bottom: none; }
-  .zero-list strong { color: var(--fg); }
-  .zero-list span { color: var(--dim); }
-
-  .links { display: flex; gap: 1.5rem; }
-  .links a {
-    color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-  }
-  .links a:hover { border-bottom-color: var(--accent); }
-
-  footer {
-    border-top: 1px solid var(--border);
-    padding-top: 1.5rem;
-    color: #333;
-    font-size: 0.75rem;
-  }
-
-  @media (max-width: 600px) {
-    .pkg { grid-template-columns: 1fr; gap: 0.25rem; }
-  }
+  pre code { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.8rem; }
+  .kw { color: #c792ea } .str { color: #c3e88d } .fn { color: #82aaff } .cm { color: #546e7a }
 </style>
 </head>
-<body>
-<div class="container">
+<body class="min-h-screen bg-base-200">
 
-<header>
-  <h1>obieg<span>-zero</span></h1>
-  <p class="tagline">Browser-native document flow engine.<br>Zero backend. Zero config. Zero barrier.</p>
-  <div class="badges">
-    <span class="badge">TypeScript</span>
-    <span class="badge">ESM</span>
-    <span class="badge">OPFS</span>
-    <span class="badge">IndexedDB</span>
-    <span class="badge">WebAssembly</span>
-    <span class="badge">Web Workers</span>
-    <span class="badge">MIT</span>
-  </div>
-</header>
-
-<section>
-  <h2>Packages</h2>
-  <div class="pkg-grid">
-    <div class="pkg">
-      <div><span class="pkg-name">@obieg-zero/core</span></div>
-      <div><span class="pkg-desc">Flow engine — nodes, variables, events</span> <span class="pkg-size">~2 kB</span></div>
-    </div>
-    <div class="pkg">
-      <div><span class="pkg-name">@obieg-zero/storage</span></div>
-      <div><span class="pkg-desc">OPFS file storage + IndexedDB persistence</span> <span class="pkg-size">~2 kB</span></div>
-    </div>
-    <div class="pkg">
-      <div><span class="pkg-name">@obieg-zero/ocr</span></div>
-      <div><span class="pkg-desc">PDF text extraction + Tesseract OCR fallback</span> <span class="pkg-size">~1 kB</span></div>
-    </div>
-    <div class="pkg">
-      <div><span class="pkg-name">@obieg-zero/embed</span></div>
-      <div><span class="pkg-desc">HuggingFace embeddings + semantic search</span> <span class="pkg-size">~2 kB</span></div>
-    </div>
-    <div class="pkg">
-      <div><span class="pkg-name">@obieg-zero/llm</span></div>
-      <div><span class="pkg-desc">Local LLM inference via wllama/GGUF</span> <span class="pkg-size">~1 kB</span></div>
+<!-- hero -->
+<div class="hero py-16">
+  <div class="hero-content text-center">
+    <div>
+      <h1 class="text-5xl font-mono font-light tracking-tight">obieg<span class="text-primary">-zero</span></h1>
+      <p class="py-4 text-base-content/60 max-w-md">Browser-native document flow engine.<br>Zero backend. Zero config. Zero barrier.</p>
+      <div class="flex flex-wrap gap-2 justify-center">
+        <span class="badge badge-outline badge-sm">TypeScript</span>
+        <span class="badge badge-outline badge-sm">OPFS</span>
+        <span class="badge badge-outline badge-sm">IndexedDB</span>
+        <span class="badge badge-outline badge-sm">WebAssembly</span>
+        <span class="badge badge-outline badge-sm">Web Workers</span>
+      </div>
+      <div class="mt-6 flex gap-3 justify-center">
+        <a href="https://github.com/obieg-zero/obieg-zero" class="btn btn-primary btn-sm">GitHub</a>
+        <a href="https://www.npmjs.com/org/obieg-zero" class="btn btn-ghost btn-sm">npm</a>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
-<section>
-  <h2>Example</h2>
-<pre><span class="kw">import</span> { <span class="fn">createFlow</span>, <span class="fn">templateNode</span> } <span class="kw">from</span> <span class="str">'@obieg-zero/core'</span>
+<div class="max-w-4xl mx-auto px-4 pb-16 space-y-8">
+
+  <!-- packages -->
+  <div class="card bg-base-100">
+    <div class="card-body">
+      <h2 class="card-title text-sm uppercase tracking-widest text-base-content/40">Packages</h2>
+      <div class="overflow-x-auto">
+        <table class="table table-sm">
+          <tbody>
+            <tr><td class="font-mono text-primary">@obieg-zero/core</td><td class="text-base-content/60">Flow engine — nodes, variables, events</td><td class="text-right text-xs text-base-content/30">~2 kB</td></tr>
+            <tr><td class="font-mono text-primary">@obieg-zero/storage</td><td class="text-base-content/60">OPFS file storage + IndexedDB persistence</td><td class="text-right text-xs text-base-content/30">~2 kB</td></tr>
+            <tr><td class="font-mono text-primary">@obieg-zero/ocr</td><td class="text-base-content/60">PDF text extraction + Tesseract OCR fallback</td><td class="text-right text-xs text-base-content/30">~1 kB</td></tr>
+            <tr><td class="font-mono text-primary">@obieg-zero/embed</td><td class="text-base-content/60">HuggingFace embeddings + semantic search</td><td class="text-right text-xs text-base-content/30">~2 kB</td></tr>
+            <tr><td class="font-mono text-primary">@obieg-zero/llm</td><td class="text-base-content/60">Local LLM inference via wllama/GGUF</td><td class="text-right text-xs text-base-content/30">~1 kB</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- use case: PDF → OCR → LLM -->
+  <div class="card bg-base-100">
+    <div class="card-body">
+      <h2 class="card-title text-sm uppercase tracking-widest text-base-content/40">Use case — PDF to answer, fully local</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- left: visual flow -->
+        <div>
+          <ul class="steps steps-vertical text-sm">
+            <li data-content="1" class="step step-primary">
+              <div class="text-left"><strong>Upload PDF</strong><br><span class="text-xs text-base-content/50">Stored in OPFS — no server, no upload</span></div>
+            </li>
+            <li data-content="2" class="step step-primary">
+              <div class="text-left"><strong>OCR</strong><br><span class="text-xs text-base-content/50">pdfjs text layer → Tesseract fallback → pages[]</span></div>
+            </li>
+            <li data-content="3" class="step step-primary">
+              <div class="text-left"><strong>Template</strong><br><span class="text-xs text-base-content/50">Inject extracted text into prompt via {{context}}</span></div>
+            </li>
+            <li data-content="4" class="step step-primary">
+              <div class="text-left"><strong>LLM</strong><br><span class="text-xs text-base-content/50">Bielik 1.5B runs in browser via WebAssembly</span></div>
+            </li>
+            <li data-content="5" class="step step-primary">
+              <div class="text-left"><strong>Answer</strong><br><span class="text-xs text-base-content/50">flow.get('answer') — structured or free-text</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- right: code -->
+        <div>
+<pre class="bg-base-300 rounded-lg p-4 text-xs leading-relaxed overflow-x-auto"><code><span class="kw">import</span> { <span class="fn">createFlow</span>, <span class="fn">templateNode</span> } <span class="kw">from</span> <span class="str">'@obieg-zero/core'</span>
+<span class="kw">import</span> { <span class="fn">opfsUpload</span> } <span class="kw">from</span> <span class="str">'@obieg-zero/storage'</span>
 <span class="kw">import</span> { <span class="fn">ocrNode</span> } <span class="kw">from</span> <span class="str">'@obieg-zero/ocr'</span>
 <span class="kw">import</span> { <span class="fn">llmNode</span> } <span class="kw">from</span> <span class="str">'@obieg-zero/llm'</span>
 
 <span class="kw">const</span> flow = <span class="fn">createFlow</span>()
 
-flow.<span class="fn">node</span>(<span class="str">'ocr'</span>, <span class="fn">ocrNode</span>({ language: <span class="str">'pol'</span> }))
+flow.<span class="fn">node</span>(<span class="str">'upload'</span>, <span class="fn">opfsUpload</span>())
+flow.<span class="fn">node</span>(<span class="str">'ocr'</span>,    <span class="fn">ocrNode</span>({ language: <span class="str">'pol'</span> }))
 flow.<span class="fn">node</span>(<span class="str">'prompt'</span>, <span class="fn">templateNode</span>({
-  template: <span class="str">'Podsumuj: {{context}}'</span>
+  template: <span class="str">'Podsumuj dokument:\n{{context}}'</span>
 }))
 flow.<span class="fn">node</span>(<span class="str">'llm'</span>, <span class="fn">llmNode</span>({
-  modelUrl: <span class="str">'/models/Bielik-1.5B-v3.0-Instruct.Q4_K_M.gguf'</span>
+  modelUrl: <span class="str">'/models/Bielik-1.5B.gguf'</span>
 }))
 
-<span class="cm">// PDF → OCR → prompt → local LLM → answer</span>
-flow.<span class="fn">set</span>(<span class="str">'file'</span>, pdfFile)
-<span class="kw">await</span> flow.<span class="fn">run</span>(<span class="str">'ocr'</span>, <span class="str">'prompt'</span>, <span class="str">'llm'</span>)
-console.log(flow.<span class="fn">get</span>(<span class="str">'answer'</span>))</pre>
-</section>
+<span class="cm">// run the pipeline</span>
+flow.<span class="fn">set</span>(<span class="str">'file'</span>, userFile)
+flow.<span class="fn">set</span>(<span class="str">'projectId'</span>, <span class="str">'demo'</span>)
+flow.<span class="fn">set</span>(<span class="str">'fileKey'</span>, <span class="str">'doc.pdf'</span>)
 
-<section>
-  <h2>Philosophy</h2>
-  <ul class="zero-list">
-    <li><strong>Zero backend</strong> <span>— OPFS, IndexedDB, WASM. No server required.</span></li>
-    <li><strong>Zero config</strong> <span>— Sensible defaults. Plug in nodes and run.</span></li>
-    <li><strong>Zero barrier</strong> <span>— No accounts, no API keys, no setup. Works offline.</span></li>
-    <li><strong>Zero bundle tax</strong> <span>— 5 packages. Install only what you need.</span></li>
-  </ul>
-</section>
+<span class="kw">await</span> flow.<span class="fn">run</span>(
+  <span class="str">'upload'</span>, <span class="str">'ocr'</span>, <span class="str">'prompt'</span>, <span class="str">'llm'</span>
+)
 
-<section>
-  <h2>How it works</h2>
-  <ul class="zero-list">
-    <li><strong>Flow</strong> <span>— orchestrator holding variables (shared state) and nodes (processing steps)</span></li>
-    <li><strong>Nodes</strong> <span>— read variables, do work, write variables. That's it.</span></li>
-    <li><strong>Events</strong> <span>— subscribe to variable changes, node lifecycle, progress updates</span></li>
-    <li><strong>Dynamic imports</strong> <span>— heavy deps (pdfjs, tesseract, wllama) loaded on first use</span></li>
-  </ul>
-</section>
-
-<section>
-  <h2>Links</h2>
-  <div class="links">
-    <a href="https://github.com/obieg-zero/obieg-zero">GitHub</a>
-    <a href="https://www.npmjs.com/org/obieg-zero">npm</a>
+console.log(flow.<span class="fn">get</span>(<span class="str">'answer'</span>))</code></pre>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
 
-<footer>
-  obieg-zero &middot; MIT &middot; 738 LOC
-</footer>
+  <!-- philosophy -->
+  <div class="grid sm:grid-cols-2 gap-4">
+    <div class="card bg-base-100">
+      <div class="card-body">
+        <h3 class="font-bold">Zero backend</h3>
+        <p class="text-sm text-base-content/60">OPFS, IndexedDB, WASM. Everything in the browser. Works offline.</p>
+      </div>
+    </div>
+    <div class="card bg-base-100">
+      <div class="card-body">
+        <h3 class="font-bold">Zero config</h3>
+        <p class="text-sm text-base-content/60">Sensible defaults. Plug in nodes, set variables, run.</p>
+      </div>
+    </div>
+    <div class="card bg-base-100">
+      <div class="card-body">
+        <h3 class="font-bold">Zero barrier</h3>
+        <p class="text-sm text-base-content/60">No accounts, no API keys, no server setup. npm install and go.</p>
+      </div>
+    </div>
+    <div class="card bg-base-100">
+      <div class="card-body">
+        <h3 class="font-bold">Zero bundle tax</h3>
+        <p class="text-sm text-base-content/60">5 packages, ~8 kB total. Install only what you need. Heavy deps are peer.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- install -->
+  <div class="card bg-base-100">
+    <div class="card-body">
+      <h2 class="card-title text-sm uppercase tracking-widest text-base-content/40">Get started</h2>
+      <div class="mockup-code text-sm">
+        <pre data-prefix="$"><code>npm i @obieg-zero/core</code></pre>
+        <pre data-prefix="$" class="text-base-content/40"><code>npm i @obieg-zero/storage @obieg-zero/ocr  # add what you need</code></pre>
+        <pre data-prefix="$" class="text-base-content/40"><code>npm i @obieg-zero/embed @obieg-zero/llm    # heavy nodes, optional</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="text-center text-xs text-base-content/30 pt-4">
+    obieg-zero &middot; MIT &middot; 738 LOC
+  </footer>
 
 </div>
 </body>
