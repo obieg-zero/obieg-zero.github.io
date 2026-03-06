@@ -1,113 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="black">
+<html lang="pl" data-theme="black">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>obieg-zero</title>
-<link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/daisyui@5/full.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>obieg-zero — doc analyzer</title>
+  <script type="module" crossorigin src="/assets/index-Bg8sWjHy.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CQ_hoxTN.css">
 </head>
-<body class="font-mono text-sm">
-<div class="max-w-2xl mx-auto px-4 py-12 space-y-10">
-
-  <!-- header -->
-  <div>
-    <h1 class="text-2xl font-light tracking-tight">obieg<span class="text-primary">-zero</span></h1>
-    <p class="text-base-content/40 text-xs mt-1">Browser-native document flow engine. Zero backend. Zero config. Zero barrier.</p>
-  </div>
-
-  <!-- boilerplate -->
-  <div class="space-y-3">
-    <h2 class="text-xs uppercase tracking-widest text-base-content/30">Boilerplate — 472 LOC</h2>
-    <p class="text-xs text-base-content/50">Vite + React + DaisyUI + Zustand. PDF upload, OCR, embeddings, Bielik LLM, Q&A — all in-browser.</p>
-
-    <div class="mockup-code text-xs">
-      <pre data-prefix="$"><code>git clone https://github.com/obieg-zero/obieg-zero.git</code></pre>
-      <pre data-prefix="$"><code>cd obieg-zero/examples/doc-analyzer</code></pre>
-      <pre data-prefix="$"><code>npm install && npm run dev</code></pre>
-    </div>
-
-    <div class="bg-base-200 rounded p-4 space-y-2 text-xs">
-      <div class="text-base-content/30 uppercase tracking-widest text-[10px]">Struktura</div>
-      <pre class="text-base-content/50 leading-relaxed">src/
-  store.ts         45 LOC  Zustand — routing, sheets, module toggle
-  modules.ts       15 LOC  registerModule() — dodaj moduł, dostaje routing
-  App.tsx         101 LOC  shell, header, hash router, drawer sheet
-  flow.ts          50 LOC  obieg-zero pipeline setup
-  modules/
-    upload.tsx    102 LOC  page: PDF → OPFS → OCR → embed → extract
-    ocr-view.tsx   45 LOC  sheet: tekst OCR ze stron
-    qa.tsx         62 LOC  sheet: Q&amp;A z Bielikiem (streaming)
-    settings.tsx   45 LOC  page: włącz/wyłącz moduły</pre>
-    </div>
-
-    <a href="https://github.com/obieg-zero/obieg-zero/tree/main/examples/doc-analyzer" class="btn btn-primary btn-sm">Kod na GitHub →</a>
-  </div>
-
-  <!-- how to add a module -->
-  <div class="space-y-3">
-    <h2 class="text-xs uppercase tracking-widest text-base-content/30">Dodaj moduł — jeden plik</h2>
-    <pre class="bg-base-200 rounded p-4 text-xs leading-relaxed overflow-x-auto whitespace-pre"><code>import { registerModule } from '../modules.ts'
-
-function MyPage() {
-  return &lt;div&gt;Mój moduł&lt;/div&gt;
-}
-
-registerModule({
-  id: 'my-module',
-  label: 'Mój moduł',
-  icon: MyIcon,
-  type: 'page',      // hash routing, albo 'sheet' → drawer
-  Component: MyPage,
-})</code></pre>
-    <p class="text-xs text-base-content/30">Moduł pojawia się w headerze, routingu i ustawieniach. Zero wiring.</p>
-  </div>
-
-  <!-- flow setup -->
-  <div class="space-y-3">
-    <h2 class="text-xs uppercase tracking-widest text-base-content/30">Flow — pipeline w 50 LOC</h2>
-    <pre class="bg-base-200 rounded p-4 text-xs leading-relaxed overflow-x-auto whitespace-pre"><code>import { createFlow, templateNode, extractNode } from '@obieg-zero/core'
-import { opfsUpload, persistSave, persistLoad } from '@obieg-zero/storage'
-import { ocrNode } from '@obieg-zero/ocr'
-import { embedNode, searchNode } from '@obieg-zero/embed'
-import { llmNode } from '@obieg-zero/llm'
-
-const flow = createFlow()
-
-flow.node('upload', opfsUpload())
-flow.node('ocr',    ocrNode({ language: 'pol' }))
-flow.node('embed',  embedNode({ model: 'Xenova/multilingual-e5-small', ... }))
-flow.node('search', searchNode({ topK: 3 }))
-flow.node('llm',    llmNode({ modelUrl: '/models/Bielik-1.5B.gguf' }))
-flow.node('save',   persistSave({ keys: ['pages', 'chunks'] }))
-
-// run pipeline
-flow.set('file', pdf)
-await flow.run('upload', 'ocr', 'embed', 'save')
-// → flow.get('pages'), flow.get('chunks')</code></pre>
-  </div>
-
-  <!-- packages -->
-  <div class="space-y-3">
-    <h2 class="text-xs uppercase tracking-widest text-base-content/30">Packages</h2>
-    <div class="grid gap-1 text-xs">
-      <div class="flex justify-between py-1 border-b border-base-content/5"><span><span class="text-base-content/30">npm i </span><span class="text-primary">@obieg-zero/core</span></span><span class="text-base-content/20">flow, template, extract</span></div>
-      <div class="flex justify-between py-1 border-b border-base-content/5"><span><span class="text-base-content/30">npm i </span><span class="text-primary">@obieg-zero/storage</span></span><span class="text-base-content/20">OPFS + IndexedDB</span></div>
-      <div class="flex justify-between py-1 border-b border-base-content/5"><span><span class="text-base-content/30">npm i </span><span class="text-primary">@obieg-zero/ocr</span></span><span class="text-base-content/20">PDF + Tesseract</span></div>
-      <div class="flex justify-between py-1 border-b border-base-content/5"><span><span class="text-base-content/30">npm i </span><span class="text-primary">@obieg-zero/embed</span></span><span class="text-base-content/20">embeddings + search</span></div>
-      <div class="flex justify-between py-1"><span><span class="text-base-content/30">npm i </span><span class="text-primary">@obieg-zero/llm</span></span><span class="text-base-content/20">wllama/GGUF</span></div>
-    </div>
-  </div>
-
-  <!-- footer -->
-  <div class="flex gap-4 text-xs text-base-content/30 pt-4 border-t border-base-content/5">
-    <a href="https://github.com/obieg-zero/obieg-zero" class="link link-hover">GitHub</a>
-    <a href="https://www.npmjs.com/org/obieg-zero" class="link link-hover">npm</a>
-    <a href="https://github.com/obieg-zero/obieg-zero/tree/main/examples/doc-analyzer" class="link link-hover">Boilerplate</a>
-    <span class="ml-auto">MIT</span>
-  </div>
-
-</div>
+<body>
+  <div id="root"></div>
 </body>
 </html>
