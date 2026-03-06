@@ -9,53 +9,83 @@
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="font-mono text-sm">
-<div class="max-w-2xl mx-auto px-4 py-12 space-y-12">
+<div class="max-w-2xl mx-auto px-4 py-12 space-y-10">
 
   <!-- header -->
   <div>
-    <h1 class="text-3xl font-light tracking-tight mb-1">obieg<span class="text-primary">-zero</span></h1>
-    <p class="text-base-content/40">Browser-native document flow engine</p>
+    <h1 class="text-2xl font-light tracking-tight">obieg<span class="text-primary">-zero</span></h1>
+    <p class="text-base-content/40 text-xs mt-1">Browser-native document flow engine. Zero backend. Zero config. Zero barrier.</p>
   </div>
 
-  <!-- live demo -->
+  <!-- boilerplate -->
   <div class="space-y-3">
-    <h2 class="text-xs uppercase tracking-widest text-base-content/30">Demo — PDF document analysis (simulated)</h2>
+    <h2 class="text-xs uppercase tracking-widest text-base-content/30">Boilerplate — 472 LOC</h2>
+    <p class="text-xs text-base-content/50">Vite + React + DaisyUI + Zustand. PDF upload, OCR, embeddings, Bielik LLM, Q&A — all in-browser.</p>
 
-    <div class="bg-base-200 rounded p-4 space-y-3">
-      <div class="flex items-center gap-3">
-        <button id="btn-run" class="btn btn-primary btn-sm">Run flow</button>
-        <span id="status" class="text-xs text-base-content/40"></span>
-      </div>
-      <progress id="pbar" class="progress progress-primary w-full h-1 hidden" value="0" max="100"></progress>
-
-      <!-- flow variable inspector -->
-      <div id="vars" class="space-y-2 hidden">
-        <div class="text-[10px] uppercase tracking-widest text-base-content/30 mt-2">Flow variables</div>
-      </div>
+    <div class="mockup-code text-xs">
+      <pre data-prefix="$"><code>git clone https://github.com/obieg-zero/obieg-zero.git</code></pre>
+      <pre data-prefix="$"><code>cd obieg-zero/examples/doc-analyzer</code></pre>
+      <pre data-prefix="$"><code>npm install && npm run dev</code></pre>
     </div>
+
+    <div class="bg-base-200 rounded p-4 space-y-2 text-xs">
+      <div class="text-base-content/30 uppercase tracking-widest text-[10px]">Struktura</div>
+      <pre class="text-base-content/50 leading-relaxed">src/
+  store.ts         45 LOC  Zustand — routing, sheets, module toggle
+  modules.ts       15 LOC  registerModule() — dodaj moduł, dostaje routing
+  App.tsx         101 LOC  shell, header, hash router, drawer sheet
+  flow.ts          50 LOC  obieg-zero pipeline setup
+  modules/
+    upload.tsx    102 LOC  page: PDF → OPFS → OCR → embed → extract
+    ocr-view.tsx   45 LOC  sheet: tekst OCR ze stron
+    qa.tsx         62 LOC  sheet: Q&amp;A z Bielikiem (streaming)
+    settings.tsx   45 LOC  page: włącz/wyłącz moduły</pre>
+    </div>
+
+    <a href="https://github.com/obieg-zero/obieg-zero/tree/main/examples/doc-analyzer" class="btn btn-primary btn-sm">Kod na GitHub →</a>
   </div>
 
-  <!-- code that powers the demo -->
+  <!-- how to add a module -->
   <div class="space-y-3">
-    <h2 class="text-xs uppercase tracking-widest text-base-content/30">Code</h2>
+    <h2 class="text-xs uppercase tracking-widest text-base-content/30">Dodaj moduł — jeden plik</h2>
+    <pre class="bg-base-200 rounded p-4 text-xs leading-relaxed overflow-x-auto whitespace-pre"><code>import { registerModule } from '../modules.ts'
+
+function MyPage() {
+  return &lt;div&gt;Mój moduł&lt;/div&gt;
+}
+
+registerModule({
+  id: 'my-module',
+  label: 'Mój moduł',
+  icon: MyIcon,
+  type: 'page',      // hash routing, albo 'sheet' → drawer
+  Component: MyPage,
+})</code></pre>
+    <p class="text-xs text-base-content/30">Moduł pojawia się w headerze, routingu i ustawieniach. Zero wiring.</p>
+  </div>
+
+  <!-- flow setup -->
+  <div class="space-y-3">
+    <h2 class="text-xs uppercase tracking-widest text-base-content/30">Flow — pipeline w 50 LOC</h2>
     <pre class="bg-base-200 rounded p-4 text-xs leading-relaxed overflow-x-auto whitespace-pre"><code>import { createFlow, templateNode, extractNode } from '@obieg-zero/core'
+import { opfsUpload, persistSave, persistLoad } from '@obieg-zero/storage'
 import { ocrNode } from '@obieg-zero/ocr'
+import { embedNode, searchNode } from '@obieg-zero/embed'
 import { llmNode } from '@obieg-zero/llm'
 
 const flow = createFlow()
 
-flow.node('ocr', ocrNode({ language: 'pol' }))
-flow.node('prompt', templateNode({
-  template: `Extract from document:\n{{context}}\n\nReturn JSON: {amount, date, party}`
-}))
-flow.node('llm', llmNode({ modelUrl: '/models/Bielik-1.5B.gguf' }))
-flow.node('parse', extractNode({ output: 'result' }))
+flow.node('upload', opfsUpload())
+flow.node('ocr',    ocrNode({ language: 'pol' }))
+flow.node('embed',  embedNode({ model: 'Xenova/multilingual-e5-small', ... }))
+flow.node('search', searchNode({ topK: 3 }))
+flow.node('llm',    llmNode({ modelUrl: '/models/Bielik-1.5B.gguf' }))
+flow.node('save',   persistSave({ keys: ['pages', 'chunks'] }))
 
-flow.set('file', uploadedPdf)
-await flow.run('ocr', 'prompt', 'llm', 'parse')
-
-flow.get('result')
-// → { amount: 350000, date: "2019-03-15", party: "mBank S.A." }</code></pre>
+// run pipeline
+flow.set('file', pdf)
+await flow.run('upload', 'ocr', 'embed', 'save')
+// → flow.get('pages'), flow.get('chunks')</code></pre>
   </div>
 
   <!-- packages -->
@@ -74,114 +104,10 @@ flow.get('result')
   <div class="flex gap-4 text-xs text-base-content/30 pt-4 border-t border-base-content/5">
     <a href="https://github.com/obieg-zero/obieg-zero" class="link link-hover">GitHub</a>
     <a href="https://www.npmjs.com/org/obieg-zero" class="link link-hover">npm</a>
-    <span class="ml-auto">MIT · 738 LOC</span>
+    <a href="https://github.com/obieg-zero/obieg-zero/tree/main/examples/doc-analyzer" class="link link-hover">Boilerplate</a>
+    <span class="ml-auto">MIT</span>
   </div>
 
 </div>
-
-<script>
-// Simulated flow demo — shows how obieg-zero processes a document
-const SAMPLE_DOC = `UMOWA KREDYTU HIPOTECZNEGO nr KH/2019/03/15842
-zawarta w dniu 15 marca 2019 r. w Warszawie
-pomiędzy: mBank Spółka Akcyjna z siedzibą w Warszawie
-a Kredytobiorcą: Jan Kowalski, PESEL 85032412345
-
-§1. Bank udziela Kredytobiorcy kredytu w kwocie 350 000,00 PLN
-(słownie: trzysta pięćdziesiąt tysięcy złotych)
-na okres 300 miesięcy, tj. do dnia 15 marca 2044 r.
-
-§2. Oprocentowanie kredytu jest zmienne i stanowi sumę
-stawki referencyjnej WIBOR 3M oraz marży Banku
-w wysokości 1,89% (jeden i 89/100 procent) w stosunku rocznym.`;
-
-const EXTRACTED = { kwota: 350000, data: '2019-03-15', bank: 'mBank S.A.', marza: 1.89, okres_miesiecy: 300, stawka: 'WIBOR 3M' };
-
-const steps = [
-  { id: 'upload', label: 'opfsUpload', time: 300, vars: { file: '📄 umowa_kredytu.pdf (142 KB)', projectId: 'case-001' } },
-  { id: 'ocr', label: 'ocrNode', time: 1800, progress: true, vars: { 'pages': null } },
-  { id: 'prompt', label: 'templateNode', time: 200, vars: { prompt: null } },
-  { id: 'llm', label: 'llmNode', time: 2000, progress: true, vars: { answer: null } },
-  { id: 'parse', label: 'extractNode', time: 300, vars: { result: null } },
-];
-
-const btn = document.getElementById('btn-run');
-const status = document.getElementById('status');
-const pbar = document.getElementById('pbar');
-const varsEl = document.getElementById('vars');
-
-function renderVar(key, value) {
-  let el = document.getElementById('var-' + key);
-  if (!el) {
-    el = document.createElement('div');
-    el.id = 'var-' + key;
-    el.className = 'bg-base-300 rounded p-2';
-    varsEl.appendChild(el);
-  }
-  const display = typeof value === 'string'
-    ? (value.length > 120 ? value.slice(0, 120) + '…' : value)
-    : JSON.stringify(value, null, 2);
-  el.innerHTML = `<div class="text-[10px] text-primary/60 mb-1">$${key}</div><pre class="text-xs text-base-content/70 whitespace-pre-wrap">${display}</pre>`;
-}
-
-async function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
-
-async function simulate(step, pct) {
-  pbar.classList.remove('hidden');
-  pbar.value = pct;
-  status.textContent = `node:start → ${step.label}`;
-
-  if (step.progress) {
-    for (let i = 0; i <= 100; i += 8) {
-      pbar.value = pct + (i / 100) * (100 / steps.length);
-      status.textContent = `${step.label}: ${i}%`;
-      await sleep(step.time / 13);
-    }
-  } else {
-    await sleep(step.time);
-  }
-
-  status.textContent = `node:done → ${step.label}`;
-}
-
-btn.addEventListener('click', async () => {
-  btn.disabled = true;
-  varsEl.classList.remove('hidden');
-  varsEl.querySelectorAll('.bg-base-300').forEach(e => e.remove());
-
-  for (let i = 0; i < steps.length; i++) {
-    const step = steps[i];
-    const pct = (i / steps.length) * 100;
-    await simulate(step, pct);
-
-    // show variables after each step
-    if (step.id === 'upload') {
-      renderVar('file', step.vars.file);
-      renderVar('projectId', step.vars.projectId);
-    }
-    if (step.id === 'ocr') {
-      renderVar('pages', [
-        { page: 1, text: SAMPLE_DOC.slice(0, 200) + '…' },
-        { page: 2, text: '§2. Oprocentowanie kredytu…' }
-      ]);
-    }
-    if (step.id === 'prompt') {
-      renderVar('prompt', 'Z dokumentu wyciągnij dane kredytu.\n\nTEKST:\n' + SAMPLE_DOC.slice(0, 100) + '…\n\nJSON:');
-    }
-    if (step.id === 'llm') {
-      renderVar('answer', '{"kwota": 350000, "data": "2019-03-15", "bank": "mBank S.A.", "marza": 1.89, "okres_miesiecy": 300, "stawka": "WIBOR 3M"}');
-    }
-    if (step.id === 'parse') {
-      renderVar('result', EXTRACTED);
-    }
-
-    await sleep(200);
-  }
-
-  pbar.value = 100;
-  status.textContent = 'done — 5 nodes, 6 variables, 0 API calls';
-  btn.disabled = false;
-  btn.textContent = 'Run again';
-});
-</script>
 </body>
 </html>
