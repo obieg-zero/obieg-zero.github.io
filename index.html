@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="black">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,159 +7,181 @@
 <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/daisyui@5/full.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<style>
-  pre code { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.8rem; }
-  .kw { color: #c792ea } .str { color: #c3e88d } .fn { color: #82aaff } .cm { color: #546e7a }
-</style>
 </head>
-<body class="min-h-screen bg-base-200">
+<body class="font-mono text-sm">
+<div class="max-w-2xl mx-auto px-4 py-12 space-y-12">
 
-<!-- hero -->
-<div class="hero py-16">
-  <div class="hero-content text-center">
-    <div>
-      <h1 class="text-5xl font-mono font-light tracking-tight">obieg<span class="text-primary">-zero</span></h1>
-      <p class="py-4 text-base-content/60 max-w-md">Browser-native document flow engine.<br>Zero backend. Zero config. Zero barrier.</p>
-      <div class="flex flex-wrap gap-2 justify-center">
-        <span class="badge badge-outline badge-sm">TypeScript</span>
-        <span class="badge badge-outline badge-sm">OPFS</span>
-        <span class="badge badge-outline badge-sm">IndexedDB</span>
-        <span class="badge badge-outline badge-sm">WebAssembly</span>
-        <span class="badge badge-outline badge-sm">Web Workers</span>
+  <!-- header -->
+  <div>
+    <h1 class="text-3xl font-light tracking-tight mb-1">obieg<span class="text-primary">-zero</span></h1>
+    <p class="text-base-content/40">Browser-native document flow engine</p>
+  </div>
+
+  <!-- live demo -->
+  <div class="space-y-3">
+    <h2 class="text-xs uppercase tracking-widest text-base-content/30">Demo — PDF document analysis (simulated)</h2>
+
+    <div class="bg-base-200 rounded p-4 space-y-3">
+      <div class="flex items-center gap-3">
+        <button id="btn-run" class="btn btn-primary btn-sm">Run flow</button>
+        <span id="status" class="text-xs text-base-content/40"></span>
       </div>
-      <div class="mt-6 flex gap-3 justify-center">
-        <a href="https://github.com/obieg-zero/obieg-zero" class="btn btn-primary btn-sm">GitHub</a>
-        <a href="https://www.npmjs.com/org/obieg-zero" class="btn btn-ghost btn-sm">npm</a>
+      <progress id="pbar" class="progress progress-primary w-full h-1 hidden" value="0" max="100"></progress>
+
+      <!-- flow variable inspector -->
+      <div id="vars" class="space-y-2 hidden">
+        <div class="text-[10px] uppercase tracking-widest text-base-content/30 mt-2">Flow variables</div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="max-w-4xl mx-auto px-4 pb-16 space-y-8">
+  <!-- code that powers the demo -->
+  <div class="space-y-3">
+    <h2 class="text-xs uppercase tracking-widest text-base-content/30">Code</h2>
+    <pre class="bg-base-200 rounded p-4 text-xs leading-relaxed overflow-x-auto whitespace-pre"><code>import { createFlow, templateNode, extractNode } from '@obieg-zero/core'
+import { ocrNode } from '@obieg-zero/ocr'
+import { llmNode } from '@obieg-zero/llm'
+
+const flow = createFlow()
+
+flow.node('ocr', ocrNode({ language: 'pol' }))
+flow.node('prompt', templateNode({
+  template: `Extract from document:\n{{context}}\n\nReturn JSON: {amount, date, party}`
+}))
+flow.node('llm', llmNode({ modelUrl: '/models/Bielik-1.5B.gguf' }))
+flow.node('parse', extractNode({ output: 'result' }))
+
+flow.set('file', uploadedPdf)
+await flow.run('ocr', 'prompt', 'llm', 'parse')
+
+flow.get('result')
+// → { amount: 350000, date: "2019-03-15", party: "mBank S.A." }</code></pre>
+  </div>
 
   <!-- packages -->
-  <div class="card bg-base-100">
-    <div class="card-body">
-      <h2 class="card-title text-sm uppercase tracking-widest text-base-content/40">Packages</h2>
-      <div class="overflow-x-auto">
-        <table class="table table-sm">
-          <tbody>
-            <tr><td class="font-mono text-primary">@obieg-zero/core</td><td class="text-base-content/60">Flow engine — nodes, variables, events</td><td class="text-right text-xs text-base-content/30">~2 kB</td></tr>
-            <tr><td class="font-mono text-primary">@obieg-zero/storage</td><td class="text-base-content/60">OPFS file storage + IndexedDB persistence</td><td class="text-right text-xs text-base-content/30">~2 kB</td></tr>
-            <tr><td class="font-mono text-primary">@obieg-zero/ocr</td><td class="text-base-content/60">PDF text extraction + Tesseract OCR fallback</td><td class="text-right text-xs text-base-content/30">~1 kB</td></tr>
-            <tr><td class="font-mono text-primary">@obieg-zero/embed</td><td class="text-base-content/60">HuggingFace embeddings + semantic search</td><td class="text-right text-xs text-base-content/30">~2 kB</td></tr>
-            <tr><td class="font-mono text-primary">@obieg-zero/llm</td><td class="text-base-content/60">Local LLM inference via wllama/GGUF</td><td class="text-right text-xs text-base-content/30">~1 kB</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <!-- use case: PDF → OCR → LLM -->
-  <div class="card bg-base-100">
-    <div class="card-body">
-      <h2 class="card-title text-sm uppercase tracking-widest text-base-content/40">Use case — PDF to answer, fully local</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-
-        <!-- left: visual flow -->
-        <div>
-          <ul class="steps steps-vertical text-sm">
-            <li data-content="1" class="step step-primary">
-              <div class="text-left"><strong>Upload PDF</strong><br><span class="text-xs text-base-content/50">Stored in OPFS — no server, no upload</span></div>
-            </li>
-            <li data-content="2" class="step step-primary">
-              <div class="text-left"><strong>OCR</strong><br><span class="text-xs text-base-content/50">pdfjs text layer → Tesseract fallback → pages[]</span></div>
-            </li>
-            <li data-content="3" class="step step-primary">
-              <div class="text-left"><strong>Template</strong><br><span class="text-xs text-base-content/50">Inject extracted text into prompt via {{context}}</span></div>
-            </li>
-            <li data-content="4" class="step step-primary">
-              <div class="text-left"><strong>LLM</strong><br><span class="text-xs text-base-content/50">Bielik 1.5B runs in browser via WebAssembly</span></div>
-            </li>
-            <li data-content="5" class="step step-primary">
-              <div class="text-left"><strong>Answer</strong><br><span class="text-xs text-base-content/50">flow.get('answer') — structured or free-text</span></div>
-            </li>
-          </ul>
-        </div>
-
-        <!-- right: code -->
-        <div>
-<pre class="bg-base-300 rounded-lg p-4 text-xs leading-relaxed overflow-x-auto"><code><span class="kw">import</span> { <span class="fn">createFlow</span>, <span class="fn">templateNode</span> } <span class="kw">from</span> <span class="str">'@obieg-zero/core'</span>
-<span class="kw">import</span> { <span class="fn">opfsUpload</span> } <span class="kw">from</span> <span class="str">'@obieg-zero/storage'</span>
-<span class="kw">import</span> { <span class="fn">ocrNode</span> } <span class="kw">from</span> <span class="str">'@obieg-zero/ocr'</span>
-<span class="kw">import</span> { <span class="fn">llmNode</span> } <span class="kw">from</span> <span class="str">'@obieg-zero/llm'</span>
-
-<span class="kw">const</span> flow = <span class="fn">createFlow</span>()
-
-flow.<span class="fn">node</span>(<span class="str">'upload'</span>, <span class="fn">opfsUpload</span>())
-flow.<span class="fn">node</span>(<span class="str">'ocr'</span>,    <span class="fn">ocrNode</span>({ language: <span class="str">'pol'</span> }))
-flow.<span class="fn">node</span>(<span class="str">'prompt'</span>, <span class="fn">templateNode</span>({
-  template: <span class="str">'Podsumuj dokument:\n{{context}}'</span>
-}))
-flow.<span class="fn">node</span>(<span class="str">'llm'</span>, <span class="fn">llmNode</span>({
-  modelUrl: <span class="str">'/models/Bielik-1.5B.gguf'</span>
-}))
-
-<span class="cm">// run the pipeline</span>
-flow.<span class="fn">set</span>(<span class="str">'file'</span>, userFile)
-flow.<span class="fn">set</span>(<span class="str">'projectId'</span>, <span class="str">'demo'</span>)
-flow.<span class="fn">set</span>(<span class="str">'fileKey'</span>, <span class="str">'doc.pdf'</span>)
-
-<span class="kw">await</span> flow.<span class="fn">run</span>(
-  <span class="str">'upload'</span>, <span class="str">'ocr'</span>, <span class="str">'prompt'</span>, <span class="str">'llm'</span>
-)
-
-console.log(flow.<span class="fn">get</span>(<span class="str">'answer'</span>))</code></pre>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- philosophy -->
-  <div class="grid sm:grid-cols-2 gap-4">
-    <div class="card bg-base-100">
-      <div class="card-body">
-        <h3 class="font-bold">Zero backend</h3>
-        <p class="text-sm text-base-content/60">OPFS, IndexedDB, WASM. Everything in the browser. Works offline.</p>
-      </div>
-    </div>
-    <div class="card bg-base-100">
-      <div class="card-body">
-        <h3 class="font-bold">Zero config</h3>
-        <p class="text-sm text-base-content/60">Sensible defaults. Plug in nodes, set variables, run.</p>
-      </div>
-    </div>
-    <div class="card bg-base-100">
-      <div class="card-body">
-        <h3 class="font-bold">Zero barrier</h3>
-        <p class="text-sm text-base-content/60">No accounts, no API keys, no server setup. npm install and go.</p>
-      </div>
-    </div>
-    <div class="card bg-base-100">
-      <div class="card-body">
-        <h3 class="font-bold">Zero bundle tax</h3>
-        <p class="text-sm text-base-content/60">5 packages, ~8 kB total. Install only what you need. Heavy deps are peer.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- install -->
-  <div class="card bg-base-100">
-    <div class="card-body">
-      <h2 class="card-title text-sm uppercase tracking-widest text-base-content/40">Get started</h2>
-      <div class="mockup-code text-sm">
-        <pre data-prefix="$"><code>npm i @obieg-zero/core</code></pre>
-        <pre data-prefix="$" class="text-base-content/40"><code>npm i @obieg-zero/storage @obieg-zero/ocr  # add what you need</code></pre>
-        <pre data-prefix="$" class="text-base-content/40"><code>npm i @obieg-zero/embed @obieg-zero/llm    # heavy nodes, optional</code></pre>
-      </div>
+  <div class="space-y-3">
+    <h2 class="text-xs uppercase tracking-widest text-base-content/30">Packages</h2>
+    <div class="grid gap-1 text-xs">
+      <div class="flex justify-between py-1 border-b border-base-content/5"><span><span class="text-base-content/30">npm i </span><span class="text-primary">@obieg-zero/core</span></span><span class="text-base-content/20">flow, template, extract</span></div>
+      <div class="flex justify-between py-1 border-b border-base-content/5"><span><span class="text-base-content/30">npm i </span><span class="text-primary">@obieg-zero/storage</span></span><span class="text-base-content/20">OPFS + IndexedDB</span></div>
+      <div class="flex justify-between py-1 border-b border-base-content/5"><span><span class="text-base-content/30">npm i </span><span class="text-primary">@obieg-zero/ocr</span></span><span class="text-base-content/20">PDF + Tesseract</span></div>
+      <div class="flex justify-between py-1 border-b border-base-content/5"><span><span class="text-base-content/30">npm i </span><span class="text-primary">@obieg-zero/embed</span></span><span class="text-base-content/20">embeddings + search</span></div>
+      <div class="flex justify-between py-1"><span><span class="text-base-content/30">npm i </span><span class="text-primary">@obieg-zero/llm</span></span><span class="text-base-content/20">wllama/GGUF</span></div>
     </div>
   </div>
 
   <!-- footer -->
-  <footer class="text-center text-xs text-base-content/30 pt-4">
-    obieg-zero &middot; MIT &middot; 738 LOC
-  </footer>
+  <div class="flex gap-4 text-xs text-base-content/30 pt-4 border-t border-base-content/5">
+    <a href="https://github.com/obieg-zero/obieg-zero" class="link link-hover">GitHub</a>
+    <a href="https://www.npmjs.com/org/obieg-zero" class="link link-hover">npm</a>
+    <span class="ml-auto">MIT · 738 LOC</span>
+  </div>
 
 </div>
+
+<script>
+// Simulated flow demo — shows how obieg-zero processes a document
+const SAMPLE_DOC = `UMOWA KREDYTU HIPOTECZNEGO nr KH/2019/03/15842
+zawarta w dniu 15 marca 2019 r. w Warszawie
+pomiędzy: mBank Spółka Akcyjna z siedzibą w Warszawie
+a Kredytobiorcą: Jan Kowalski, PESEL 85032412345
+
+§1. Bank udziela Kredytobiorcy kredytu w kwocie 350 000,00 PLN
+(słownie: trzysta pięćdziesiąt tysięcy złotych)
+na okres 300 miesięcy, tj. do dnia 15 marca 2044 r.
+
+§2. Oprocentowanie kredytu jest zmienne i stanowi sumę
+stawki referencyjnej WIBOR 3M oraz marży Banku
+w wysokości 1,89% (jeden i 89/100 procent) w stosunku rocznym.`;
+
+const EXTRACTED = { kwota: 350000, data: '2019-03-15', bank: 'mBank S.A.', marza: 1.89, okres_miesiecy: 300, stawka: 'WIBOR 3M' };
+
+const steps = [
+  { id: 'upload', label: 'opfsUpload', time: 300, vars: { file: '📄 umowa_kredytu.pdf (142 KB)', projectId: 'case-001' } },
+  { id: 'ocr', label: 'ocrNode', time: 1800, progress: true, vars: { 'pages': null } },
+  { id: 'prompt', label: 'templateNode', time: 200, vars: { prompt: null } },
+  { id: 'llm', label: 'llmNode', time: 2000, progress: true, vars: { answer: null } },
+  { id: 'parse', label: 'extractNode', time: 300, vars: { result: null } },
+];
+
+const btn = document.getElementById('btn-run');
+const status = document.getElementById('status');
+const pbar = document.getElementById('pbar');
+const varsEl = document.getElementById('vars');
+
+function renderVar(key, value) {
+  let el = document.getElementById('var-' + key);
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'var-' + key;
+    el.className = 'bg-base-300 rounded p-2';
+    varsEl.appendChild(el);
+  }
+  const display = typeof value === 'string'
+    ? (value.length > 120 ? value.slice(0, 120) + '…' : value)
+    : JSON.stringify(value, null, 2);
+  el.innerHTML = `<div class="text-[10px] text-primary/60 mb-1">$${key}</div><pre class="text-xs text-base-content/70 whitespace-pre-wrap">${display}</pre>`;
+}
+
+async function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function simulate(step, pct) {
+  pbar.classList.remove('hidden');
+  pbar.value = pct;
+  status.textContent = `node:start → ${step.label}`;
+
+  if (step.progress) {
+    for (let i = 0; i <= 100; i += 8) {
+      pbar.value = pct + (i / 100) * (100 / steps.length);
+      status.textContent = `${step.label}: ${i}%`;
+      await sleep(step.time / 13);
+    }
+  } else {
+    await sleep(step.time);
+  }
+
+  status.textContent = `node:done → ${step.label}`;
+}
+
+btn.addEventListener('click', async () => {
+  btn.disabled = true;
+  varsEl.classList.remove('hidden');
+  varsEl.querySelectorAll('.bg-base-300').forEach(e => e.remove());
+
+  for (let i = 0; i < steps.length; i++) {
+    const step = steps[i];
+    const pct = (i / steps.length) * 100;
+    await simulate(step, pct);
+
+    // show variables after each step
+    if (step.id === 'upload') {
+      renderVar('file', step.vars.file);
+      renderVar('projectId', step.vars.projectId);
+    }
+    if (step.id === 'ocr') {
+      renderVar('pages', [
+        { page: 1, text: SAMPLE_DOC.slice(0, 200) + '…' },
+        { page: 2, text: '§2. Oprocentowanie kredytu…' }
+      ]);
+    }
+    if (step.id === 'prompt') {
+      renderVar('prompt', 'Z dokumentu wyciągnij dane kredytu.\n\nTEKST:\n' + SAMPLE_DOC.slice(0, 100) + '…\n\nJSON:');
+    }
+    if (step.id === 'llm') {
+      renderVar('answer', '{"kwota": 350000, "data": "2019-03-15", "bank": "mBank S.A.", "marza": 1.89, "okres_miesiecy": 300, "stawka": "WIBOR 3M"}');
+    }
+    if (step.id === 'parse') {
+      renderVar('result', EXTRACTED);
+    }
+
+    await sleep(200);
+  }
+
+  pbar.value = 100;
+  status.textContent = 'done — 5 nodes, 6 variables, 0 API calls';
+  btn.disabled = false;
+  btn.textContent = 'Run again';
+});
+</script>
 </body>
 </html>
