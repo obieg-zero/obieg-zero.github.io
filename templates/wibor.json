@@ -22,9 +22,9 @@
     },
     {
       "id": "extract-0",
-      "type": "extract",
+      "type": "extract-api",
       "position": { "x": 0, "y": 400 },
-      "data": { "label": "Extract (umowy)", "config": { "questions": "Nazwa banku to\nKwota kredytu wynosi\nMarza banku wynosi\nStawka WIBOR wynosi\nUmowe podpisano dnia\nOkres kredytu to\nKredytobiorca to", "topK": "2", "modelUrl": "https://huggingface.co/obieg-zero/Bielik-1.5B-v3.0-Instruct-GGUF/resolve/main/Bielik-1.5B-v3.0-Instruct.Q4_K_M.gguf" } }
+      "data": { "label": "Extract (umowy)", "config": { "questions": "Nazwa banku to\nKwota kredytu wynosi\nMarza banku wynosi\nStawka WIBOR wynosi\nUmowe podpisano dnia\nOkres kredytu to\nKredytobiorca to", "topK": "2", "apiUrl": "setting:wibor:apiUrl", "apiKey": "setting:wibor:apiKey", "apiModel": "setting:wibor:apiModel" } }
     },
     {
       "id": "embed-1",
@@ -34,9 +34,9 @@
     },
     {
       "id": "extract-1",
-      "type": "extract",
+      "type": "extract-api",
       "position": { "x": 420, "y": 400 },
-      "data": { "label": "Extract (aneksy)", "config": { "questions": "Nowa stawka WIBOR wynosi\nData wejscia w zycie aneksu to\nPoprzednia stawka WIBOR wynosila\nZmiana marzy wynosi", "topK": "2", "modelUrl": "https://huggingface.co/obieg-zero/Bielik-1.5B-v3.0-Instruct-GGUF/resolve/main/Bielik-1.5B-v3.0-Instruct.Q4_K_M.gguf" } }
+      "data": { "label": "Extract (aneksy)", "config": { "questions": "Nowa stawka WIBOR wynosi\nData wejscia w zycie aneksu to\nPoprzednia stawka WIBOR wynosila\nZmiana marzy wynosi", "topK": "2", "apiUrl": "setting:wibor:apiUrl", "apiKey": "setting:wibor:apiKey", "apiModel": "setting:wibor:apiModel" } }
     },
     {
       "id": "embed-2",
@@ -46,9 +46,9 @@
     },
     {
       "id": "extract-2",
-      "type": "extract",
+      "type": "extract-api",
       "position": { "x": 840, "y": 400 },
-      "data": { "label": "Extract (spłaty)", "config": { "questions": "Miesieczna rata wynosi\nSaldo zadluzenia wynosi\nData splaty to\nOprocentowanie w okresie wynosi", "topK": "1", "modelUrl": "https://huggingface.co/obieg-zero/Bielik-1.5B-v3.0-Instruct-GGUF/resolve/main/Bielik-1.5B-v3.0-Instruct.Q4_K_M.gguf" } }
+      "data": { "label": "Extract (spłaty)", "config": { "questions": "Miesieczna rata wynosi\nSaldo zadluzenia wynosi\nData splaty to\nOprocentowanie w okresie wynosi", "topK": "1", "apiUrl": "setting:wibor:apiUrl", "apiKey": "setting:wibor:apiKey", "apiModel": "setting:wibor:apiModel" } }
     },
     {
       "id": "validate-1",
