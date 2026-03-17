@@ -57,8 +57,8 @@ const xe = (u) => {
               label: t.label,
               detail: t.description,
               aside: /* @__PURE__ */ c("div", { className: "flex items-center gap-1", children: [
-                /* @__PURE__ */ n("span", { className: "badge badge-ghost badge-sm text-2xs", children: t.version }),
-                C === t.id ? /* @__PURE__ */ n("span", { className: "loading loading-spinner loading-xs" }) : s ? /* @__PURE__ */ n("span", { className: "text-2xs text-success", children: "zainstalowany" }) : /* @__PURE__ */ n("button", { className: "btn btn-primary btn-xs", onClick: () => h(t.id, () => i.install(t.repo)), children: "Instaluj" })
+                C === t.id ? /* @__PURE__ */ n("span", { className: "loading loading-spinner loading-xs" }) : s ? /* @__PURE__ */ n("span", { className: "text-2xs text-success", children: "zainstalowany" }) : /* @__PURE__ */ n("button", { className: "btn btn-primary btn-xs", onClick: () => h(t.id, () => i.install(t.repo)), children: "Instaluj" }),
+                /* @__PURE__ */ n("span", { className: "badge badge-ghost badge-sm text-2xs", children: t.version })
               ] })
             },
             t.id
