@@ -1,0 +1,9 @@
+{
+  "id": "playground",
+  "label": "Playground",
+  "description": "Blokowy RAG builder (React Flow)",
+  "version": "0.1.0",
+  "author": "obieg-zero",
+  "entry": "index.mjs",
+  "requires": ["projects"]
+}

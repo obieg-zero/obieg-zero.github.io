@@ -3,9 +3,7 @@
     "projects": true,
     "darkmode": true,
     "playground": true,
-    "plugin-manager": true,
-    "config-export": true,
-    "notes": false
+    "plugin-manager": true
   },
   "defaultPlugin": "playground"
 }
