@@ -1,12 +1,12 @@
-// mcp-plugin-dev/shims/react.mjs
+// ../obieg-zero-plugins/.shims/react.mjs
 var R = globalThis.__obieg.React;
 var { useState, useEffect, useCallback, useRef, useMemo, useReducer, useContext, createContext, createElement, Fragment, memo, forwardRef, useLayoutEffect, useId, useSyncExternalStore, useTransition, Component } = R;
 
-// mcp-plugin-dev/shims/jsx-runtime.mjs
+// ../obieg-zero-plugins/.shims/jsx-runtime.mjs
 var J = globalThis.__obieg.jsxRuntime;
 var { jsx, jsxs, Fragment: Fragment2 } = J;
 
-// ../obieg-zero-plugins/plugin-manager/src/index.tsx
+// ../obieg-zero-plugins/manager/src/index.tsx
 var _host;
 var ListItem;
 var Tabs;
@@ -173,7 +173,7 @@ var pluginManagerPlugin = (deps) => {
     ] });
   }
   return {
-    id: "plugin-manager",
+    id: "manager",
     label: "Pluginy",
     description: "Katalog i instalacja pluginow",
     icon: Package,

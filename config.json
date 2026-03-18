@@ -3,7 +3,7 @@
     "projects": true,
     "darkmode": true,
     "playground": true,
-    "plugin-manager": true
+    "manager": true
   },
   "defaultPlugin": "playground"
 }
