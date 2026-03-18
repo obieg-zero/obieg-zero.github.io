@@ -1,9 +1,0 @@
-{
-  "id": "edu-reader",
-  "label": "Edu Reader",
-  "description": "Czytnik lekcji z lexikonem i discovery",
-  "version": "0.1.1",
-  "author": "obieg-zero",
-  "entry": "index.mjs",
-  "defaultSettings": {}
-}
