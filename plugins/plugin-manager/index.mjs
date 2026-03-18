@@ -1,151 +1,187 @@
-const A = globalThis.__obieg.jsxRuntime, { jsx: n, jsxs: c, Fragment: g } = A, L = globalThis.__obieg.React, { useState: r, useEffect: U, useCallback: V, useRef: B, useMemo: D, useReducer: W, useContext: $, createContext: H, createElement: J, Fragment: Z, memo: G, forwardRef: Q, useLayoutEffect: X, useId: Y, Children: ee, isValidElement: te, cloneElement: ne, Suspense: se, lazy: ae, Component: ie, PureComponent: le, createRef: ce, useImperativeHandle: oe, useDebugValue: re, useSyncExternalStore: de, useTransition: ue, useDeferredValue: ge, startTransition: be } = L;
-let w, b, j, I, z, O, T, i;
-const xe = (u) => {
-  w = u.host, { ListItem: b, Tabs: j, Field: I } = u.ui, { Package: z, CheckCircle: O, ArrowUpCircle: T } = u.icons, i = u.sdk;
-  function _() {
-    const [x, F] = r("installed"), [l, K] = r(null), [v, M] = r([]), [C, y] = r(null), [m, p] = r(null), [k, E] = r({}), [, q] = r(0), d = i.getAllPlugins(), P = V(async () => {
-      M(await i.listInstalled());
+// mcp-plugin-dev/shims/react.mjs
+var R = globalThis.__obieg.React;
+var { useState, useEffect, useCallback, useRef, useMemo, useReducer, useContext, createContext, createElement, Fragment, memo, forwardRef, useLayoutEffect, useId, useSyncExternalStore, useTransition, Component } = R;
+
+// mcp-plugin-dev/shims/jsx-runtime.mjs
+var J = globalThis.__obieg.jsxRuntime;
+var { jsx, jsxs, Fragment: Fragment2 } = J;
+
+// ../obieg-zero-plugins/plugin-manager/src/index.tsx
+var _host;
+var ListItem;
+var Tabs;
+var Field;
+var Package;
+var CheckCircle;
+var ArrowUpCircle;
+var sdk;
+var pluginManagerPlugin = (deps) => {
+  _host = deps.host;
+  ({ ListItem, Tabs, Field } = deps.ui);
+  ({ Package, CheckCircle, ArrowUpCircle } = deps.icons);
+  sdk = deps.sdk;
+  function ManagerCenter() {
+    const [tab, setTab] = useState("installed");
+    const [registry, setRegistry] = useState(null);
+    const [installed, setInstalled] = useState([]);
+    const [busy, setBusy] = useState(null);
+    const [msg, setMsg] = useState(null);
+    const [settings, setSettings] = useState({});
+    const [, rerender] = useState(0);
+    const plugins = sdk.getAllPlugins();
+    const refresh = useCallback(async () => {
+      setInstalled(await sdk.listInstalled());
       try {
-        K(await i.fetchRegistry());
+        setRegistry(await sdk.fetchRegistry());
       } catch {
       }
-      E(await w.db.getSettings(""));
+      setSettings(await _host.db.getSettings(""));
     }, []);
-    U(() => {
-      P();
+    useEffect(() => {
+      refresh();
     }, []);
-    async function h(t, s) {
-      y(t), p(null);
+    async function run(id, fn) {
+      setBusy(id);
+      setMsg(null);
       try {
-        await s(), await P(), p({ text: "OK", ok: !0 });
+        await fn();
+        await refresh();
+        setMsg({ text: "OK", ok: true });
       } catch (e) {
-        p({ text: e.message, ok: !1 });
+        setMsg({ text: e.message, ok: false });
       } finally {
-        y(null);
+        setBusy(null);
       }
     }
-    function R(t) {
-      var e, o;
-      const s = !i.isPluginEnabled(t);
-      if (i.setPluginEnabled(t, s), s)
-        for (const a of ((e = d.find((f) => f.id === t)) == null ? void 0 : e.requires) ?? []) i.isPluginEnabled(a) || i.setPluginEnabled(a, !0);
-      if (!s)
-        for (const a of d) (o = a.requires) != null && o.includes(t) && i.isPluginEnabled(a.id) && i.setPluginEnabled(a.id, !1);
-      q((a) => a + 1);
+    function togglePlugin(id) {
+      const enabling = !sdk.isPluginEnabled(id);
+      sdk.setPluginEnabled(id, enabling);
+      if (enabling) {
+        for (const req of plugins.find((p) => p.id === id)?.requires ?? []) if (!sdk.isPluginEnabled(req)) sdk.setPluginEnabled(req, true);
+      }
+      if (!enabling) {
+        for (const p of plugins) if (p.requires?.includes(id) && sdk.isPluginEnabled(p.id)) sdk.setPluginEnabled(p.id, false);
+      }
+      rerender((n) => n + 1);
     }
-    async function S(t, s) {
-      await w.db.setSetting(t, s), E((e) => ({ ...e, [t]: s }));
+    async function saveSetting(key, value) {
+      await _host.db.setSetting(key, value);
+      setSettings((s) => ({ ...s, [key]: value }));
     }
-    return /* @__PURE__ */ c("div", { className: "flex-1 min-h-0 flex flex-col p-2 space-y-2", children: [
-      /* @__PURE__ */ n(
-        j,
+    return /* @__PURE__ */ jsxs("div", { className: "flex-1 min-h-0 flex flex-col p-2 space-y-2", children: [
+      /* @__PURE__ */ jsx(
+        Tabs,
         {
-          active: x,
-          onSelect: (t) => F(t),
+          active: tab,
+          onSelect: (id) => setTab(id),
           items: [{ id: "installed", label: "Zainstalowane" }, { id: "catalog", label: "Katalog" }, { id: "settings", label: "Ustawienia" }]
         }
       ),
-      x === "catalog" ? /* @__PURE__ */ c(g, { children: [
-        !l && /* @__PURE__ */ n("p", { className: "text-xs text-base-content/40 py-2", children: "Ladowanie..." }),
-        (l == null ? void 0 : l.length) === 0 && /* @__PURE__ */ n("p", { className: "text-xs text-base-content/30 py-2", children: "Katalog pusty." }),
-        l == null ? void 0 : l.map((t) => {
-          const s = d.some((e) => e.id === t.id);
-          return /* @__PURE__ */ n(
-            b,
+      tab === "catalog" ? /* @__PURE__ */ jsxs(Fragment2, { children: [
+        !registry && /* @__PURE__ */ jsx("p", { className: "text-xs text-base-content/40 py-2", children: "Ladowanie..." }),
+        registry?.length === 0 && /* @__PURE__ */ jsx("p", { className: "text-xs text-base-content/30 py-2", children: "Katalog pusty." }),
+        registry?.map((entry) => {
+          const isInstalled = plugins.some((p) => p.id === entry.id);
+          return /* @__PURE__ */ jsx(
+            ListItem,
             {
-              separator: !0,
-              label: t.label,
-              detail: t.description,
-              aside: /* @__PURE__ */ c("div", { className: "flex items-center gap-1", children: [
-                C === t.id ? /* @__PURE__ */ n("span", { className: "loading loading-spinner loading-xs" }) : s ? /* @__PURE__ */ n("span", { className: "text-2xs text-success", children: "zainstalowany" }) : /* @__PURE__ */ n("button", { className: "btn btn-primary btn-xs", onClick: () => h(t.id, () => i.install(t.repo)), children: "Instaluj" }),
-                /* @__PURE__ */ n("span", { className: "badge badge-ghost badge-sm text-2xs", children: t.version })
+              separator: true,
+              label: entry.label,
+              detail: entry.description,
+              aside: /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-1", children: [
+                busy === entry.id ? /* @__PURE__ */ jsx("span", { className: "loading loading-spinner loading-xs" }) : isInstalled ? /* @__PURE__ */ jsx("span", { className: "text-2xs text-success", children: "zainstalowany" }) : /* @__PURE__ */ jsx("button", { className: "btn btn-primary btn-xs", onClick: () => run(entry.id, () => sdk.install(entry.repo)), children: "Instaluj" }),
+                /* @__PURE__ */ jsx("span", { className: "badge badge-ghost badge-sm text-2xs", children: entry.version })
               ] })
             },
-            t.id
+            entry.id
           );
         })
-      ] }) : x === "settings" ? /* @__PURE__ */ c(g, { children: [
-        Object.entries(k).length === 0 && /* @__PURE__ */ n("p", { className: "text-xs text-base-content/30 py-2", children: "Brak ustawien." }),
-        Object.entries(k).map(([t, s]) => /* @__PURE__ */ n(I, { label: t, children: t.includes("key") || t.includes("token") || t.includes("secret") ? /* @__PURE__ */ n(
+      ] }) : tab === "settings" ? /* @__PURE__ */ jsxs(Fragment2, { children: [
+        Object.entries(settings).length === 0 && /* @__PURE__ */ jsx("p", { className: "text-xs text-base-content/30 py-2", children: "Brak ustawien." }),
+        Object.entries(settings).map(([key, value]) => /* @__PURE__ */ jsx(Field, { label: key, children: key.includes("key") || key.includes("token") || key.includes("secret") ? /* @__PURE__ */ jsx(
           "input",
           {
             type: "password",
-            value: s,
-            onChange: (e) => S(t, e.target.value),
+            value,
+            onChange: (e) => saveSetting(key, e.target.value),
             className: "input input-bordered input-sm text-xs w-full font-mono"
           }
-        ) : /* @__PURE__ */ n(
+        ) : /* @__PURE__ */ jsx(
           "input",
           {
             type: "text",
-            value: s,
-            onChange: (e) => S(t, e.target.value),
+            value,
+            onChange: (e) => saveSetting(key, e.target.value),
             className: "input input-bordered input-sm text-xs w-full font-mono"
           }
-        ) }, t))
-      ] }) : /* @__PURE__ */ n(g, { children: (() => {
-        const t = d.filter((e) => i.isPluginEnabled(e.id) && !e.alwaysOn), s = d.filter((e) => !i.isPluginEnabled(e.id));
-        return /* @__PURE__ */ c(g, { children: [
-          t.length > 0 && /* @__PURE__ */ n("div", { className: "text-2xs text-base-content/30 uppercase tracking-wider px-1 pt-1", children: "Aktywne" }),
-          t.map((e) => {
-            const o = v.find((N) => N.id === e.id), a = l == null ? void 0 : l.find((N) => N.id === e.id), f = o && a && a.version !== o.version;
-            return /* @__PURE__ */ n(
-              b,
+        ) }, key))
+      ] }) : /* @__PURE__ */ jsx(Fragment2, { children: (() => {
+        const active = plugins.filter((p) => sdk.isPluginEnabled(p.id) && !p.alwaysOn);
+        const inactive = plugins.filter((p) => !sdk.isPluginEnabled(p.id));
+        return /* @__PURE__ */ jsxs(Fragment2, { children: [
+          active.length > 0 && /* @__PURE__ */ jsx("div", { className: "text-2xs text-base-content/30 uppercase tracking-wider px-1 pt-1", children: "Aktywne" }),
+          active.map((p) => {
+            const inst = installed.find((i) => i.id === p.id);
+            const remote = registry?.find((r) => r.id === p.id);
+            const hasUpdate = inst && remote && remote.version !== inst.version;
+            return /* @__PURE__ */ jsx(
+              ListItem,
               {
-                label: /* @__PURE__ */ c("span", { className: "flex items-center gap-1.5", children: [
-                  /* @__PURE__ */ n(O, { size: 12, className: "text-success shrink-0" }),
-                  e.label
+                label: /* @__PURE__ */ jsxs("span", { className: "flex items-center gap-1.5", children: [
+                  /* @__PURE__ */ jsx(CheckCircle, { size: 12, className: "text-success shrink-0" }),
+                  p.label
                 ] }),
-                detail: e.description,
-                separator: !0,
-                aside: /* @__PURE__ */ c("div", { className: "flex items-center gap-1", children: [
-                  f && (C === e.id ? /* @__PURE__ */ n("span", { className: "loading loading-spinner loading-xs" }) : /* @__PURE__ */ c("button", { className: "btn btn-warning btn-xs text-2xs", onClick: () => h(e.id, () => i.install(a.repo)), children: [
-                    /* @__PURE__ */ n(T, { size: 12 }),
-                    a.version
+                detail: p.description,
+                separator: true,
+                aside: /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-1", children: [
+                  hasUpdate && (busy === p.id ? /* @__PURE__ */ jsx("span", { className: "loading loading-spinner loading-xs" }) : /* @__PURE__ */ jsxs("button", { className: "btn btn-warning btn-xs text-2xs", onClick: () => run(p.id, () => sdk.install(remote.repo)), children: [
+                    /* @__PURE__ */ jsx(ArrowUpCircle, { size: 12 }),
+                    remote.version
                   ] })),
-                  /* @__PURE__ */ n("button", { className: "btn btn-ghost btn-xs text-2xs", onClick: () => R(e.id), children: "Wyłącz" })
+                  /* @__PURE__ */ jsx("button", { className: "btn btn-ghost btn-xs text-2xs", onClick: () => togglePlugin(p.id), children: "Wy\u0142\u0105cz" })
                 ] })
               },
-              e.id
+              p.id
             );
           }),
-          s.length > 0 && /* @__PURE__ */ n("div", { className: "text-2xs text-base-content/30 uppercase tracking-wider px-1 pt-3", children: "Nieaktywne" }),
-          s.map((e) => {
-            const o = v.find((a) => a.id === e.id);
-            return /* @__PURE__ */ n("div", { className: "opacity-40 hover:opacity-70 transition-opacity", children: /* @__PURE__ */ n(
-              b,
+          inactive.length > 0 && /* @__PURE__ */ jsx("div", { className: "text-2xs text-base-content/30 uppercase tracking-wider px-1 pt-3", children: "Nieaktywne" }),
+          inactive.map((p) => {
+            const inst = installed.find((i) => i.id === p.id);
+            return /* @__PURE__ */ jsx("div", { className: "opacity-40 hover:opacity-70 transition-opacity", children: /* @__PURE__ */ jsx(
+              ListItem,
               {
-                label: e.label,
-                detail: e.description,
-                separator: !0,
-                aside: /* @__PURE__ */ c("div", { className: "flex items-center gap-1", children: [
-                  o && /* @__PURE__ */ n(
+                label: p.label,
+                detail: p.description,
+                separator: true,
+                aside: /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-1", children: [
+                  inst && /* @__PURE__ */ jsx(
                     "button",
                     {
                       className: "btn btn-ghost btn-xs text-2xs text-error",
-                      onClick: () => h(e.id, () => i.uninstall(e.id)),
+                      onClick: () => run(p.id, () => sdk.uninstall(p.id)),
                       children: "Odinstaluj"
                     }
                   ),
-                  /* @__PURE__ */ n("button", { className: "btn btn-ghost btn-xs text-2xs", onClick: () => R(e.id), children: "Włącz" })
+                  /* @__PURE__ */ jsx("button", { className: "btn btn-ghost btn-xs text-2xs", onClick: () => togglePlugin(p.id), children: "W\u0142\u0105cz" })
                 ] })
               }
-            ) }, e.id);
+            ) }, p.id);
           })
         ] });
       })() }),
-      m && /* @__PURE__ */ n("div", { className: "border-t border-base-300 px-2 py-2", children: /* @__PURE__ */ n("span", { className: `text-2xs ${m.ok ? "text-success" : "text-error"}`, children: m.text }) })
+      msg && /* @__PURE__ */ jsx("div", { className: "border-t border-base-300 px-2 py-2", children: /* @__PURE__ */ jsx("span", { className: `text-2xs ${msg.ok ? "text-success" : "text-error"}`, children: msg.text }) })
     ] });
   }
   return {
     id: "plugin-manager",
     label: "Pluginy",
     description: "Katalog i instalacja pluginow",
-    icon: z,
-    alwaysOn: !0,
-    layout: { center: _ }
+    icon: Package,
+    alwaysOn: true,
+    layout: { center: ManagerCenter }
   };
 };
+var index_default = pluginManagerPlugin;
 export {
-  xe as default
+  index_default as default
 };
