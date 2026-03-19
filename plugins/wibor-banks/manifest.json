@@ -1,0 +1,15 @@
+{
+  "id": "wibor-banks",
+  "label": "Baza bankow",
+  "description": "Baza bankow — dane rejestrowe, szablony kredytow, podstawy prawne",
+  "version": "0.1.1",
+  "author": "obieg-zero",
+  "entry": "index.mjs",
+  "requires": [],
+  "tags": [
+    "legal",
+    "wibor",
+    "banks"
+  ],
+  "defaultSettings": {}
+}

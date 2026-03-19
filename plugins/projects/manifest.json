@@ -1,0 +1,8 @@
+{
+  "id": "projects",
+  "label": "Projekty",
+  "description": "Lista projektów OPFS",
+  "version": "0.1.0",
+  "author": "obieg-zero",
+  "entry": "index.mjs"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "wibor-docs",
+  "label": "Analiza dokumentow",
+  "description": "OCR, ekstrakcja danych z umow, Q&A o kontrakcie",
+  "version": "0.1.1",
+  "author": "obieg-zero",
+  "entry": "index.mjs",
+  "requires": [
+    "wibor-calc",
+    "wibor-evidence"
+  ],
+  "tags": [
+    "legal",
+    "wibor",
+    "analysis",
+    "llm"
+  ],
+  "defaultSettings": {}
+}
