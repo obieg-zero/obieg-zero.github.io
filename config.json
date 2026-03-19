@@ -1,9 +1,8 @@
 {
   "plugins": {
-    "projects": true,
     "darkmode": true,
-    "playground": true,
-    "manager": true
+    "manager": true,
+    "publisher": true
   },
-  "defaultPlugin": "playground"
+  "defaultPlugin": "manager"
 }
