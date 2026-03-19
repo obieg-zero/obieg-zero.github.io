@@ -3,7 +3,7 @@ var plugin = (deps) => {
   const { React, ui, icons, sdk } = deps;
   const { useState, useCallback, createElement: h } = React;
   const { Field, ProgressBar } = ui;
-  const { Package, Download } = icons;
+  const { Download } = icons;
   const SERVER_JS = `const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -250,7 +250,7 @@ Works fully offline after first launch. AI models download on first use and cach
     id: "publisher",
     label: "Publisher",
     description: "Eksportuj app jako ZIP do self-hostingu",
-    icon: Package,
+    icon: Download,
     layout: { center: Center }
   };
 };
