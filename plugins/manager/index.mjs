@@ -25,7 +25,6 @@ var pluginManagerPlugin = (deps) => {
     const [registry, setRegistry] = useState(null);
     const [installed, setInstalled] = useState([]);
     const [busy, setBusy] = useState(null);
-    const [msg, setMsg] = useState(null);
     const [settings, setSettings] = useState({});
     const [, rerender] = useState(0);
     const plugins = sdk.getAllPlugins();
@@ -42,13 +41,12 @@ var pluginManagerPlugin = (deps) => {
     }, []);
     async function run(id, fn) {
       setBusy(id);
-      setMsg(null);
       try {
         await fn();
         await refresh();
-        setMsg({ text: "OK", ok: true });
+        sdk.log(`${id}: OK`, "ok");
       } catch (e) {
-        setMsg({ text: e.message, ok: false });
+        sdk.log(`${id}: ${e.message}`, "error");
       } finally {
         setBusy(null);
       }
@@ -168,8 +166,7 @@ var pluginManagerPlugin = (deps) => {
             ) }, p.id);
           })
         ] });
-      })() }),
-      msg && /* @__PURE__ */ jsx("div", { className: "border-t border-base-300 px-2 py-2", children: /* @__PURE__ */ jsx("span", { className: `text-2xs ${msg.ok ? "text-success" : "text-error"}`, children: msg.text }) })
+      })() })
     ] });
   }
   return {

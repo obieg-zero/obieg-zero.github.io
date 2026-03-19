@@ -10751,7 +10751,7 @@ Tag.propTypes = {
 Tag.displayName = "Tag";
 var tag_default = Tag;
 
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/terminal.js
+// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/upload.js
 init_react();
 var import_prop_types13 = __toESM(require_prop_types());
 function _extends13() {
@@ -10795,7 +10795,7 @@ function _objectWithoutPropertiesLoose13(source, excluded) {
   }
   return target;
 }
-var Terminal = forwardRef(function(_ref, ref) {
+var Upload = forwardRef(function(_ref, ref) {
   var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties13(_ref, ["color", "size"]);
   return /* @__PURE__ */ react_default.createElement("svg", _extends13({
     ref,
@@ -10808,23 +10808,25 @@ var Terminal = forwardRef(function(_ref, ref) {
     strokeWidth: "2",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("polyline", {
-    points: "4 17 10 11 4 5"
+  }, rest), /* @__PURE__ */ react_default.createElement("path", {
+    d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+  }), /* @__PURE__ */ react_default.createElement("polyline", {
+    points: "17 8 12 3 7 8"
   }), /* @__PURE__ */ react_default.createElement("line", {
     x1: "12",
-    y1: "19",
-    x2: "20",
-    y2: "19"
+    y1: "3",
+    x2: "12",
+    y2: "15"
   }));
 });
-Terminal.propTypes = {
+Upload.propTypes = {
   color: import_prop_types13.default.string,
   size: import_prop_types13.default.oneOfType([import_prop_types13.default.string, import_prop_types13.default.number])
 };
-Terminal.displayName = "Terminal";
-var terminal_default = Terminal;
+Upload.displayName = "Upload";
+var upload_default = Upload;
 
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/trash-2.js
+// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/x.js
 init_react();
 var import_prop_types14 = __toESM(require_prop_types());
 function _extends14() {
@@ -10868,164 +10870,9 @@ function _objectWithoutPropertiesLoose14(source, excluded) {
   }
   return target;
 }
-var Trash2 = forwardRef(function(_ref, ref) {
+var X = forwardRef(function(_ref, ref) {
   var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties14(_ref, ["color", "size"]);
   return /* @__PURE__ */ react_default.createElement("svg", _extends14({
-    ref,
-    xmlns: "http://www.w3.org/2000/svg",
-    width: size,
-    height: size,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: color2,
-    strokeWidth: "2",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("polyline", {
-    points: "3 6 5 6 21 6"
-  }), /* @__PURE__ */ react_default.createElement("path", {
-    d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
-  }), /* @__PURE__ */ react_default.createElement("line", {
-    x1: "10",
-    y1: "11",
-    x2: "10",
-    y2: "17"
-  }), /* @__PURE__ */ react_default.createElement("line", {
-    x1: "14",
-    y1: "11",
-    x2: "14",
-    y2: "17"
-  }));
-});
-Trash2.propTypes = {
-  color: import_prop_types14.default.string,
-  size: import_prop_types14.default.oneOfType([import_prop_types14.default.string, import_prop_types14.default.number])
-};
-Trash2.displayName = "Trash2";
-var trash_2_default = Trash2;
-
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/upload.js
-init_react();
-var import_prop_types15 = __toESM(require_prop_types());
-function _extends15() {
-  _extends15 = Object.assign || function(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-    return target;
-  };
-  return _extends15.apply(this, arguments);
-}
-function _objectWithoutProperties15(source, excluded) {
-  if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose15(source, excluded);
-  var key, i;
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-function _objectWithoutPropertiesLoose15(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-  return target;
-}
-var Upload = forwardRef(function(_ref, ref) {
-  var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties15(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends15({
-    ref,
-    xmlns: "http://www.w3.org/2000/svg",
-    width: size,
-    height: size,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: color2,
-    strokeWidth: "2",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("path", {
-    d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-  }), /* @__PURE__ */ react_default.createElement("polyline", {
-    points: "17 8 12 3 7 8"
-  }), /* @__PURE__ */ react_default.createElement("line", {
-    x1: "12",
-    y1: "3",
-    x2: "12",
-    y2: "15"
-  }));
-});
-Upload.propTypes = {
-  color: import_prop_types15.default.string,
-  size: import_prop_types15.default.oneOfType([import_prop_types15.default.string, import_prop_types15.default.number])
-};
-Upload.displayName = "Upload";
-var upload_default = Upload;
-
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/x.js
-init_react();
-var import_prop_types16 = __toESM(require_prop_types());
-function _extends16() {
-  _extends16 = Object.assign || function(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-    return target;
-  };
-  return _extends16.apply(this, arguments);
-}
-function _objectWithoutProperties16(source, excluded) {
-  if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose16(source, excluded);
-  var key, i;
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-function _objectWithoutPropertiesLoose16(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-  return target;
-}
-var X = forwardRef(function(_ref, ref) {
-  var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties16(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends16({
     ref,
     xmlns: "http://www.w3.org/2000/svg",
     width: size,
@@ -11049,8 +10896,8 @@ var X = forwardRef(function(_ref, ref) {
   }));
 });
 X.propTypes = {
-  color: import_prop_types16.default.string,
-  size: import_prop_types16.default.oneOfType([import_prop_types16.default.string, import_prop_types16.default.number])
+  color: import_prop_types14.default.string,
+  size: import_prop_types14.default.oneOfType([import_prop_types14.default.string, import_prop_types14.default.number])
 };
 X.displayName = "X";
 var x_default = X;
@@ -11159,12 +11006,13 @@ var nodeTypes = {
 var _host;
 var Box;
 var Cell;
-var Bar;
 var ListItem;
 var Field;
 var Tabs;
 var doAction;
 var getProvider;
+var sdkLog;
+var sdkClearLog;
 var execPipeline;
 var BIELIK = "https://huggingface.co/obieg-zero/Bielik-1.5B-v3.0-Instruct-GGUF/resolve/main/Bielik-1.5B-v3.0-Instruct.Q4_K_M.gguf";
 var PALETTE = [
@@ -11308,22 +11156,8 @@ function RightPanel() {
 }
 function FooterPanel() {
   const { s, a } = use();
-  const logRef = useRef(null);
-  useEffect(() => {
-    logRef.current?.scrollTo(0, logRef.current.scrollHeight);
-  }, [s.log]);
   if (!s.project) return null;
-  return /* @__PURE__ */ jsx("div", { children: s.running || s.log?.length > 0 ? /* @__PURE__ */ jsxs("div", { className: "flex flex-col", style: { maxHeight: "33vh" }, children: [
-    /* @__PURE__ */ jsxs(Bar, { children: [
-      s.running && /* @__PURE__ */ jsx("span", { className: "loading loading-spinner loading-xs text-warning mr-2" }),
-      /* @__PURE__ */ jsxs(Cell, { label: true, children: [
-        /* @__PURE__ */ jsx(terminal_default, { size: 12, className: "mr-2" }),
-        "Dziennik"
-      ] }),
-      !s.running && /* @__PURE__ */ jsx(Cell, { onClick: () => a.setLog([]), children: /* @__PURE__ */ jsx(trash_2_default, { size: 12 }) })
-    ] }),
-    /* @__PURE__ */ jsx("pre", { ref: logRef, className: "flex-1 overflow-y-auto px-3 pb-4 font-mono text-2xs whitespace-pre-wrap break-all text-base-content/40 leading-relaxed", children: (s.log || []).join("\n") })
-  ] }) : /* @__PURE__ */ jsxs("div", { className: "p-3 flex gap-2", children: [
+  return /* @__PURE__ */ jsxs("div", { className: "p-3 flex gap-2", children: [
     /* @__PURE__ */ jsxs("button", { onClick: () => {
       a.runPipeline();
       doAction("shell:close-left");
@@ -11332,12 +11166,11 @@ function FooterPanel() {
       "Analizuj"
     ] }),
     /* @__PURE__ */ jsx("button", { onClick: a.exportPipeline, className: "btn btn-ghost btn-sm btn-square", title: "Eksportuj pipeline JSON", children: /* @__PURE__ */ jsx(download_default, { size: 14 }) })
-  ] }) });
+  ] });
 }
 function PlaygroundProvider({ children: children2 }) {
   const [nodes, setNodes] = useState([]);
   const [edges, setEdges] = useState([]);
-  const [log, setLog] = useState([]);
   const [running, setRunning] = useState(false);
   const [leftTab, setLeftTab] = useState("templates");
   const [selectedId, setSelectedId] = useState(null);
@@ -11346,9 +11179,6 @@ function PlaygroundProvider({ children: children2 }) {
   const dataNodeSide = useRef(0);
   const host = _host;
   const project = getProvider("projects").useProjects().current;
-  const addLog = useCallback((msg) => {
-    setLog((p) => [...p, `${(/* @__PURE__ */ new Date()).toLocaleTimeString()} ${msg}`]);
-  }, []);
   useEffect(() => {
     host.db.listTemplates().then(setTemplates);
   }, []);
@@ -11362,7 +11192,6 @@ function PlaygroundProvider({ children: children2 }) {
       p ? (setNodes(p.nodes), setEdges(p.edges)) : (setNodes([]), setEdges([]));
       setTimeout(() => rfInstance.current?.fitView({ padding: 0.2 }), 50);
     });
-    setLog([]);
     setSelectedId(null);
   }, [project]);
   useEffect(() => {
@@ -11427,7 +11256,7 @@ function PlaygroundProvider({ children: children2 }) {
     }))]);
   }
   async function runPipeline() {
-    if (!project) return addLog("Wybierz projekt");
+    if (!project) return sdkLog("Wybierz projekt");
     const posMap = new Map(nodes.map((n) => [n.id, n.position]));
     const pipeNodes = nodes.filter((n) => n.type !== "data" && n.type !== "entity" && n.type !== "doc");
     const pipeEdgeIds = new Set(pipeNodes.map((n) => n.id));
@@ -11435,12 +11264,12 @@ function PlaygroundProvider({ children: children2 }) {
     dataNodeSide.current = 0;
     setRunning(true);
     doAction("shell:progress", true);
-    setLog([]);
+    sdkClearLog();
     setSelectedId(null);
-    addLog(`=== ${project} ===`);
+    sdkLog(`=== ${project} ===`);
     setNodes((n) => n.filter((x) => x.type !== "data" && x.type !== "entity" && x.type !== "doc"));
     setEdges((e) => e.filter((x) => !x.id.startsWith("viz:")));
-    await execPipeline(host, project, pipeNodes, pipeEdges, [], addLog, (id2, status, result, meta) => {
+    await execPipeline(host, project, pipeNodes, pipeEdges, [], (msg) => sdkLog(msg), (id2, status, result, meta) => {
       setNodeResult(id2, status, result);
       if (status !== "done" || !meta) return;
       const pos = posMap.get(id2);
@@ -11452,7 +11281,7 @@ function PlaygroundProvider({ children: children2 }) {
       if (meta.chunks) addDataNodes(id2, meta.chunks.slice(0, 6).map((ch, i) => ({ id: `viz:${id2}:c${i}`, label: `chunk ${i}`, detail: ch.text.slice(0, 40) + "..." })), pos);
       if (meta.graph) addGraphNodes(id2, meta.graph, pos);
     });
-    addLog("--- done ---");
+    sdkLog("--- done ---", "ok");
     setRunning(false);
     doAction("shell:progress", false);
   }
@@ -11468,14 +11297,12 @@ function PlaygroundProvider({ children: children2 }) {
     a2.click();
     URL.revokeObjectURL(a2.href);
   }
-  const s = { nodes, edges, project, log, running, leftTab, selectedId, templates };
+  const s = { nodes, edges, project, running, leftTab, selectedId, templates };
   const a = {
     setNodes,
     setEdges,
-    setLog,
     setLeftTab,
     setSelectedId,
-    addLog,
     loadTemplate,
     runPipeline,
     exportPipeline,
@@ -11531,8 +11358,10 @@ function CenterCanvas() {
 }
 var playgroundPlugin = (deps) => {
   _host = deps.host;
-  ({ Box, Cell, Bar, ListItem, Field, Tabs } = deps.ui);
+  ({ Box, Cell, ListItem, Field, Tabs } = deps.ui);
   ({ doAction, getProvider } = deps.sdk);
+  sdkLog = deps.sdk.log;
+  sdkClearLog = deps.sdk.clearLog;
   execPipeline = deps.blocks.runPipeline;
   return {
     id: "playground",
