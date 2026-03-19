@@ -1,6 +1,6 @@
 // ../obieg-zero-plugins/.shims/react.mjs
 var R = globalThis.__obieg.React;
-var { useState, useEffect, useCallback, useRef, useMemo, useReducer, useContext, createContext, createElement, Fragment, memo, forwardRef, useLayoutEffect, useId, useSyncExternalStore, useTransition, Component } = R;
+var { useState, useEffect, useCallback, useRef, useMemo, useReducer, useContext, createContext, createElement, Fragment, memo, forwardRef, useLayoutEffect, useId, useSyncExternalStore, useTransition, useDebugValue, Component } = R;
 
 // ../obieg-zero-plugins/.shims/jsx-runtime.mjs
 var J = globalThis.__obieg.jsxRuntime;
@@ -116,7 +116,7 @@ var pluginManagerPlugin = (deps) => {
           }
         ) }, key))
       ] }) : /* @__PURE__ */ jsx(Fragment2, { children: (() => {
-        const active = plugins.filter((p) => sdk.isPluginEnabled(p.id) && !p.alwaysOn);
+        const active = plugins.filter((p) => sdk.isPluginEnabled(p.id));
         const inactive = plugins.filter((p) => !sdk.isPluginEnabled(p.id));
         return /* @__PURE__ */ jsxs(Fragment2, { children: [
           active.length > 0 && /* @__PURE__ */ jsx("div", { className: "text-2xs text-base-content/30 uppercase tracking-wider px-1 pt-1", children: "Aktywne" }),
@@ -177,7 +177,6 @@ var pluginManagerPlugin = (deps) => {
     label: "Pluginy",
     description: "Katalog i instalacja pluginow",
     icon: Package,
-    alwaysOn: true,
     layout: { center: ManagerCenter }
   };
 };
