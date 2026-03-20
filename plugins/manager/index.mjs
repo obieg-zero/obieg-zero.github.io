@@ -67,14 +67,21 @@ var pluginManagerPlugin = (deps) => {
         registry?.length === 0 && /* @__PURE__ */ jsx("p", { className: "text-xs text-base-content/30 py-2", children: "Katalog pusty." }),
         registry?.map((entry) => {
           const isPresent = plugins.some((p) => p.id === entry.id);
+          const missingDeps = (entry.requires ?? []).filter((r) => !plugins.some((p) => p.id === r));
           return /* @__PURE__ */ jsx(
             ListItem,
             {
               separator: true,
               label: entry.label,
-              detail: entry.description,
+              detail: /* @__PURE__ */ jsxs("div", { children: [
+                /* @__PURE__ */ jsx("div", { children: entry.description }),
+                entry.requires?.length > 0 && /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-1 mt-0.5", children: [
+                  /* @__PURE__ */ jsx("span", { className: "text-2xs text-base-content/40", children: "wymaga:" }),
+                  entry.requires.map((r) => /* @__PURE__ */ jsx("span", { className: `badge badge-sm text-2xs ${missingDeps.includes(r) ? "badge-error" : "badge-outline"}`, children: r }, r))
+                ] })
+              ] }),
               aside: /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-1", children: [
-                busy === entry.id ? /* @__PURE__ */ jsx("span", { className: "loading loading-spinner loading-xs" }) : isPresent ? /* @__PURE__ */ jsx("span", { className: "text-2xs text-success", children: "zainstalowany" }) : /* @__PURE__ */ jsx("button", { className: "btn btn-primary btn-xs", onClick: () => run(entry.id, () => sdk.install(entry.repo)), children: "Instaluj" }),
+                busy === entry.id ? /* @__PURE__ */ jsx("span", { className: "loading loading-spinner loading-xs" }) : isPresent ? /* @__PURE__ */ jsx("span", { className: "text-2xs text-success", children: "zainstalowany" }) : missingDeps.length > 0 ? /* @__PURE__ */ jsx("span", { className: "text-2xs text-error", children: "brak wymaganych" }) : /* @__PURE__ */ jsx("button", { className: "btn btn-primary btn-xs", onClick: () => run(entry.id, () => sdk.install(entry.repo)), children: "Instaluj" }),
                 /* @__PURE__ */ jsx("span", { className: "badge badge-ghost badge-sm text-2xs", children: entry.version })
               ] })
             },
