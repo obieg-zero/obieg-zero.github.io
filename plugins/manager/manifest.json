@@ -1,8 +1,0 @@
-{
-  "id": "manager",
-  "label": "Pluginy",
-  "description": "Katalog i instalacja pluginow",
-  "version": "0.1.16",
-  "author": "obieg-zero",
-  "entry": "index.mjs"
-}
