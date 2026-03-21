@@ -5,8 +5,8 @@ export default function (deps) {
   const { Sun, Moon } = icons
 
   const STORAGE_KEY = 'bp-theme'
-  const DARK = 'dark'
-  const LIGHT = 'light'
+  const DARK = 'dim'
+  const LIGHT = 'corporate'
 
   function ThemeToggle() {
     const [dark, setDark] = useState(() => (localStorage.getItem(STORAGE_KEY) ?? DARK) === DARK)

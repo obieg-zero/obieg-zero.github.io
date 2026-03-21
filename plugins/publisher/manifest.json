@@ -2,7 +2,7 @@
   "id": "publisher",
   "label": "Publisher",
   "description": "Export app as standalone ZIP for self-hosting (offline-ready)",
-  "version": "0.1.5",
+  "version": "0.1.2",
   "author": "obieg-zero",
   "entry": "index.mjs",
   "requires": [],

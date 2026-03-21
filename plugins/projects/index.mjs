@@ -1,8 +1,8 @@
-// ../obieg-zero-plugins/.shims/react.mjs
+// mcp-plugin-dev/shims/react.mjs
 var R = globalThis.__obieg.React;
-var { useState, useEffect, useCallback, useRef, useMemo, useReducer, useContext, createContext, createElement, Fragment, memo, forwardRef, useLayoutEffect, useId, useSyncExternalStore, useTransition, useDebugValue, Component } = R;
+var { useState, useEffect, useCallback, useRef, useMemo, useReducer, useContext, createContext, createElement, Fragment, memo, forwardRef, useLayoutEffect, useId, useSyncExternalStore, useTransition, Component } = R;
 
-// ../obieg-zero-plugins/.shims/jsx-runtime.mjs
+// mcp-plugin-dev/shims/jsx-runtime.mjs
 var J = globalThis.__obieg.jsxRuntime;
 var { jsx, jsxs, Fragment: Fragment2 } = J;
 
