@@ -1,12 +1,6 @@
-// mcp-plugin-dev/shims/react.mjs
-var R = globalThis.__obieg.React;
-var { useState, useEffect, useCallback, useRef, useMemo, useReducer, useContext, createContext, createElement, Fragment, memo, forwardRef, useLayoutEffect, useId, useSyncExternalStore, useTransition, Component } = R;
-
-// mcp-plugin-dev/shims/jsx-runtime.mjs
-var J = globalThis.__obieg.jsxRuntime;
-var { jsx, jsxs, Fragment: Fragment2 } = J;
-
-// ../obieg-zero-plugins/projects/src/index.tsx
+// src/index.tsx
+import { useState, useSyncExternalStore } from "react";
+import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 var _host;
 var ListItem;
 var Field;
@@ -59,7 +53,7 @@ var projectsPlugin = (deps) => {
   function ProjectList() {
     const { projects, current, select: select2, create: create2, remove: remove2 } = useProjects();
     const [name, setName] = useState("");
-    return /* @__PURE__ */ jsxs(Fragment2, { children: [
+    return /* @__PURE__ */ jsxs(Fragment, { children: [
       projects.map((p) => /* @__PURE__ */ jsx(ListItem, { label: p, active: current === p, onClick: () => select2(p), action: { icon: X, onClick: () => remove2(p) } }, p)),
       /* @__PURE__ */ jsx(Field, { label: "", children: /* @__PURE__ */ jsxs("div", { className: "flex gap-2", children: [
         /* @__PURE__ */ jsx(

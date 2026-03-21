@@ -2,7 +2,7 @@
   "id": "playground",
   "label": "Playground",
   "description": "Blokowy RAG builder (React Flow)",
-  "version": "0.1.4",
+  "version": "0.1.10",
   "author": "obieg-zero",
   "entry": "index.mjs",
   "requires": [

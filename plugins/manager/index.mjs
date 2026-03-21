@@ -1,12 +1,6 @@
-// ../obieg-zero-plugins/.shims/react.mjs
-var R = globalThis.__obieg.React;
-var { useState, useEffect, useCallback, useRef, useMemo, useReducer, useContext, createContext, createElement, Fragment, memo, forwardRef, useLayoutEffect, useId, useSyncExternalStore, useTransition, useDebugValue, Component } = R;
-
-// ../obieg-zero-plugins/.shims/jsx-runtime.mjs
-var J = globalThis.__obieg.jsxRuntime;
-var { jsx, jsxs, Fragment: Fragment2 } = J;
-
-// ../obieg-zero-plugins/manager/src/index.tsx
+// src/index.tsx
+import { useState, useEffect, useCallback } from "react";
+import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 var _host;
 var ListItem;
 var Tabs;
@@ -62,7 +56,7 @@ var pluginManagerPlugin = (deps) => {
           items: [{ id: "installed", label: "Zainstalowane" }, { id: "catalog", label: "Katalog" }, { id: "settings", label: "Ustawienia" }]
         }
       ),
-      tab === "catalog" ? /* @__PURE__ */ jsxs(Fragment2, { children: [
+      tab === "catalog" ? /* @__PURE__ */ jsxs(Fragment, { children: [
         !registry && /* @__PURE__ */ jsx("p", { className: "text-xs text-base-content/40 py-2", children: "Ladowanie..." }),
         registry?.length === 0 && /* @__PURE__ */ jsx("p", { className: "text-xs text-base-content/30 py-2", children: "Katalog pusty." }),
         registry?.map((entry) => {
@@ -88,7 +82,7 @@ var pluginManagerPlugin = (deps) => {
             entry.id
           );
         })
-      ] }) : tab === "settings" ? /* @__PURE__ */ jsxs(Fragment2, { children: [
+      ] }) : tab === "settings" ? /* @__PURE__ */ jsxs(Fragment, { children: [
         Object.entries(settings).length === 0 && /* @__PURE__ */ jsx("p", { className: "text-xs text-base-content/30 py-2", children: "Brak ustawien." }),
         Object.entries(settings).map(([key, value]) => /* @__PURE__ */ jsx(Field, { label: key, children: key.includes("key") || key.includes("token") || key.includes("secret") ? /* @__PURE__ */ jsx(
           "input",
@@ -107,7 +101,7 @@ var pluginManagerPlugin = (deps) => {
             className: "input input-bordered input-sm text-xs w-full font-mono"
           }
         ) }, key))
-      ] }) : /* @__PURE__ */ jsx(Fragment2, { children: plugins.map((p) => {
+      ] }) : /* @__PURE__ */ jsx(Fragment, { children: plugins.map((p) => {
         const isOpfs = installed.some((i) => i.id === p.id);
         const remote = registry?.find((r) => r.id === p.id);
         const hasUpdate = isOpfs && remote && remote.version !== p.version;

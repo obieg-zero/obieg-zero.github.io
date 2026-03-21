@@ -1,9 +1,9 @@
-// ../obieg-zero-plugins/publisher/src/index.tsx
+// src/index.tsx
 var plugin = (deps) => {
-  const { React, ui, icons } = deps;
+  const { React, ui, icons, sdk } = deps;
   const { useState, useCallback, createElement: h } = React;
   const { Field, ProgressBar } = ui;
-  const { Package, Download } = icons;
+  const { Download } = icons;
   const SERVER_JS = `const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -95,11 +95,27 @@ http.createServer((req, res) => {
     files.push({ path: "config.json", data: configBytes });
     onProgress("Pobieram pluginy...", 0, 1);
     const pluginsRes = await fetch("./plugins/index.json");
-    const pluginIds = await pluginsRes.json();
-    files.push({ path: "plugins/index.json", data: enc.encode(JSON.stringify(pluginIds)) });
-    const total = assetPaths.length + pluginIds.length * 2 + 2;
+    const bundledIds = await pluginsRes.json();
+    const allPluginIds = [...bundledIds];
+    const installed = await sdk.listInstalled();
+    const opfsIds = [];
+    for (const manifest of installed) {
+      if (bundledIds.includes(manifest.id)) continue;
+      try {
+        const entry = manifest.entry || "index.mjs";
+        const manifestStr = await sdk.readPluginFile(manifest.id, "manifest.json");
+        const mjsStr = await sdk.readPluginFile(manifest.id, entry);
+        files.push({ path: `plugins/${manifest.id}/manifest.json`, data: enc.encode(manifestStr) });
+        files.push({ path: `plugins/${manifest.id}/${entry}`, data: enc.encode(mjsStr) });
+        opfsIds.push(manifest.id);
+      } catch {
+      }
+    }
+    allPluginIds.push(...opfsIds);
+    files.push({ path: "plugins/index.json", data: enc.encode(JSON.stringify(allPluginIds)) });
+    const total = assetPaths.length + bundledIds.length * 2 + 2;
     let done = 0;
-    for (const pid of pluginIds) {
+    for (const pid of bundledIds) {
       try {
         const manifest = await fetchBytes(`./plugins/${pid}/manifest.json`);
         files.push({ path: `plugins/${pid}/manifest.json`, data: manifest });
@@ -112,6 +128,7 @@ http.createServer((req, res) => {
         onProgress(`Skip: ${pid}`, done, total);
       }
     }
+    if (opfsIds.length) onProgress(`OPFS: ${opfsIds.join(", ")}`, done, total);
     for (const asset of assetPaths) {
       try {
         const data = await fetchBytes(`./${asset}`);
@@ -152,7 +169,7 @@ Works fully offline after first launch. AI models download on first use and cach
 ## What's inside
 - \`index.html\` \u2014 app entry point
 - \`assets/\` \u2014 compiled JS/CSS
-- \`plugins/\` \u2014 bundled plugins (${pluginIds.join(", ")})
+- \`plugins/\` \u2014 bundled plugins (${allPluginIds.join(", ")})
 - \`config.json\` \u2014 plugin configuration
 - \`server.js\` \u2014 minimal Node.js static server (zero dependencies)
 `;
@@ -233,7 +250,7 @@ Works fully offline after first launch. AI models download on first use and cach
     id: "publisher",
     label: "Publisher",
     description: "Eksportuj app jako ZIP do self-hostingu",
-    icon: Package,
+    icon: Download,
     layout: { center: Center }
   };
 };

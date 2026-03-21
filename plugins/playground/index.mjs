@@ -1,19 +1,17 @@
-(function(){if(!document.querySelector('#obieg-playground-css')){var s=document.createElement('style');s.id='obieg-playground-css';s.textContent="/* ../obieg-zero-plugins/node_modules/@xyflow/react/dist/style.css */\n.react-flow {\n  direction: ltr;\n  --xy-edge-stroke-default: #b1b1b7;\n  --xy-edge-stroke-width-default: 1;\n  --xy-edge-stroke-selected-default: #555;\n  --xy-connectionline-stroke-default: #b1b1b7;\n  --xy-connectionline-stroke-width-default: 1;\n  --xy-attribution-background-color-default: rgba(255, 255, 255, 0.5);\n  --xy-minimap-background-color-default: #fff;\n  --xy-minimap-mask-background-color-default: rgba(240, 240, 240, 0.6);\n  --xy-minimap-mask-stroke-color-default: transparent;\n  --xy-minimap-mask-stroke-width-default: 1;\n  --xy-minimap-node-background-color-default: #e2e2e2;\n  --xy-minimap-node-stroke-color-default: transparent;\n  --xy-minimap-node-stroke-width-default: 2;\n  --xy-background-color-default: transparent;\n  --xy-background-pattern-dots-color-default: #91919a;\n  --xy-background-pattern-lines-color-default: #eee;\n  --xy-background-pattern-cross-color-default: #e2e2e2;\n  background-color: var(--xy-background-color, var(--xy-background-color-default));\n  --xy-node-color-default: inherit;\n  --xy-node-border-default: 1px solid #1a192b;\n  --xy-node-background-color-default: #fff;\n  --xy-node-group-background-color-default: rgba(240, 240, 240, 0.25);\n  --xy-node-boxshadow-hover-default: 0 1px 4px 1px rgba(0, 0, 0, 0.08);\n  --xy-node-boxshadow-selected-default: 0 0 0 0.5px #1a192b;\n  --xy-node-border-radius-default: 3px;\n  --xy-handle-background-color-default: #1a192b;\n  --xy-handle-border-color-default: #fff;\n  --xy-selection-background-color-default: rgba(0, 89, 220, 0.08);\n  --xy-selection-border-default: 1px dotted rgba(0, 89, 220, 0.8);\n  --xy-controls-button-background-color-default: #fefefe;\n  --xy-controls-button-background-color-hover-default: #f4f4f4;\n  --xy-controls-button-color-default: inherit;\n  --xy-controls-button-color-hover-default: inherit;\n  --xy-controls-button-border-color-default: #eee;\n  --xy-controls-box-shadow-default: 0 0 2px 1px rgba(0, 0, 0, 0.08);\n  --xy-edge-label-background-color-default: #ffffff;\n  --xy-edge-label-color-default: inherit;\n  --xy-resize-background-color-default: #3367d9;\n}\n.react-flow.dark {\n  --xy-edge-stroke-default: #3e3e3e;\n  --xy-edge-stroke-width-default: 1;\n  --xy-edge-stroke-selected-default: #727272;\n  --xy-connectionline-stroke-default: #b1b1b7;\n  --xy-connectionline-stroke-width-default: 1;\n  --xy-attribution-background-color-default: rgba(150, 150, 150, 0.25);\n  --xy-minimap-background-color-default: #141414;\n  --xy-minimap-mask-background-color-default: rgba(60, 60, 60, 0.6);\n  --xy-minimap-mask-stroke-color-default: transparent;\n  --xy-minimap-mask-stroke-width-default: 1;\n  --xy-minimap-node-background-color-default: #2b2b2b;\n  --xy-minimap-node-stroke-color-default: transparent;\n  --xy-minimap-node-stroke-width-default: 2;\n  --xy-background-color-default: #141414;\n  --xy-background-pattern-dots-color-default: #777;\n  --xy-background-pattern-lines-color-default: #777;\n  --xy-background-pattern-cross-color-default: #777;\n  --xy-node-color-default: #f8f8f8;\n  --xy-node-border-default: 1px solid #3c3c3c;\n  --xy-node-background-color-default: #1e1e1e;\n  --xy-node-group-background-color-default: rgba(240, 240, 240, 0.25);\n  --xy-node-boxshadow-hover-default: 0 1px 4px 1px rgba(255, 255, 255, 0.08);\n  --xy-node-boxshadow-selected-default: 0 0 0 0.5px #999;\n  --xy-handle-background-color-default: #bebebe;\n  --xy-handle-border-color-default: #1e1e1e;\n  --xy-selection-background-color-default: rgba(200, 200, 220, 0.08);\n  --xy-selection-border-default: 1px dotted rgba(200, 200, 220, 0.8);\n  --xy-controls-button-background-color-default: #2b2b2b;\n  --xy-controls-button-background-color-hover-default: #3e3e3e;\n  --xy-controls-button-color-default: #f8f8f8;\n  --xy-controls-button-color-hover-default: #fff;\n  --xy-controls-button-border-color-default: #5b5b5b;\n  --xy-controls-box-shadow-default: 0 0 2px 1px rgba(0, 0, 0, 0.08);\n  --xy-edge-label-background-color-default: #141414;\n  --xy-edge-label-color-default: #f8f8f8;\n}\n.react-flow__background {\n  background-color: var(--xy-background-color-props, var(--xy-background-color, var(--xy-background-color-default)));\n  pointer-events: none;\n  z-index: -1;\n}\n.react-flow__container {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n}\n.react-flow__pane {\n  z-index: 1;\n}\n.react-flow__pane.draggable {\n  cursor: grab;\n}\n.react-flow__pane.dragging {\n  cursor: grabbing;\n}\n.react-flow__pane.selection {\n  cursor: pointer;\n}\n.react-flow__viewport {\n  transform-origin: 0 0;\n  z-index: 2;\n  pointer-events: none;\n}\n.react-flow__renderer {\n  z-index: 4;\n}\n.react-flow__selection {\n  z-index: 6;\n}\n.react-flow__nodesselection-rect:focus,\n.react-flow__nodesselection-rect:focus-visible {\n  outline: none;\n}\n.react-flow__edge-path {\n  stroke: var(--xy-edge-stroke, var(--xy-edge-stroke-default));\n  stroke-width: var(--xy-edge-stroke-width, var(--xy-edge-stroke-width-default));\n  fill: none;\n}\n.react-flow__connection-path {\n  stroke: var(--xy-connectionline-stroke, var(--xy-connectionline-stroke-default));\n  stroke-width: var(--xy-connectionline-stroke-width, var(--xy-connectionline-stroke-width-default));\n  fill: none;\n}\n.react-flow .react-flow__edges {\n  position: absolute;\n}\n.react-flow .react-flow__edges svg {\n  overflow: visible;\n  position: absolute;\n  pointer-events: none;\n}\n.react-flow__edge {\n  pointer-events: visibleStroke;\n}\n.react-flow__edge.selectable {\n  cursor: pointer;\n}\n.react-flow__edge.animated path {\n  stroke-dasharray: 5;\n  animation: dashdraw 0.5s linear infinite;\n}\n.react-flow__edge.animated path.react-flow__edge-interaction {\n  stroke-dasharray: none;\n  animation: none;\n}\n.react-flow__edge.inactive {\n  pointer-events: none;\n}\n.react-flow__edge.selected,\n.react-flow__edge:focus,\n.react-flow__edge:focus-visible {\n  outline: none;\n}\n.react-flow__edge.selected .react-flow__edge-path,\n.react-flow__edge.selectable:focus .react-flow__edge-path,\n.react-flow__edge.selectable:focus-visible .react-flow__edge-path {\n  stroke: var(--xy-edge-stroke-selected, var(--xy-edge-stroke-selected-default));\n}\n.react-flow__edge-textwrapper {\n  pointer-events: all;\n}\n.react-flow__edge .react-flow__edge-text {\n  pointer-events: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  user-select: none;\n}\n.react-flow__arrowhead polyline {\n  stroke: var(--xy-edge-stroke, var(--xy-edge-stroke-default));\n}\n.react-flow__arrowhead polyline.arrowclosed {\n  fill: var(--xy-edge-stroke, var(--xy-edge-stroke-default));\n}\n.react-flow__connection {\n  pointer-events: none;\n}\n.react-flow__connection .animated {\n  stroke-dasharray: 5;\n  animation: dashdraw 0.5s linear infinite;\n}\nsvg.react-flow__connectionline {\n  z-index: 1001;\n  overflow: visible;\n  position: absolute;\n}\n.react-flow__nodes {\n  pointer-events: none;\n  transform-origin: 0 0;\n}\n.react-flow__node {\n  position: absolute;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  user-select: none;\n  pointer-events: all;\n  transform-origin: 0 0;\n  box-sizing: border-box;\n  cursor: default;\n}\n.react-flow__node.selectable {\n  cursor: pointer;\n}\n.react-flow__node.draggable {\n  cursor: grab;\n  pointer-events: all;\n}\n.react-flow__node.draggable.dragging {\n  cursor: grabbing;\n}\n.react-flow__nodesselection {\n  z-index: 3;\n  transform-origin: left top;\n  pointer-events: none;\n}\n.react-flow__nodesselection-rect {\n  position: absolute;\n  pointer-events: all;\n  cursor: grab;\n}\n.react-flow__handle {\n  position: absolute;\n  pointer-events: none;\n  min-width: 5px;\n  min-height: 5px;\n  width: 6px;\n  height: 6px;\n  background-color: var(--xy-handle-background-color, var(--xy-handle-background-color-default));\n  border: 1px solid var(--xy-handle-border-color, var(--xy-handle-border-color-default));\n  border-radius: 100%;\n}\n.react-flow__handle.connectingfrom {\n  pointer-events: all;\n}\n.react-flow__handle.connectionindicator {\n  pointer-events: all;\n  cursor: crosshair;\n}\n.react-flow__handle-bottom {\n  top: auto;\n  left: 50%;\n  bottom: 0;\n  transform: translate(-50%, 50%);\n}\n.react-flow__handle-top {\n  top: 0;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.react-flow__handle-left {\n  top: 50%;\n  left: 0;\n  transform: translate(-50%, -50%);\n}\n.react-flow__handle-right {\n  top: 50%;\n  right: 0;\n  transform: translate(50%, -50%);\n}\n.react-flow__edgeupdater {\n  cursor: move;\n  pointer-events: all;\n}\n.react-flow__pane.selection .react-flow__panel {\n  pointer-events: none;\n}\n.react-flow__panel {\n  position: absolute;\n  z-index: 5;\n  margin: 15px;\n}\n.react-flow__panel.top {\n  top: 0;\n}\n.react-flow__panel.bottom {\n  bottom: 0;\n}\n.react-flow__panel.top.center,\n.react-flow__panel.bottom.center {\n  left: 50%;\n  transform: translateX(-15px) translateX(-50%);\n}\n.react-flow__panel.left {\n  left: 0;\n}\n.react-flow__panel.right {\n  right: 0;\n}\n.react-flow__panel.left.center,\n.react-flow__panel.right.center {\n  top: 50%;\n  transform: translateY(-15px) translateY(-50%);\n}\n.react-flow__attribution {\n  font-size: 10px;\n  background: var(--xy-attribution-background-color, var(--xy-attribution-background-color-default));\n  padding: 2px 3px;\n  margin: 0;\n}\n.react-flow__attribution a {\n  text-decoration: none;\n  color: #999;\n}\n@keyframes dashdraw {\n  from {\n    stroke-dashoffset: 10;\n  }\n}\n.react-flow__edgelabel-renderer {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  pointer-events: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  user-select: none;\n  left: 0;\n  top: 0;\n}\n.react-flow__viewport-portal {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: 0;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  user-select: none;\n}\n.react-flow__minimap {\n  background: var( --xy-minimap-background-color-props, var(--xy-minimap-background-color, var(--xy-minimap-background-color-default)) );\n}\n.react-flow__minimap-svg {\n  display: block;\n}\n.react-flow__minimap-mask {\n  fill: var( --xy-minimap-mask-background-color-props, var(--xy-minimap-mask-background-color, var(--xy-minimap-mask-background-color-default)) );\n  stroke: var( --xy-minimap-mask-stroke-color-props, var(--xy-minimap-mask-stroke-color, var(--xy-minimap-mask-stroke-color-default)) );\n  stroke-width: var( --xy-minimap-mask-stroke-width-props, var(--xy-minimap-mask-stroke-width, var(--xy-minimap-mask-stroke-width-default)) );\n}\n.react-flow__minimap-node {\n  fill: var( --xy-minimap-node-background-color-props, var(--xy-minimap-node-background-color, var(--xy-minimap-node-background-color-default)) );\n  stroke: var( --xy-minimap-node-stroke-color-props, var(--xy-minimap-node-stroke-color, var(--xy-minimap-node-stroke-color-default)) );\n  stroke-width: var( --xy-minimap-node-stroke-width-props, var(--xy-minimap-node-stroke-width, var(--xy-minimap-node-stroke-width-default)) );\n}\n.react-flow__background-pattern.dots {\n  fill: var( --xy-background-pattern-color-props, var(--xy-background-pattern-color, var(--xy-background-pattern-dots-color-default)) );\n}\n.react-flow__background-pattern.lines {\n  stroke: var( --xy-background-pattern-color-props, var(--xy-background-pattern-color, var(--xy-background-pattern-lines-color-default)) );\n}\n.react-flow__background-pattern.cross {\n  stroke: var( --xy-background-pattern-color-props, var(--xy-background-pattern-color, var(--xy-background-pattern-cross-color-default)) );\n}\n.react-flow__controls {\n  display: flex;\n  flex-direction: column;\n  box-shadow: var(--xy-controls-box-shadow, var(--xy-controls-box-shadow-default));\n}\n.react-flow__controls.horizontal {\n  flex-direction: row;\n}\n.react-flow__controls-button {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 26px;\n  width: 26px;\n  padding: 4px;\n  border: none;\n  background: var(--xy-controls-button-background-color, var(--xy-controls-button-background-color-default));\n  border-bottom: 1px solid var( --xy-controls-button-border-color-props, var(--xy-controls-button-border-color, var(--xy-controls-button-border-color-default)) );\n  color: var( --xy-controls-button-color-props, var(--xy-controls-button-color, var(--xy-controls-button-color-default)) );\n  cursor: pointer;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  user-select: none;\n}\n.react-flow__controls-button svg {\n  width: 100%;\n  max-width: 12px;\n  max-height: 12px;\n  fill: currentColor;\n}\n.react-flow__edge.updating .react-flow__edge-path {\n  stroke: #777;\n}\n.react-flow__edge-text {\n  font-size: 10px;\n}\n.react-flow__node.selectable:focus,\n.react-flow__node.selectable:focus-visible {\n  outline: none;\n}\n.react-flow__node-input,\n.react-flow__node-default,\n.react-flow__node-output,\n.react-flow__node-group {\n  padding: 10px;\n  border-radius: var(--xy-node-border-radius, var(--xy-node-border-radius-default));\n  width: 150px;\n  font-size: 12px;\n  color: var(--xy-node-color, var(--xy-node-color-default));\n  text-align: center;\n  border: var(--xy-node-border, var(--xy-node-border-default));\n  background-color: var(--xy-node-background-color, var(--xy-node-background-color-default));\n}\n.react-flow__node-input.selectable:hover,\n.react-flow__node-default.selectable:hover,\n.react-flow__node-output.selectable:hover,\n.react-flow__node-group.selectable:hover {\n  box-shadow: var(--xy-node-boxshadow-hover, var(--xy-node-boxshadow-hover-default));\n}\n.react-flow__node-input.selectable.selected,\n.react-flow__node-input.selectable:focus,\n.react-flow__node-input.selectable:focus-visible,\n.react-flow__node-default.selectable.selected,\n.react-flow__node-default.selectable:focus,\n.react-flow__node-default.selectable:focus-visible,\n.react-flow__node-output.selectable.selected,\n.react-flow__node-output.selectable:focus,\n.react-flow__node-output.selectable:focus-visible,\n.react-flow__node-group.selectable.selected,\n.react-flow__node-group.selectable:focus,\n.react-flow__node-group.selectable:focus-visible {\n  box-shadow: var(--xy-node-boxshadow-selected, var(--xy-node-boxshadow-selected-default));\n}\n.react-flow__node-group {\n  background-color: var(--xy-node-group-background-color, var(--xy-node-group-background-color-default));\n}\n.react-flow__nodesselection-rect,\n.react-flow__selection {\n  background: var(--xy-selection-background-color, var(--xy-selection-background-color-default));\n  border: var(--xy-selection-border, var(--xy-selection-border-default));\n}\n.react-flow__nodesselection-rect:focus,\n.react-flow__nodesselection-rect:focus-visible,\n.react-flow__selection:focus,\n.react-flow__selection:focus-visible {\n  outline: none;\n}\n.react-flow__controls-button:hover {\n  background: var( --xy-controls-button-background-color-hover-props, var(--xy-controls-button-background-color-hover, var(--xy-controls-button-background-color-hover-default)) );\n  color: var( --xy-controls-button-color-hover-props, var(--xy-controls-button-color-hover, var(--xy-controls-button-color-hover-default)) );\n}\n.react-flow__controls-button:disabled {\n  pointer-events: none;\n}\n.react-flow__controls-button:disabled svg {\n  fill-opacity: 0.4;\n}\n.react-flow__controls-button:last-child {\n  border-bottom: none;\n}\n.react-flow__controls.horizontal .react-flow__controls-button {\n  border-bottom: none;\n  border-right: 1px solid var( --xy-controls-button-border-color-props, var(--xy-controls-button-border-color, var(--xy-controls-button-border-color-default)) );\n}\n.react-flow__controls.horizontal .react-flow__controls-button:last-child {\n  border-right: none;\n}\n.react-flow__resize-control {\n  position: absolute;\n}\n.react-flow__resize-control.left,\n.react-flow__resize-control.right {\n  cursor: ew-resize;\n}\n.react-flow__resize-control.top,\n.react-flow__resize-control.bottom {\n  cursor: ns-resize;\n}\n.react-flow__resize-control.top.left,\n.react-flow__resize-control.bottom.right {\n  cursor: nwse-resize;\n}\n.react-flow__resize-control.bottom.left,\n.react-flow__resize-control.top.right {\n  cursor: nesw-resize;\n}\n.react-flow__resize-control.handle {\n  width: 5px;\n  height: 5px;\n  border: 1px solid #fff;\n  border-radius: 1px;\n  background-color: var(--xy-resize-background-color, var(--xy-resize-background-color-default));\n  translate: -50% -50%;\n}\n.react-flow__resize-control.handle.left {\n  left: 0;\n  top: 50%;\n}\n.react-flow__resize-control.handle.right {\n  left: 100%;\n  top: 50%;\n}\n.react-flow__resize-control.handle.top {\n  left: 50%;\n  top: 0;\n}\n.react-flow__resize-control.handle.bottom {\n  left: 50%;\n  top: 100%;\n}\n.react-flow__resize-control.handle.top.left {\n  left: 0;\n}\n.react-flow__resize-control.handle.bottom.left {\n  left: 0;\n}\n.react-flow__resize-control.handle.top.right {\n  left: 100%;\n}\n.react-flow__resize-control.handle.bottom.right {\n  left: 100%;\n}\n.react-flow__resize-control.line {\n  border-color: var(--xy-resize-background-color, var(--xy-resize-background-color-default));\n  border-width: 0;\n  border-style: solid;\n}\n.react-flow__resize-control.line.left,\n.react-flow__resize-control.line.right {\n  width: 1px;\n  transform: translate(-50%, 0);\n  top: 0;\n  height: 100%;\n}\n.react-flow__resize-control.line.left {\n  left: 0;\n  border-left-width: 1px;\n}\n.react-flow__resize-control.line.right {\n  left: 100%;\n  border-right-width: 1px;\n}\n.react-flow__resize-control.line.top,\n.react-flow__resize-control.line.bottom {\n  height: 1px;\n  transform: translate(0, -50%);\n  left: 0;\n  width: 100%;\n}\n.react-flow__resize-control.line.top {\n  top: 0;\n  border-top-width: 1px;\n}\n.react-flow__resize-control.line.bottom {\n  border-bottom-width: 1px;\n  top: 100%;\n}\n.react-flow__edge-textbg {\n  fill: var(--xy-edge-label-background-color, var(--xy-edge-label-background-color-default));\n}\n.react-flow__edge-text {\n  fill: var(--xy-edge-label-color, var(--xy-edge-label-color-default));\n}\n";document.head.appendChild(s)}})();
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __esm = (fn, res) => function __init() {
-  return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
-};
-var __commonJS = (cb, mod) => function __require() {
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, {
+  get: (a, b) => (typeof require !== "undefined" ? require : a)[b]
+}) : x)(function(x) {
+  if (typeof require !== "undefined") return require.apply(this, arguments);
+  throw Error('Dynamic require of "' + x + '" is not supported');
+});
+var __commonJS = (cb, mod) => function __require2() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
-};
-var __export = (target, all) => {
-  for (var name in all)
-    __defProp(target, name, { get: all[name], enumerable: true });
 };
 var __copyProps = (to, from, except, desc) => {
   if (from && typeof from === "object" || typeof from === "function") {
@@ -31,49 +29,17 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
   mod
 ));
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// ../obieg-zero-plugins/.shims/react.mjs
-var react_exports = {};
-__export(react_exports, {
-  Component: () => Component,
-  Fragment: () => Fragment,
-  createContext: () => createContext,
-  createElement: () => createElement,
-  default: () => react_default,
-  forwardRef: () => forwardRef,
-  memo: () => memo,
-  useCallback: () => useCallback,
-  useContext: () => useContext,
-  useEffect: () => useEffect,
-  useId: () => useId,
-  useLayoutEffect: () => useLayoutEffect,
-  useMemo: () => useMemo,
-  useReducer: () => useReducer,
-  useRef: () => useRef,
-  useState: () => useState,
-  useSyncExternalStore: () => useSyncExternalStore,
-  useTransition: () => useTransition
-});
-var R, react_default, useState, useEffect, useCallback, useRef, useMemo, useReducer, useContext, createContext, createElement, Fragment, memo, forwardRef, useLayoutEffect, useId, useSyncExternalStore, useTransition, Component;
-var init_react = __esm({
-  "../obieg-zero-plugins/.shims/react.mjs"() {
-    R = globalThis.__obieg.React;
-    react_default = R;
-    ({ useState, useEffect, useCallback, useRef, useMemo, useReducer, useContext, createContext, createElement, Fragment, memo, forwardRef, useLayoutEffect, useId, useSyncExternalStore, useTransition, Component } = R);
-  }
-});
-
-// ../obieg-zero-plugins/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js
+// ../node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js
 var require_use_sync_external_store_shim_development = __commonJS({
-  "../obieg-zero-plugins/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js"(exports) {
+  "../node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js"(exports) {
     "use strict";
     (function() {
       function is(x, y) {
         return x === y && (0 !== x || 1 / x === 1 / y) || x !== x && y !== y;
       }
       function useSyncExternalStore$2(subscribe, getSnapshot) {
-        didWarnOld18Alpha || void 0 === React.startTransition || (didWarnOld18Alpha = true, console.error(
+        didWarnOld18Alpha || void 0 === React15.startTransition || (didWarnOld18Alpha = true, console.error(
           "You are using an outdated, pre-release alpha of React 18 that does not support useSyncExternalStore. The use-sync-external-store shim will not work correctly. Upgrade to a newer pre-release."
         ));
         var value = getSnapshot();
@@ -83,7 +49,7 @@ var require_use_sync_external_store_shim_development = __commonJS({
             "The result of getSnapshot should be cached to avoid an infinite loop"
           ), didWarnUncachedGetSnapshot = true);
         }
-        cachedValue = useState2({
+        cachedValue = useState3({
           inst: { value, getSnapshot }
         });
         var inst = cachedValue[0].inst, forceUpdate = cachedValue[1];
@@ -95,7 +61,7 @@ var require_use_sync_external_store_shim_development = __commonJS({
           },
           [subscribe, value, getSnapshot]
         );
-        useEffect2(
+        useEffect3(
           function() {
             checkIfSnapshotChanged(inst) && forceUpdate({ inst });
             return subscribe(function() {
@@ -121,16 +87,16 @@ var require_use_sync_external_store_shim_development = __commonJS({
         return getSnapshot();
       }
       "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-      var React = (init_react(), __toCommonJS(react_exports)), objectIs = "function" === typeof Object.is ? Object.is : is, useState2 = React.useState, useEffect2 = React.useEffect, useLayoutEffect2 = React.useLayoutEffect, useDebugValue2 = React.useDebugValue, didWarnOld18Alpha = false, didWarnUncachedGetSnapshot = false, shim = "undefined" === typeof window || "undefined" === typeof window.document || "undefined" === typeof window.document.createElement ? useSyncExternalStore$1 : useSyncExternalStore$2;
-      exports.useSyncExternalStore = void 0 !== React.useSyncExternalStore ? React.useSyncExternalStore : shim;
+      var React15 = __require("react"), objectIs = "function" === typeof Object.is ? Object.is : is, useState3 = React15.useState, useEffect3 = React15.useEffect, useLayoutEffect2 = React15.useLayoutEffect, useDebugValue2 = React15.useDebugValue, didWarnOld18Alpha = false, didWarnUncachedGetSnapshot = false, shim = "undefined" === typeof window || "undefined" === typeof window.document || "undefined" === typeof window.document.createElement ? useSyncExternalStore$1 : useSyncExternalStore$2;
+      exports.useSyncExternalStore = void 0 !== React15.useSyncExternalStore ? React15.useSyncExternalStore : shim;
       "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
     })();
   }
 });
 
-// ../obieg-zero-plugins/node_modules/use-sync-external-store/shim/index.js
+// ../node_modules/use-sync-external-store/shim/index.js
 var require_shim = __commonJS({
-  "../obieg-zero-plugins/node_modules/use-sync-external-store/shim/index.js"(exports, module) {
+  "../node_modules/use-sync-external-store/shim/index.js"(exports, module) {
     "use strict";
     if (false) {
       module.exports = null;
@@ -140,18 +106,18 @@ var require_shim = __commonJS({
   }
 });
 
-// ../obieg-zero-plugins/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js
+// ../node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js
 var require_with_selector_development = __commonJS({
-  "../obieg-zero-plugins/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js"(exports) {
+  "../node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js"(exports) {
     "use strict";
     (function() {
       function is(x, y) {
         return x === y && (0 !== x || 1 / x === 1 / y) || x !== x && y !== y;
       }
       "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-      var React = (init_react(), __toCommonJS(react_exports)), shim = require_shim(), objectIs = "function" === typeof Object.is ? Object.is : is, useSyncExternalStore2 = shim.useSyncExternalStore, useRef2 = React.useRef, useEffect2 = React.useEffect, useMemo2 = React.useMemo, useDebugValue2 = React.useDebugValue;
+      var React15 = __require("react"), shim = require_shim(), objectIs = "function" === typeof Object.is ? Object.is : is, useSyncExternalStore = shim.useSyncExternalStore, useRef3 = React15.useRef, useEffect3 = React15.useEffect, useMemo2 = React15.useMemo, useDebugValue2 = React15.useDebugValue;
       exports.useSyncExternalStoreWithSelector = function(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
-        var instRef = useRef2(null);
+        var instRef = useRef3(null);
         if (null === instRef.current) {
           var inst = { hasValue: false, value: null };
           instRef.current = inst;
@@ -191,8 +157,8 @@ var require_with_selector_development = __commonJS({
           },
           [getSnapshot, getServerSnapshot, selector, isEqual]
         );
-        var value = useSyncExternalStore2(subscribe, instRef[0], instRef[1]);
-        useEffect2(
+        var value = useSyncExternalStore(subscribe, instRef[0], instRef[1]);
+        useEffect3(
           function() {
             inst.hasValue = true;
             inst.value = value;
@@ -207,9 +173,9 @@ var require_with_selector_development = __commonJS({
   }
 });
 
-// ../obieg-zero-plugins/node_modules/use-sync-external-store/shim/with-selector.js
+// ../node_modules/use-sync-external-store/shim/with-selector.js
 var require_with_selector = __commonJS({
-  "../obieg-zero-plugins/node_modules/use-sync-external-store/shim/with-selector.js"(exports, module) {
+  "../node_modules/use-sync-external-store/shim/with-selector.js"(exports, module) {
     "use strict";
     if (false) {
       module.exports = null;
@@ -219,32 +185,32 @@ var require_with_selector = __commonJS({
   }
 });
 
-// ../obieg-zero-plugins/node_modules/react-is/cjs/react-is.development.js
+// ../node_modules/react-is/cjs/react-is.development.js
 var require_react_is_development = __commonJS({
-  "../obieg-zero-plugins/node_modules/react-is/cjs/react-is.development.js"(exports) {
+  "../node_modules/react-is/cjs/react-is.development.js"(exports) {
     "use strict";
     if (true) {
       (function() {
         "use strict";
         var hasSymbol = typeof Symbol === "function" && Symbol.for;
-        var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 60103;
-        var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for("react.portal") : 60106;
-        var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for("react.fragment") : 60107;
-        var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for("react.strict_mode") : 60108;
-        var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for("react.profiler") : 60114;
-        var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for("react.provider") : 60109;
-        var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for("react.context") : 60110;
-        var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for("react.async_mode") : 60111;
-        var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for("react.concurrent_mode") : 60111;
-        var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for("react.forward_ref") : 60112;
-        var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for("react.suspense") : 60113;
-        var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for("react.suspense_list") : 60120;
-        var REACT_MEMO_TYPE = hasSymbol ? Symbol.for("react.memo") : 60115;
-        var REACT_LAZY_TYPE = hasSymbol ? Symbol.for("react.lazy") : 60116;
-        var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for("react.block") : 60121;
-        var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for("react.fundamental") : 60117;
-        var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for("react.responder") : 60118;
-        var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for("react.scope") : 60119;
+        var REACT_ELEMENT_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.element") : 60103;
+        var REACT_PORTAL_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.portal") : 60106;
+        var REACT_FRAGMENT_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.fragment") : 60107;
+        var REACT_STRICT_MODE_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.strict_mode") : 60108;
+        var REACT_PROFILER_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.profiler") : 60114;
+        var REACT_PROVIDER_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.provider") : 60109;
+        var REACT_CONTEXT_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.context") : 60110;
+        var REACT_ASYNC_MODE_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.async_mode") : 60111;
+        var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.concurrent_mode") : 60111;
+        var REACT_FORWARD_REF_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.forward_ref") : 60112;
+        var REACT_SUSPENSE_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.suspense") : 60113;
+        var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.suspense_list") : 60120;
+        var REACT_MEMO_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.memo") : 60115;
+        var REACT_LAZY_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.lazy") : 60116;
+        var REACT_BLOCK_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.block") : 60121;
+        var REACT_FUNDAMENTAL_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.fundamental") : 60117;
+        var REACT_RESPONDER_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.responder") : 60118;
+        var REACT_SCOPE_TYPE = hasSymbol ? /* @__PURE__ */ Symbol.for("react.scope") : 60119;
         function isValidElementType(type) {
           return typeof type === "string" || typeof type === "function" || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
           type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === "object" && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
@@ -288,7 +254,7 @@ var require_react_is_development = __commonJS({
         var ContextProvider = REACT_PROVIDER_TYPE;
         var Element = REACT_ELEMENT_TYPE;
         var ForwardRef = REACT_FORWARD_REF_TYPE;
-        var Fragment3 = REACT_FRAGMENT_TYPE;
+        var Fragment4 = REACT_FRAGMENT_TYPE;
         var Lazy = REACT_LAZY_TYPE;
         var Memo = REACT_MEMO_TYPE;
         var Portal = REACT_PORTAL_TYPE;
@@ -347,7 +313,7 @@ var require_react_is_development = __commonJS({
         exports.ContextProvider = ContextProvider;
         exports.Element = Element;
         exports.ForwardRef = ForwardRef;
-        exports.Fragment = Fragment3;
+        exports.Fragment = Fragment4;
         exports.Lazy = Lazy;
         exports.Memo = Memo;
         exports.Portal = Portal;
@@ -374,9 +340,9 @@ var require_react_is_development = __commonJS({
   }
 });
 
-// ../obieg-zero-plugins/node_modules/react-is/index.js
+// ../node_modules/react-is/index.js
 var require_react_is = __commonJS({
-  "../obieg-zero-plugins/node_modules/react-is/index.js"(exports, module) {
+  "../node_modules/react-is/index.js"(exports, module) {
     "use strict";
     if (false) {
       module.exports = null;
@@ -386,9 +352,9 @@ var require_react_is = __commonJS({
   }
 });
 
-// ../obieg-zero-plugins/node_modules/object-assign/index.js
+// ../node_modules/object-assign/index.js
 var require_object_assign = __commonJS({
-  "../obieg-zero-plugins/node_modules/object-assign/index.js"(exports, module) {
+  "../node_modules/object-assign/index.js"(exports, module) {
     "use strict";
     var getOwnPropertySymbols = Object.getOwnPropertySymbols;
     var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -456,25 +422,25 @@ var require_object_assign = __commonJS({
   }
 });
 
-// ../obieg-zero-plugins/node_modules/prop-types/lib/ReactPropTypesSecret.js
+// ../node_modules/prop-types/lib/ReactPropTypesSecret.js
 var require_ReactPropTypesSecret = __commonJS({
-  "../obieg-zero-plugins/node_modules/prop-types/lib/ReactPropTypesSecret.js"(exports, module) {
+  "../node_modules/prop-types/lib/ReactPropTypesSecret.js"(exports, module) {
     "use strict";
     var ReactPropTypesSecret = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
     module.exports = ReactPropTypesSecret;
   }
 });
 
-// ../obieg-zero-plugins/node_modules/prop-types/lib/has.js
+// ../node_modules/prop-types/lib/has.js
 var require_has = __commonJS({
-  "../obieg-zero-plugins/node_modules/prop-types/lib/has.js"(exports, module) {
+  "../node_modules/prop-types/lib/has.js"(exports, module) {
     module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
   }
 });
 
-// ../obieg-zero-plugins/node_modules/prop-types/checkPropTypes.js
+// ../node_modules/prop-types/checkPropTypes.js
 var require_checkPropTypes = __commonJS({
-  "../obieg-zero-plugins/node_modules/prop-types/checkPropTypes.js"(exports, module) {
+  "../node_modules/prop-types/checkPropTypes.js"(exports, module) {
     "use strict";
     var printWarning = function() {
     };
@@ -538,9 +504,9 @@ var require_checkPropTypes = __commonJS({
   }
 });
 
-// ../obieg-zero-plugins/node_modules/prop-types/factoryWithTypeCheckers.js
+// ../node_modules/prop-types/factoryWithTypeCheckers.js
 var require_factoryWithTypeCheckers = __commonJS({
-  "../obieg-zero-plugins/node_modules/prop-types/factoryWithTypeCheckers.js"(exports, module) {
+  "../node_modules/prop-types/factoryWithTypeCheckers.js"(exports, module) {
     "use strict";
     var ReactIs = require_react_is();
     var assign = require_object_assign();
@@ -981,9 +947,9 @@ var require_factoryWithTypeCheckers = __commonJS({
   }
 });
 
-// ../obieg-zero-plugins/node_modules/prop-types/index.js
+// ../node_modules/prop-types/index.js
 var require_prop_types = __commonJS({
-  "../obieg-zero-plugins/node_modules/prop-types/index.js"(exports, module) {
+  "../node_modules/prop-types/index.js"(exports, module) {
     if (true) {
       ReactIs = require_react_is();
       throwOnDirectAccess = true;
@@ -996,17 +962,14 @@ var require_prop_types = __commonJS({
   }
 });
 
-// ../obieg-zero-plugins/playground/src/index.tsx
-init_react();
+// src/index.tsx
+import { useState as useState2, useCallback as useCallback2, useEffect as useEffect2, useRef as useRef2, createContext as createContext2, useContext as useContext2 } from "react";
 
-// ../obieg-zero-plugins/.shims/jsx-runtime.mjs
-var J = globalThis.__obieg.jsxRuntime;
-var { jsx, jsxs, Fragment: Fragment2 } = J;
+// ../node_modules/@xyflow/react/dist/esm/index.js
+import { jsxs, Fragment, jsx } from "react/jsx-runtime";
+import { createContext, useContext, useMemo, forwardRef, useEffect, useRef, useState, useLayoutEffect, useCallback, memo } from "react";
 
-// ../obieg-zero-plugins/node_modules/@xyflow/react/dist/esm/index.js
-init_react();
-
-// ../obieg-zero-plugins/node_modules/classcat/index.js
+// ../node_modules/classcat/index.js
 function cc(names) {
   if (typeof names === "string" || typeof names === "number") return "" + names;
   let out = "";
@@ -1024,7 +987,7 @@ function cc(names) {
   return out;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-dispatch/src/dispatch.js
+// ../node_modules/d3-dispatch/src/dispatch.js
 var noop = { value: () => {
 } };
 function dispatch() {
@@ -1094,7 +1057,7 @@ function set(type, name, callback) {
 }
 var dispatch_default = dispatch;
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/namespaces.js
+// ../node_modules/d3-selection/src/namespaces.js
 var xhtml = "http://www.w3.org/1999/xhtml";
 var namespaces_default = {
   svg: "http://www.w3.org/2000/svg",
@@ -1104,14 +1067,14 @@ var namespaces_default = {
   xmlns: "http://www.w3.org/2000/xmlns/"
 };
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/namespace.js
+// ../node_modules/d3-selection/src/namespace.js
 function namespace_default(name) {
   var prefix = name += "", i = prefix.indexOf(":");
   if (i >= 0 && (prefix = name.slice(0, i)) !== "xmlns") name = name.slice(i + 1);
   return namespaces_default.hasOwnProperty(prefix) ? { space: namespaces_default[prefix], local: name } : name;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/creator.js
+// ../node_modules/d3-selection/src/creator.js
 function creatorInherit(name) {
   return function() {
     var document2 = this.ownerDocument, uri = this.namespaceURI;
@@ -1128,7 +1091,7 @@ function creator_default(name) {
   return (fullname.local ? creatorFixed : creatorInherit)(fullname);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selector.js
+// ../node_modules/d3-selection/src/selector.js
 function none() {
 }
 function selector_default(selector) {
@@ -1137,7 +1100,7 @@ function selector_default(selector) {
   };
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/select.js
+// ../node_modules/d3-selection/src/selection/select.js
 function select_default(select) {
   if (typeof select !== "function") select = selector_default(select);
   for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0; j < m; ++j) {
@@ -1151,12 +1114,12 @@ function select_default(select) {
   return new Selection(subgroups, this._parents);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/array.js
+// ../node_modules/d3-selection/src/array.js
 function array(x) {
   return x == null ? [] : Array.isArray(x) ? x : Array.from(x);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selectorAll.js
+// ../node_modules/d3-selection/src/selectorAll.js
 function empty() {
   return [];
 }
@@ -1166,7 +1129,7 @@ function selectorAll_default(selector) {
   };
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/selectAll.js
+// ../node_modules/d3-selection/src/selection/selectAll.js
 function arrayAll(select) {
   return function() {
     return array(select.apply(this, arguments));
@@ -1186,7 +1149,7 @@ function selectAll_default(select) {
   return new Selection(subgroups, parents);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/matcher.js
+// ../node_modules/d3-selection/src/matcher.js
 function matcher_default(selector) {
   return function() {
     return this.matches(selector);
@@ -1198,7 +1161,7 @@ function childMatcher(selector) {
   };
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/selectChild.js
+// ../node_modules/d3-selection/src/selection/selectChild.js
 var find = Array.prototype.find;
 function childFind(match) {
   return function() {
@@ -1212,7 +1175,7 @@ function selectChild_default(match) {
   return this.select(match == null ? childFirst : childFind(typeof match === "function" ? match : childMatcher(match)));
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/selectChildren.js
+// ../node_modules/d3-selection/src/selection/selectChildren.js
 var filter = Array.prototype.filter;
 function children() {
   return Array.from(this.children);
@@ -1226,7 +1189,7 @@ function selectChildren_default(match) {
   return this.selectAll(match == null ? children : childrenFilter(typeof match === "function" ? match : childMatcher(match)));
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/filter.js
+// ../node_modules/d3-selection/src/selection/filter.js
 function filter_default(match) {
   if (typeof match !== "function") match = matcher_default(match);
   for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0; j < m; ++j) {
@@ -1239,12 +1202,12 @@ function filter_default(match) {
   return new Selection(subgroups, this._parents);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/sparse.js
+// ../node_modules/d3-selection/src/selection/sparse.js
 function sparse_default(update) {
   return new Array(update.length);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/enter.js
+// ../node_modules/d3-selection/src/selection/enter.js
 function enter_default() {
   return new Selection(this._enter || this._groups.map(sparse_default), this._parents);
 }
@@ -1271,14 +1234,14 @@ EnterNode.prototype = {
   }
 };
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/constant.js
+// ../node_modules/d3-selection/src/constant.js
 function constant_default(x) {
   return function() {
     return x;
   };
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/data.js
+// ../node_modules/d3-selection/src/selection/data.js
 function bindIndex(parent, group, enter, update, exit, data) {
   var i = 0, node, groupLength = group.length, dataLength = data.length;
   for (; i < dataLength; ++i) {
@@ -1350,12 +1313,12 @@ function arraylike(data) {
   return typeof data === "object" && "length" in data ? data : Array.from(data);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/exit.js
+// ../node_modules/d3-selection/src/selection/exit.js
 function exit_default() {
   return new Selection(this._exit || this._groups.map(sparse_default), this._parents);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/join.js
+// ../node_modules/d3-selection/src/selection/join.js
 function join_default(onenter, onupdate, onexit) {
   var enter = this.enter(), update = this, exit = this.exit();
   if (typeof onenter === "function") {
@@ -1373,7 +1336,7 @@ function join_default(onenter, onupdate, onexit) {
   return enter && update ? enter.merge(update).order() : update;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/merge.js
+// ../node_modules/d3-selection/src/selection/merge.js
 function merge_default(context) {
   var selection2 = context.selection ? context.selection() : context;
   for (var groups0 = this._groups, groups1 = selection2._groups, m0 = groups0.length, m1 = groups1.length, m = Math.min(m0, m1), merges = new Array(m0), j = 0; j < m; ++j) {
@@ -1389,7 +1352,7 @@ function merge_default(context) {
   return new Selection(merges, this._parents);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/order.js
+// ../node_modules/d3-selection/src/selection/order.js
 function order_default() {
   for (var groups = this._groups, j = -1, m = groups.length; ++j < m; ) {
     for (var group = groups[j], i = group.length - 1, next = group[i], node; --i >= 0; ) {
@@ -1402,7 +1365,7 @@ function order_default() {
   return this;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/sort.js
+// ../node_modules/d3-selection/src/selection/sort.js
 function sort_default(compare) {
   if (!compare) compare = ascending;
   function compareNode(a, b) {
@@ -1422,7 +1385,7 @@ function ascending(a, b) {
   return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/call.js
+// ../node_modules/d3-selection/src/selection/call.js
 function call_default() {
   var callback = arguments[0];
   arguments[0] = this;
@@ -1430,12 +1393,12 @@ function call_default() {
   return this;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/nodes.js
+// ../node_modules/d3-selection/src/selection/nodes.js
 function nodes_default() {
   return Array.from(this);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/node.js
+// ../node_modules/d3-selection/src/selection/node.js
 function node_default() {
   for (var groups = this._groups, j = 0, m = groups.length; j < m; ++j) {
     for (var group = groups[j], i = 0, n = group.length; i < n; ++i) {
@@ -1446,19 +1409,19 @@ function node_default() {
   return null;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/size.js
+// ../node_modules/d3-selection/src/selection/size.js
 function size_default() {
   let size = 0;
   for (const node of this) ++size;
   return size;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/empty.js
+// ../node_modules/d3-selection/src/selection/empty.js
 function empty_default() {
   return !this.node();
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/each.js
+// ../node_modules/d3-selection/src/selection/each.js
 function each_default(callback) {
   for (var groups = this._groups, j = 0, m = groups.length; j < m; ++j) {
     for (var group = groups[j], i = 0, n = group.length, node; i < n; ++i) {
@@ -1468,7 +1431,7 @@ function each_default(callback) {
   return this;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/attr.js
+// ../node_modules/d3-selection/src/selection/attr.js
 function attrRemove(name) {
   return function() {
     this.removeAttribute(name);
@@ -1512,12 +1475,12 @@ function attr_default(name, value) {
   return this.each((value == null ? fullname.local ? attrRemoveNS : attrRemove : typeof value === "function" ? fullname.local ? attrFunctionNS : attrFunction : fullname.local ? attrConstantNS : attrConstant)(fullname, value));
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/window.js
+// ../node_modules/d3-selection/src/window.js
 function window_default(node) {
   return node.ownerDocument && node.ownerDocument.defaultView || node.document && node || node.defaultView;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/style.js
+// ../node_modules/d3-selection/src/selection/style.js
 function styleRemove(name) {
   return function() {
     this.style.removeProperty(name);
@@ -1542,7 +1505,7 @@ function styleValue(node, name) {
   return node.style.getPropertyValue(name) || window_default(node).getComputedStyle(node, null).getPropertyValue(name);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/property.js
+// ../node_modules/d3-selection/src/selection/property.js
 function propertyRemove(name) {
   return function() {
     delete this[name];
@@ -1564,7 +1527,7 @@ function property_default(name, value) {
   return arguments.length > 1 ? this.each((value == null ? propertyRemove : typeof value === "function" ? propertyFunction : propertyConstant)(name, value)) : this.node()[name];
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/classed.js
+// ../node_modules/d3-selection/src/selection/classed.js
 function classArray(string) {
   return string.trim().split(/^|\s+/);
 }
@@ -1627,7 +1590,7 @@ function classed_default(name, value) {
   return this.each((typeof value === "function" ? classedFunction : value ? classedTrue : classedFalse)(names, value));
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/text.js
+// ../node_modules/d3-selection/src/selection/text.js
 function textRemove() {
   this.textContent = "";
 }
@@ -1646,7 +1609,7 @@ function text_default(value) {
   return arguments.length ? this.each(value == null ? textRemove : (typeof value === "function" ? textFunction : textConstant)(value)) : this.node().textContent;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/html.js
+// ../node_modules/d3-selection/src/selection/html.js
 function htmlRemove() {
   this.innerHTML = "";
 }
@@ -1665,7 +1628,7 @@ function html_default(value) {
   return arguments.length ? this.each(value == null ? htmlRemove : (typeof value === "function" ? htmlFunction : htmlConstant)(value)) : this.node().innerHTML;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/raise.js
+// ../node_modules/d3-selection/src/selection/raise.js
 function raise() {
   if (this.nextSibling) this.parentNode.appendChild(this);
 }
@@ -1673,7 +1636,7 @@ function raise_default() {
   return this.each(raise);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/lower.js
+// ../node_modules/d3-selection/src/selection/lower.js
 function lower() {
   if (this.previousSibling) this.parentNode.insertBefore(this, this.parentNode.firstChild);
 }
@@ -1681,7 +1644,7 @@ function lower_default() {
   return this.each(lower);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/append.js
+// ../node_modules/d3-selection/src/selection/append.js
 function append_default(name) {
   var create2 = typeof name === "function" ? name : creator_default(name);
   return this.select(function() {
@@ -1689,7 +1652,7 @@ function append_default(name) {
   });
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/insert.js
+// ../node_modules/d3-selection/src/selection/insert.js
 function constantNull() {
   return null;
 }
@@ -1700,7 +1663,7 @@ function insert_default(name, before) {
   });
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/remove.js
+// ../node_modules/d3-selection/src/selection/remove.js
 function remove() {
   var parent = this.parentNode;
   if (parent) parent.removeChild(this);
@@ -1709,7 +1672,7 @@ function remove_default() {
   return this.each(remove);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/clone.js
+// ../node_modules/d3-selection/src/selection/clone.js
 function selection_cloneShallow() {
   var clone = this.cloneNode(false), parent = this.parentNode;
   return parent ? parent.insertBefore(clone, this.nextSibling) : clone;
@@ -1722,12 +1685,12 @@ function clone_default(deep) {
   return this.select(deep ? selection_cloneDeep : selection_cloneShallow);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/datum.js
+// ../node_modules/d3-selection/src/selection/datum.js
 function datum_default(value) {
   return arguments.length ? this.property("__data__", value) : this.node().__data__;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/on.js
+// ../node_modules/d3-selection/src/selection/on.js
 function contextListener(listener) {
   return function(event) {
     listener.call(this, event, this.__data__);
@@ -1790,7 +1753,7 @@ function on_default(typename, value, options) {
   return this;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/dispatch.js
+// ../node_modules/d3-selection/src/selection/dispatch.js
 function dispatchEvent(node, type, params) {
   var window2 = window_default(node), event = window2.CustomEvent;
   if (typeof event === "function") {
@@ -1816,7 +1779,7 @@ function dispatch_default2(type, params) {
   return this.each((typeof params === "function" ? dispatchFunction : dispatchConstant)(type, params));
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/iterator.js
+// ../node_modules/d3-selection/src/selection/iterator.js
 function* iterator_default() {
   for (var groups = this._groups, j = 0, m = groups.length; j < m; ++j) {
     for (var group = groups[j], i = 0, n = group.length, node; i < n; ++i) {
@@ -1825,7 +1788,7 @@ function* iterator_default() {
   }
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/selection/index.js
+// ../node_modules/d3-selection/src/selection/index.js
 var root = [null];
 function Selection(groups, parents) {
   this._groups = groups;
@@ -1877,19 +1840,19 @@ Selection.prototype = selection.prototype = {
 };
 var selection_default = selection;
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/select.js
+// ../node_modules/d3-selection/src/select.js
 function select_default2(selector) {
   return typeof selector === "string" ? new Selection([[document.querySelector(selector)]], [document.documentElement]) : new Selection([[selector]], root);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/sourceEvent.js
+// ../node_modules/d3-selection/src/sourceEvent.js
 function sourceEvent_default(event) {
   let sourceEvent;
   while (sourceEvent = event.sourceEvent) event = sourceEvent;
   return event;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-selection/src/pointer.js
+// ../node_modules/d3-selection/src/pointer.js
 function pointer_default(event, node) {
   event = sourceEvent_default(event);
   if (node === void 0) node = event.currentTarget;
@@ -1909,7 +1872,7 @@ function pointer_default(event, node) {
   return [event.pageX, event.pageY];
 }
 
-// ../obieg-zero-plugins/node_modules/d3-drag/src/noevent.js
+// ../node_modules/d3-drag/src/noevent.js
 var nonpassive = { passive: false };
 var nonpassivecapture = { capture: true, passive: false };
 function nopropagation(event) {
@@ -1920,7 +1883,7 @@ function noevent_default(event) {
   event.stopImmediatePropagation();
 }
 
-// ../obieg-zero-plugins/node_modules/d3-drag/src/nodrag.js
+// ../node_modules/d3-drag/src/nodrag.js
 function nodrag_default(view) {
   var root2 = view.document.documentElement, selection2 = select_default2(view).on("dragstart.drag", noevent_default, nonpassivecapture);
   if ("onselectstart" in root2) {
@@ -1946,10 +1909,10 @@ function yesdrag(view, noclick) {
   }
 }
 
-// ../obieg-zero-plugins/node_modules/d3-drag/src/constant.js
+// ../node_modules/d3-drag/src/constant.js
 var constant_default2 = (x) => () => x;
 
-// ../obieg-zero-plugins/node_modules/d3-drag/src/event.js
+// ../node_modules/d3-drag/src/event.js
 function DragEvent(type, {
   sourceEvent,
   subject,
@@ -1981,7 +1944,7 @@ DragEvent.prototype.on = function() {
   return value === this._ ? this : value;
 };
 
-// ../obieg-zero-plugins/node_modules/d3-drag/src/drag.js
+// ../node_modules/d3-drag/src/drag.js
 function defaultFilter(event) {
   return !event.ctrlKey && !event.button;
 }
@@ -2126,7 +2089,7 @@ function drag_default() {
   return drag;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-color/src/define.js
+// ../node_modules/d3-color/src/define.js
 function define_default(constructor, factory, prototype) {
   constructor.prototype = factory.prototype = prototype;
   prototype.constructor = constructor;
@@ -2137,7 +2100,7 @@ function extend(parent, definition) {
   return prototype;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-color/src/color.js
+// ../node_modules/d3-color/src/color.js
 function Color() {
 }
 var darker = 0.7;
@@ -2474,7 +2437,7 @@ function hsl2rgb(h, m1, m2) {
   return (h < 60 ? m1 + (m2 - m1) * h / 60 : h < 180 ? m2 : h < 240 ? m1 + (m2 - m1) * (240 - h) / 60 : m1) * 255;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-interpolate/src/basis.js
+// ../node_modules/d3-interpolate/src/basis.js
 function basis(t1, v0, v1, v2, v3) {
   var t2 = t1 * t1, t3 = t2 * t1;
   return ((1 - 3 * t1 + 3 * t2 - t3) * v0 + (4 - 6 * t2 + 3 * t3) * v1 + (1 + 3 * t1 + 3 * t2 - 3 * t3) * v2 + t3 * v3) / 6;
@@ -2487,7 +2450,7 @@ function basis_default(values) {
   };
 }
 
-// ../obieg-zero-plugins/node_modules/d3-interpolate/src/basisClosed.js
+// ../node_modules/d3-interpolate/src/basisClosed.js
 function basisClosed_default(values) {
   var n = values.length;
   return function(t) {
@@ -2496,10 +2459,10 @@ function basisClosed_default(values) {
   };
 }
 
-// ../obieg-zero-plugins/node_modules/d3-interpolate/src/constant.js
+// ../node_modules/d3-interpolate/src/constant.js
 var constant_default3 = (x) => () => x;
 
-// ../obieg-zero-plugins/node_modules/d3-interpolate/src/color.js
+// ../node_modules/d3-interpolate/src/color.js
 function linear(a, d) {
   return function(t) {
     return a + t * d;
@@ -2520,7 +2483,7 @@ function nogamma(a, b) {
   return d ? linear(a, d) : constant_default3(isNaN(a) ? b : a);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-interpolate/src/rgb.js
+// ../node_modules/d3-interpolate/src/rgb.js
 var rgb_default = (function rgbGamma(y) {
   var color2 = gamma(y);
   function rgb2(start2, end) {
@@ -2560,7 +2523,7 @@ function rgbSpline(spline) {
 var rgbBasis = rgbSpline(basis_default);
 var rgbBasisClosed = rgbSpline(basisClosed_default);
 
-// ../obieg-zero-plugins/node_modules/d3-interpolate/src/numberArray.js
+// ../node_modules/d3-interpolate/src/numberArray.js
 function numberArray_default(a, b) {
   if (!b) b = [];
   var n = a ? Math.min(b.length, a.length) : 0, c = b.slice(), i;
@@ -2573,7 +2536,7 @@ function isNumberArray(x) {
   return ArrayBuffer.isView(x) && !(x instanceof DataView);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-interpolate/src/array.js
+// ../node_modules/d3-interpolate/src/array.js
 function genericArray(a, b) {
   var nb = b ? b.length : 0, na = a ? Math.min(nb, a.length) : 0, x = new Array(na), c = new Array(nb), i;
   for (i = 0; i < na; ++i) x[i] = value_default(a[i], b[i]);
@@ -2584,7 +2547,7 @@ function genericArray(a, b) {
   };
 }
 
-// ../obieg-zero-plugins/node_modules/d3-interpolate/src/date.js
+// ../node_modules/d3-interpolate/src/date.js
 function date_default(a, b) {
   var d = /* @__PURE__ */ new Date();
   return a = +a, b = +b, function(t) {
@@ -2592,14 +2555,14 @@ function date_default(a, b) {
   };
 }
 
-// ../obieg-zero-plugins/node_modules/d3-interpolate/src/number.js
+// ../node_modules/d3-interpolate/src/number.js
 function number_default(a, b) {
   return a = +a, b = +b, function(t) {
     return a * (1 - t) + b * t;
   };
 }
 
-// ../obieg-zero-plugins/node_modules/d3-interpolate/src/object.js
+// ../node_modules/d3-interpolate/src/object.js
 function object_default(a, b) {
   var i = {}, c = {}, k;
   if (a === null || typeof a !== "object") a = {};
@@ -2617,7 +2580,7 @@ function object_default(a, b) {
   };
 }
 
-// ../obieg-zero-plugins/node_modules/d3-interpolate/src/string.js
+// ../node_modules/d3-interpolate/src/string.js
 var reA = /[-+]?(?:\d+\.?\d*|\.?\d+)(?:[eE][-+]?\d+)?/g;
 var reB = new RegExp(reA.source, "g");
 function zero(b) {
@@ -2659,13 +2622,13 @@ function string_default(a, b) {
   });
 }
 
-// ../obieg-zero-plugins/node_modules/d3-interpolate/src/value.js
+// ../node_modules/d3-interpolate/src/value.js
 function value_default(a, b) {
   var t = typeof b, c;
   return b == null || t === "boolean" ? constant_default3(b) : (t === "number" ? number_default : t === "string" ? (c = color(b)) ? (b = c, rgb_default) : string_default : b instanceof color ? rgb_default : b instanceof Date ? date_default : isNumberArray(b) ? numberArray_default : Array.isArray(b) ? genericArray : typeof b.valueOf !== "function" && typeof b.toString !== "function" || isNaN(b) ? object_default : number_default)(a, b);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-interpolate/src/transform/decompose.js
+// ../node_modules/d3-interpolate/src/transform/decompose.js
 var degrees = 180 / Math.PI;
 var identity = {
   translateX: 0,
@@ -2691,7 +2654,7 @@ function decompose_default(a, b, c, d, e, f) {
   };
 }
 
-// ../obieg-zero-plugins/node_modules/d3-interpolate/src/transform/parse.js
+// ../node_modules/d3-interpolate/src/transform/parse.js
 var svgNode;
 function parseCss(value) {
   const m = new (typeof DOMMatrix === "function" ? DOMMatrix : WebKitCSSMatrix)(value + "");
@@ -2706,7 +2669,7 @@ function parseSvg(value) {
   return decompose_default(value.a, value.b, value.c, value.d, value.e, value.f);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-interpolate/src/transform/index.js
+// ../node_modules/d3-interpolate/src/transform/index.js
 function interpolateTransform(parse, pxComma, pxParen, degParen) {
   function pop(s) {
     return s.length ? s.pop() + " " : "";
@@ -2761,7 +2724,7 @@ function interpolateTransform(parse, pxComma, pxParen, degParen) {
 var interpolateTransformCss = interpolateTransform(parseCss, "px, ", "px)", "deg)");
 var interpolateTransformSvg = interpolateTransform(parseSvg, ", ", ")", ")");
 
-// ../obieg-zero-plugins/node_modules/d3-interpolate/src/zoom.js
+// ../node_modules/d3-interpolate/src/zoom.js
 var epsilon2 = 1e-12;
 function cosh(x) {
   return ((x = Math.exp(x)) + 1 / x) / 2;
@@ -2806,7 +2769,7 @@ var zoom_default = (function zoomRho(rho, rho2, rho4) {
   return zoom;
 })(Math.SQRT2, 2, 4);
 
-// ../obieg-zero-plugins/node_modules/d3-timer/src/timer.js
+// ../node_modules/d3-timer/src/timer.js
 var frame = 0;
 var timeout = 0;
 var interval = 0;
@@ -2908,7 +2871,7 @@ function sleep(time) {
   }
 }
 
-// ../obieg-zero-plugins/node_modules/d3-timer/src/timeout.js
+// ../node_modules/d3-timer/src/timeout.js
 function timeout_default(callback, delay, time) {
   var t = new Timer();
   delay = delay == null ? 0 : +delay;
@@ -2919,7 +2882,7 @@ function timeout_default(callback, delay, time) {
   return t;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/schedule.js
+// ../node_modules/d3-transition/src/transition/schedule.js
 var emptyOn = dispatch_default("start", "end", "cancel", "interrupt");
 var emptyTween = [];
 var CREATED = 0;
@@ -3030,7 +2993,7 @@ function create(node, id2, self) {
   }
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/interrupt.js
+// ../node_modules/d3-transition/src/interrupt.js
 function interrupt_default(node, name) {
   var schedules = node.__transition, schedule, active, empty2 = true, i;
   if (!schedules) return;
@@ -3049,14 +3012,14 @@ function interrupt_default(node, name) {
   if (empty2) delete node.__transition;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/selection/interrupt.js
+// ../node_modules/d3-transition/src/selection/interrupt.js
 function interrupt_default2(name) {
   return this.each(function() {
     interrupt_default(this, name);
   });
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/tween.js
+// ../node_modules/d3-transition/src/transition/tween.js
 function tweenRemove(id2, name) {
   var tween0, tween1;
   return function() {
@@ -3117,13 +3080,13 @@ function tweenValue(transition2, name, value) {
   };
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/interpolate.js
+// ../node_modules/d3-transition/src/transition/interpolate.js
 function interpolate_default(a, b) {
   var c;
   return (typeof b === "number" ? number_default : b instanceof color ? rgb_default : (c = color(b)) ? (b = c, rgb_default) : string_default)(a, b);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/attr.js
+// ../node_modules/d3-transition/src/transition/attr.js
 function attrRemove2(name) {
   return function() {
     this.removeAttribute(name);
@@ -3173,7 +3136,7 @@ function attr_default2(name, value) {
   return this.attrTween(name, typeof value === "function" ? (fullname.local ? attrFunctionNS2 : attrFunction2)(fullname, i, tweenValue(this, "attr." + name, value)) : value == null ? (fullname.local ? attrRemoveNS2 : attrRemove2)(fullname) : (fullname.local ? attrConstantNS2 : attrConstant2)(fullname, i, value));
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/attrTween.js
+// ../node_modules/d3-transition/src/transition/attrTween.js
 function attrInterpolate(name, i) {
   return function(t) {
     this.setAttribute(name, i.call(this, t));
@@ -3213,7 +3176,7 @@ function attrTween_default(name, value) {
   return this.tween(key, (fullname.local ? attrTweenNS : attrTween)(fullname, value));
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/delay.js
+// ../node_modules/d3-transition/src/transition/delay.js
 function delayFunction(id2, value) {
   return function() {
     init(this, id2).delay = +value.apply(this, arguments);
@@ -3229,7 +3192,7 @@ function delay_default(value) {
   return arguments.length ? this.each((typeof value === "function" ? delayFunction : delayConstant)(id2, value)) : get2(this.node(), id2).delay;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/duration.js
+// ../node_modules/d3-transition/src/transition/duration.js
 function durationFunction(id2, value) {
   return function() {
     set2(this, id2).duration = +value.apply(this, arguments);
@@ -3245,7 +3208,7 @@ function duration_default(value) {
   return arguments.length ? this.each((typeof value === "function" ? durationFunction : durationConstant)(id2, value)) : get2(this.node(), id2).duration;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/ease.js
+// ../node_modules/d3-transition/src/transition/ease.js
 function easeConstant(id2, value) {
   if (typeof value !== "function") throw new Error();
   return function() {
@@ -3257,7 +3220,7 @@ function ease_default(value) {
   return arguments.length ? this.each(easeConstant(id2, value)) : get2(this.node(), id2).ease;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/easeVarying.js
+// ../node_modules/d3-transition/src/transition/easeVarying.js
 function easeVarying(id2, value) {
   return function() {
     var v = value.apply(this, arguments);
@@ -3270,7 +3233,7 @@ function easeVarying_default(value) {
   return this.each(easeVarying(this._id, value));
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/filter.js
+// ../node_modules/d3-transition/src/transition/filter.js
 function filter_default2(match) {
   if (typeof match !== "function") match = matcher_default(match);
   for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0; j < m; ++j) {
@@ -3283,7 +3246,7 @@ function filter_default2(match) {
   return new Transition(subgroups, this._parents, this._name, this._id);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/merge.js
+// ../node_modules/d3-transition/src/transition/merge.js
 function merge_default2(transition2) {
   if (transition2._id !== this._id) throw new Error();
   for (var groups0 = this._groups, groups1 = transition2._groups, m0 = groups0.length, m1 = groups1.length, m = Math.min(m0, m1), merges = new Array(m0), j = 0; j < m; ++j) {
@@ -3299,7 +3262,7 @@ function merge_default2(transition2) {
   return new Transition(merges, this._parents, this._name, this._id);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/on.js
+// ../node_modules/d3-transition/src/transition/on.js
 function start(name) {
   return (name + "").trim().split(/^|\s+/).every(function(t) {
     var i = t.indexOf(".");
@@ -3320,7 +3283,7 @@ function on_default2(name, listener) {
   return arguments.length < 2 ? get2(this.node(), id2).on.on(name) : this.each(onFunction(id2, name, listener));
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/remove.js
+// ../node_modules/d3-transition/src/transition/remove.js
 function removeFunction(id2) {
   return function() {
     var parent = this.parentNode;
@@ -3332,7 +3295,7 @@ function remove_default2() {
   return this.on("end.remove", removeFunction(this._id));
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/select.js
+// ../node_modules/d3-transition/src/transition/select.js
 function select_default3(select) {
   var name = this._name, id2 = this._id;
   if (typeof select !== "function") select = selector_default(select);
@@ -3348,7 +3311,7 @@ function select_default3(select) {
   return new Transition(subgroups, this._parents, name, id2);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/selectAll.js
+// ../node_modules/d3-transition/src/transition/selectAll.js
 function selectAll_default2(select) {
   var name = this._name, id2 = this._id;
   if (typeof select !== "function") select = selectorAll_default(select);
@@ -3368,13 +3331,13 @@ function selectAll_default2(select) {
   return new Transition(subgroups, parents, name, id2);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/selection.js
+// ../node_modules/d3-transition/src/transition/selection.js
 var Selection2 = selection_default.prototype.constructor;
 function selection_default2() {
   return new Selection2(this._groups, this._parents);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/style.js
+// ../node_modules/d3-transition/src/transition/style.js
 function styleNull(name, interpolate) {
   var string00, string10, interpolate0;
   return function() {
@@ -3415,7 +3378,7 @@ function style_default2(name, value, priority) {
   return value == null ? this.styleTween(name, styleNull(name, i)).on("end.style." + name, styleRemove2(name)) : typeof value === "function" ? this.styleTween(name, styleFunction2(name, i, tweenValue(this, "style." + name, value))).each(styleMaybeRemove(this._id, name)) : this.styleTween(name, styleConstant2(name, i, value), priority).on("end.style." + name, null);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/styleTween.js
+// ../node_modules/d3-transition/src/transition/styleTween.js
 function styleInterpolate(name, i, priority) {
   return function(t) {
     this.style.setProperty(name, i.call(this, t), priority);
@@ -3439,7 +3402,7 @@ function styleTween_default(name, value, priority) {
   return this.tween(key, styleTween(name, value, priority == null ? "" : priority));
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/text.js
+// ../node_modules/d3-transition/src/transition/text.js
 function textConstant2(value) {
   return function() {
     this.textContent = value;
@@ -3455,7 +3418,7 @@ function text_default2(value) {
   return this.tween("text", typeof value === "function" ? textFunction2(tweenValue(this, "text", value)) : textConstant2(value == null ? "" : value + ""));
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/textTween.js
+// ../node_modules/d3-transition/src/transition/textTween.js
 function textInterpolate(i) {
   return function(t) {
     this.textContent = i.call(this, t);
@@ -3479,7 +3442,7 @@ function textTween_default(value) {
   return this.tween(key, textTween(value));
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/transition.js
+// ../node_modules/d3-transition/src/transition/transition.js
 function transition_default() {
   var name = this._name, id0 = this._id, id1 = newId();
   for (var groups = this._groups, m = groups.length, j = 0; j < m; ++j) {
@@ -3498,7 +3461,7 @@ function transition_default() {
   return new Transition(groups, this._parents, name, id1);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/end.js
+// ../node_modules/d3-transition/src/transition/end.js
 function end_default() {
   var on0, on1, that = this, id2 = that._id, size = that.size();
   return new Promise(function(resolve, reject) {
@@ -3519,7 +3482,7 @@ function end_default() {
   });
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/transition/index.js
+// ../node_modules/d3-transition/src/transition/index.js
 var id = 0;
 function Transition(groups, parents, name, id2) {
   this._groups = groups;
@@ -3567,12 +3530,12 @@ Transition.prototype = transition.prototype = {
   [Symbol.iterator]: selection_prototype[Symbol.iterator]
 };
 
-// ../obieg-zero-plugins/node_modules/d3-ease/src/cubic.js
+// ../node_modules/d3-ease/src/cubic.js
 function cubicInOut(t) {
   return ((t *= 2) <= 1 ? t * t * t : (t -= 2) * t * t + 2) / 2;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/selection/transition.js
+// ../node_modules/d3-transition/src/selection/transition.js
 var defaultTiming = {
   time: null,
   // Set on use.
@@ -3606,14 +3569,14 @@ function transition_default2(name) {
   return new Transition(groups, this._parents, name, id2);
 }
 
-// ../obieg-zero-plugins/node_modules/d3-transition/src/selection/index.js
+// ../node_modules/d3-transition/src/selection/index.js
 selection_default.prototype.interrupt = interrupt_default2;
 selection_default.prototype.transition = transition_default2;
 
-// ../obieg-zero-plugins/node_modules/d3-zoom/src/constant.js
+// ../node_modules/d3-zoom/src/constant.js
 var constant_default4 = (x) => () => x;
 
-// ../obieg-zero-plugins/node_modules/d3-zoom/src/event.js
+// ../node_modules/d3-zoom/src/event.js
 function ZoomEvent(type, {
   sourceEvent,
   target,
@@ -3629,7 +3592,7 @@ function ZoomEvent(type, {
   });
 }
 
-// ../obieg-zero-plugins/node_modules/d3-zoom/src/transform.js
+// ../node_modules/d3-zoom/src/transform.js
 function Transform(k, x, y) {
   this.k = k;
   this.x = x;
@@ -3678,7 +3641,7 @@ function transform(node) {
   return node.__zoom;
 }
 
-// ../obieg-zero-plugins/node_modules/d3-zoom/src/noevent.js
+// ../node_modules/d3-zoom/src/noevent.js
 function nopropagation2(event) {
   event.stopImmediatePropagation();
 }
@@ -3687,7 +3650,7 @@ function noevent_default2(event) {
   event.stopImmediatePropagation();
 }
 
-// ../obieg-zero-plugins/node_modules/d3-zoom/src/zoom.js
+// ../node_modules/d3-zoom/src/zoom.js
 function defaultFilter2(event) {
   return (!event.ctrlKey || event.type === "wheel") && !event.button;
 }
@@ -4002,7 +3965,7 @@ function zoom_default2() {
   return zoom;
 }
 
-// ../obieg-zero-plugins/node_modules/@xyflow/system/dist/esm/index.js
+// ../node_modules/@xyflow/system/dist/esm/index.js
 var errorMessages = {
   error001: () => "[React Flow]: Seems like you have not used zustand provider as an ancestor. Help: https://reactflow.dev/error#001",
   error002: () => "It looks like you've created a new nodeTypes or edgeTypes object. If this wasn't on purpose please define the nodeTypes/edgeTypes outside of the component or memoize them.",
@@ -6602,11 +6565,11 @@ function XYResizer({ domNode, nodeId, getStoreItems, onChange, onEnd }) {
   };
 }
 
-// ../obieg-zero-plugins/node_modules/zustand/esm/traditional.mjs
-init_react();
+// ../node_modules/zustand/esm/traditional.mjs
 var import_with_selector = __toESM(require_with_selector(), 1);
+import ReactExports from "react";
 
-// ../obieg-zero-plugins/node_modules/zustand/esm/vanilla.mjs
+// ../node_modules/zustand/esm/vanilla.mjs
 var createStoreImpl = (createState) => {
   let state;
   const listeners = /* @__PURE__ */ new Set();
@@ -6638,8 +6601,8 @@ var createStoreImpl = (createState) => {
 };
 var createStore = (createState) => createState ? createStoreImpl(createState) : createStoreImpl;
 
-// ../obieg-zero-plugins/node_modules/zustand/esm/traditional.mjs
-var { useDebugValue } = react_default;
+// ../node_modules/zustand/esm/traditional.mjs
+var { useDebugValue } = ReactExports;
 var { useSyncExternalStoreWithSelector } = import_with_selector.default;
 var identity3 = (arg) => arg;
 function useStoreWithEqualityFn(api, selector = identity3, equalityFn) {
@@ -6661,7 +6624,7 @@ var createWithEqualityFnImpl = (createState, defaultEqualityFn) => {
 };
 var createWithEqualityFn = (createState, defaultEqualityFn) => createState ? createWithEqualityFnImpl(createState, defaultEqualityFn) : createWithEqualityFnImpl;
 
-// ../obieg-zero-plugins/node_modules/zustand/esm/shallow.mjs
+// ../node_modules/zustand/esm/shallow.mjs
 function shallow$1(objA, objB) {
   if (Object.is(objA, objB)) {
     return true;
@@ -6699,11 +6662,8 @@ function shallow$1(objA, objB) {
   return true;
 }
 
-// ../obieg-zero-plugins/.shims/react-dom.mjs
-var R2 = globalThis.__obieg.ReactDOM;
-var { createPortal, flushSync, render, hydrate, unmountComponentAtNode } = R2;
-
-// ../obieg-zero-plugins/node_modules/@xyflow/react/dist/esm/index.js
+// ../node_modules/@xyflow/react/dist/esm/index.js
+import { createPortal } from "react-dom";
 var StoreContext = createContext(null);
 var Provider$1 = StoreContext.Provider;
 var zustandErrorMessage = errorMessages["error001"]();
@@ -6748,7 +6708,7 @@ function AriaLiveMessage({ rfId }) {
 }
 function A11yDescriptions({ rfId, disableKeyboardA11y }) {
   const ariaLabelConfig = useStore(ariaLabelConfigSelector);
-  return jsxs(Fragment2, { children: [jsx("div", { id: `${ARIA_NODE_DESC_KEY}-${rfId}`, style, children: disableKeyboardA11y ? ariaLabelConfig["node.a11yDescription.default"] : ariaLabelConfig["node.a11yDescription.keyboardDisabled"] }), jsx("div", { id: `${ARIA_EDGE_DESC_KEY}-${rfId}`, style, children: ariaLabelConfig["edge.a11yDescription.default"] }), !disableKeyboardA11y && jsx(AriaLiveMessage, { rfId })] });
+  return jsxs(Fragment, { children: [jsx("div", { id: `${ARIA_NODE_DESC_KEY}-${rfId}`, style, children: disableKeyboardA11y ? ariaLabelConfig["node.a11yDescription.default"] : ariaLabelConfig["node.a11yDescription.keyboardDisabled"] }), jsx("div", { id: `${ARIA_EDGE_DESC_KEY}-${rfId}`, style, children: ariaLabelConfig["edge.a11yDescription.default"] }), !disableKeyboardA11y && jsx(AriaLiveMessage, { rfId })] });
 }
 var Panel = forwardRef(({ position = "top-left", children: children2, className, style: style2, ...rest }, ref) => {
   const positionClasses = `${position}`.split("-");
@@ -7246,8 +7206,8 @@ function elementToRemoveChange(item) {
 }
 var isNode = (element) => isNodeBase(element);
 var isEdge = (element) => isEdgeBase(element);
-function fixedForwardRef(render2) {
-  return forwardRef(render2);
+function fixedForwardRef(render) {
+  return forwardRef(render);
 }
 var useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 function useQueue(runQueue) {
@@ -8063,16 +8023,16 @@ function HandleComponent({ type = "source", position = Position.Top, isValidConn
 }
 var Handle = memo(fixedForwardRef(HandleComponent));
 function InputNode({ data, isConnectable, sourcePosition = Position.Bottom }) {
-  return jsxs(Fragment2, { children: [data?.label, jsx(Handle, { type: "source", position: sourcePosition, isConnectable })] });
+  return jsxs(Fragment, { children: [data?.label, jsx(Handle, { type: "source", position: sourcePosition, isConnectable })] });
 }
 function DefaultNode({ data, isConnectable, targetPosition = Position.Top, sourcePosition = Position.Bottom }) {
-  return jsxs(Fragment2, { children: [jsx(Handle, { type: "target", position: targetPosition, isConnectable }), data?.label, jsx(Handle, { type: "source", position: sourcePosition, isConnectable })] });
+  return jsxs(Fragment, { children: [jsx(Handle, { type: "target", position: targetPosition, isConnectable }), data?.label, jsx(Handle, { type: "source", position: sourcePosition, isConnectable })] });
 }
 function GroupNode() {
   return null;
 }
 function OutputNode({ data, isConnectable, targetPosition = Position.Top }) {
-  return jsxs(Fragment2, { children: [jsx(Handle, { type: "target", position: targetPosition, isConnectable }), data?.label] });
+  return jsxs(Fragment, { children: [jsx(Handle, { type: "target", position: targetPosition, isConnectable }), data?.label] });
 }
 var arrowKeyDiffs = {
   ArrowUp: { x: 0, y: -1 },
@@ -8514,7 +8474,7 @@ function EdgeTextComponent({ x, y, label, labelStyle, labelShowBg = true, labelB
 EdgeTextComponent.displayName = "EdgeText";
 var EdgeText = memo(EdgeTextComponent);
 function BaseEdge({ path, labelX, labelY, label, labelStyle, labelShowBg, labelBgStyle, labelBgPadding, labelBgBorderRadius, interactionWidth = 20, ...props }) {
-  return jsxs(Fragment2, { children: [jsx("path", { ...props, d: path, fill: "none", className: cc(["react-flow__edge-path", props.className]) }), interactionWidth ? jsx("path", { d: path, fill: "none", strokeOpacity: 0, strokeWidth: interactionWidth, className: "react-flow__edge-interaction" }) : null, label && isNumeric(labelX) && isNumeric(labelY) ? jsx(EdgeText, { x: labelX, y: labelY, label, labelStyle, labelShowBg, labelBgStyle, labelBgPadding, labelBgBorderRadius }) : null] });
+  return jsxs(Fragment, { children: [jsx("path", { ...props, d: path, fill: "none", className: cc(["react-flow__edge-path", props.className]) }), interactionWidth ? jsx("path", { d: path, fill: "none", strokeOpacity: 0, strokeWidth: interactionWidth, className: "react-flow__edge-interaction" }) : null, label && isNumeric(labelX) && isNumeric(labelY) ? jsx(EdgeText, { x: labelX, y: labelY, label, labelStyle, labelShowBg, labelBgStyle, labelBgPadding, labelBgBorderRadius }) : null] });
 }
 function getControl({ pos, x1, y1, x2, y2 }) {
   if (pos === Position.Left || pos === Position.Right) {
@@ -8715,7 +8675,7 @@ function EdgeUpdateAnchors({ isReconnectable, reconnectRadius, edge, sourceX, so
   const onReconnectTargetMouseDown = (event) => handleEdgeUpdater(event, { nodeId: edge.source, id: edge.sourceHandle ?? null, type: "source" });
   const onReconnectMouseEnter = () => setUpdateHover(true);
   const onReconnectMouseOut = () => setUpdateHover(false);
-  return jsxs(Fragment2, { children: [(isReconnectable === true || isReconnectable === "source") && jsx(EdgeAnchor, { position: sourcePosition, centerX: sourceX, centerY: sourceY, radius: reconnectRadius, onMouseDown: onReconnectSourceMouseDown, onMouseEnter: onReconnectMouseEnter, onMouseOut: onReconnectMouseOut, type: "source" }), (isReconnectable === true || isReconnectable === "target") && jsx(EdgeAnchor, { position: targetPosition, centerX: targetX, centerY: targetY, radius: reconnectRadius, onMouseDown: onReconnectTargetMouseDown, onMouseEnter: onReconnectMouseEnter, onMouseOut: onReconnectMouseOut, type: "target" })] });
+  return jsxs(Fragment, { children: [(isReconnectable === true || isReconnectable === "source") && jsx(EdgeAnchor, { position: sourcePosition, centerX: sourceX, centerY: sourceY, radius: reconnectRadius, onMouseDown: onReconnectSourceMouseDown, onMouseEnter: onReconnectMouseEnter, onMouseOut: onReconnectMouseOut, type: "source" }), (isReconnectable === true || isReconnectable === "target") && jsx(EdgeAnchor, { position: targetPosition, centerX: targetX, centerY: targetY, radius: reconnectRadius, onMouseDown: onReconnectTargetMouseDown, onMouseEnter: onReconnectMouseEnter, onMouseOut: onReconnectMouseOut, type: "target" })] });
 }
 function EdgeWrapper({ id: id2, edgesFocusable, edgesReconnectable, elementsSelectable, onClick, onDoubleClick, onContextMenu, onMouseEnter, onMouseMove, onMouseLeave, reconnectRadius, onReconnect, onReconnectStart, onReconnectEnd, rfId, edgeTypes, noPanClassName, onError, disableKeyboardA11y }) {
   let edge = useStore((s) => s.edgeLookup.get(id2));
@@ -9365,7 +9325,7 @@ function ReactFlowProvider({ initialNodes: nodes, initialEdges: edges, defaultNo
 function Wrapper({ children: children2, nodes, edges, defaultNodes, defaultEdges, width, height, fitView, fitViewOptions, minZoom, maxZoom, nodeOrigin, nodeExtent, zIndexMode }) {
   const isWrapped = useContext(StoreContext);
   if (isWrapped) {
-    return jsx(Fragment2, { children: children2 });
+    return jsx(Fragment, { children: children2 });
   }
   return jsx(ReactFlowProvider, { initialNodes: nodes, initialEdges: edges, defaultNodes, defaultEdges, initialWidth: width, initialHeight: height, fitView, initialFitViewOptions: fitViewOptions, initialMinZoom: minZoom, initialMaxZoom: maxZoom, nodeOrigin, nodeExtent, zIndexMode, children: children2 });
 }
@@ -9493,7 +9453,7 @@ function ControlsComponent({ style: style2, showZoom = true, showFitView = true,
     onInteractiveChange?.(!isInteractive);
   };
   const orientationClass = orientation === "horizontal" ? "horizontal" : "vertical";
-  return jsxs(Panel, { className: cc(["react-flow__controls", orientationClass, className]), position, style: style2, "data-testid": "rf__controls", "aria-label": ariaLabel ?? ariaLabelConfig["controls.ariaLabel"], children: [showZoom && jsxs(Fragment2, { children: [jsx(ControlButton, { onClick: onZoomInHandler, className: "react-flow__controls-zoomin", title: ariaLabelConfig["controls.zoomIn.ariaLabel"], "aria-label": ariaLabelConfig["controls.zoomIn.ariaLabel"], disabled: maxZoomReached, children: jsx(PlusIcon, {}) }), jsx(ControlButton, { onClick: onZoomOutHandler, className: "react-flow__controls-zoomout", title: ariaLabelConfig["controls.zoomOut.ariaLabel"], "aria-label": ariaLabelConfig["controls.zoomOut.ariaLabel"], disabled: minZoomReached, children: jsx(MinusIcon, {}) })] }), showFitView && jsx(ControlButton, { className: "react-flow__controls-fitview", onClick: onFitViewHandler, title: ariaLabelConfig["controls.fitView.ariaLabel"], "aria-label": ariaLabelConfig["controls.fitView.ariaLabel"], children: jsx(FitViewIcon, {}) }), showInteractive && jsx(ControlButton, { className: "react-flow__controls-interactive", onClick: onToggleInteractivity, title: ariaLabelConfig["controls.interactive.ariaLabel"], "aria-label": ariaLabelConfig["controls.interactive.ariaLabel"], children: isInteractive ? jsx(UnlockIcon, {}) : jsx(LockIcon, {}) }), children2] });
+  return jsxs(Panel, { className: cc(["react-flow__controls", orientationClass, className]), position, style: style2, "data-testid": "rf__controls", "aria-label": ariaLabel ?? ariaLabelConfig["controls.ariaLabel"], children: [showZoom && jsxs(Fragment, { children: [jsx(ControlButton, { onClick: onZoomInHandler, className: "react-flow__controls-zoomin", title: ariaLabelConfig["controls.zoomIn.ariaLabel"], "aria-label": ariaLabelConfig["controls.zoomIn.ariaLabel"], disabled: maxZoomReached, children: jsx(PlusIcon, {}) }), jsx(ControlButton, { onClick: onZoomOutHandler, className: "react-flow__controls-zoomout", title: ariaLabelConfig["controls.zoomOut.ariaLabel"], "aria-label": ariaLabelConfig["controls.zoomOut.ariaLabel"], disabled: minZoomReached, children: jsx(MinusIcon, {}) })] }), showFitView && jsx(ControlButton, { className: "react-flow__controls-fitview", onClick: onFitViewHandler, title: ariaLabelConfig["controls.fitView.ariaLabel"], "aria-label": ariaLabelConfig["controls.fitView.ariaLabel"], children: jsx(FitViewIcon, {}) }), showInteractive && jsx(ControlButton, { className: "react-flow__controls-interactive", onClick: onToggleInteractivity, title: ariaLabelConfig["controls.interactive.ariaLabel"], "aria-label": ariaLabelConfig["controls.interactive.ariaLabel"], children: isInteractive ? jsx(UnlockIcon, {}) : jsx(LockIcon, {}) }), children2] });
 }
 ControlsComponent.displayName = "Controls";
 var Controls = memo(ControlsComponent);
@@ -9527,7 +9487,7 @@ function MiniMapNodes({
   const nodeStrokeColorFunc = getAttrFunction(nodeStrokeColor);
   const nodeClassNameFunc = getAttrFunction(nodeClassName);
   const shapeRendering = typeof window === "undefined" || !!window.chrome ? "crispEdges" : "geometricPrecision";
-  return jsx(Fragment2, { children: nodeIds.map((nodeId) => (
+  return jsx(Fragment, { children: nodeIds.map((nodeId) => (
     /*
      * The split of responsibilities between MiniMapNodes and
      * NodeComponentWrapper may appear weird. However, it’s designed to
@@ -9820,9 +9780,9 @@ function ResizeControl({ nodeId, position, variant = ResizeControlVariant.Handle
 }
 var NodeResizeControl = memo(ResizeControl);
 
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/alert-circle.js
-init_react();
+// ../node_modules/react-feather/dist/icons/alert-circle.js
 var import_prop_types = __toESM(require_prop_types());
+import React, { forwardRef as forwardRef2 } from "react";
 function _extends() {
   _extends = Object.assign || function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -9864,9 +9824,9 @@ function _objectWithoutPropertiesLoose(source, excluded) {
   }
   return target;
 }
-var AlertCircle = forwardRef(function(_ref, ref) {
+var AlertCircle = forwardRef2(function(_ref, ref) {
   var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends({
+  return /* @__PURE__ */ React.createElement("svg", _extends({
     ref,
     xmlns: "http://www.w3.org/2000/svg",
     width: size,
@@ -9877,16 +9837,16 @@ var AlertCircle = forwardRef(function(_ref, ref) {
     strokeWidth: "2",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("circle", {
+  }, rest), /* @__PURE__ */ React.createElement("circle", {
     cx: "12",
     cy: "12",
     r: "10"
-  }), /* @__PURE__ */ react_default.createElement("line", {
+  }), /* @__PURE__ */ React.createElement("line", {
     x1: "12",
     y1: "8",
     x2: "12",
     y2: "12"
-  }), /* @__PURE__ */ react_default.createElement("line", {
+  }), /* @__PURE__ */ React.createElement("line", {
     x1: "12",
     y1: "16",
     x2: "12.01",
@@ -9900,9 +9860,9 @@ AlertCircle.propTypes = {
 AlertCircle.displayName = "AlertCircle";
 var alert_circle_default = AlertCircle;
 
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/check.js
-init_react();
+// ../node_modules/react-feather/dist/icons/check.js
 var import_prop_types2 = __toESM(require_prop_types());
+import React2, { forwardRef as forwardRef3 } from "react";
 function _extends2() {
   _extends2 = Object.assign || function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -9944,9 +9904,9 @@ function _objectWithoutPropertiesLoose2(source, excluded) {
   }
   return target;
 }
-var Check = forwardRef(function(_ref, ref) {
+var Check = forwardRef3(function(_ref, ref) {
   var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties2(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends2({
+  return /* @__PURE__ */ React2.createElement("svg", _extends2({
     ref,
     xmlns: "http://www.w3.org/2000/svg",
     width: size,
@@ -9957,7 +9917,7 @@ var Check = forwardRef(function(_ref, ref) {
     strokeWidth: "2",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("polyline", {
+  }, rest), /* @__PURE__ */ React2.createElement("polyline", {
     points: "20 6 9 17 4 12"
   }));
 });
@@ -9968,9 +9928,9 @@ Check.propTypes = {
 Check.displayName = "Check";
 var check_default = Check;
 
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/cpu.js
-init_react();
+// ../node_modules/react-feather/dist/icons/cpu.js
 var import_prop_types3 = __toESM(require_prop_types());
+import React3, { forwardRef as forwardRef4 } from "react";
 function _extends3() {
   _extends3 = Object.assign || function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -10012,9 +9972,9 @@ function _objectWithoutPropertiesLoose3(source, excluded) {
   }
   return target;
 }
-var Cpu = forwardRef(function(_ref, ref) {
+var Cpu = forwardRef4(function(_ref, ref) {
   var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties3(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends3({
+  return /* @__PURE__ */ React3.createElement("svg", _extends3({
     ref,
     xmlns: "http://www.w3.org/2000/svg",
     width: size,
@@ -10025,54 +9985,54 @@ var Cpu = forwardRef(function(_ref, ref) {
     strokeWidth: "2",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("rect", {
+  }, rest), /* @__PURE__ */ React3.createElement("rect", {
     x: "4",
     y: "4",
     width: "16",
     height: "16",
     rx: "2",
     ry: "2"
-  }), /* @__PURE__ */ react_default.createElement("rect", {
+  }), /* @__PURE__ */ React3.createElement("rect", {
     x: "9",
     y: "9",
     width: "6",
     height: "6"
-  }), /* @__PURE__ */ react_default.createElement("line", {
+  }), /* @__PURE__ */ React3.createElement("line", {
     x1: "9",
     y1: "1",
     x2: "9",
     y2: "4"
-  }), /* @__PURE__ */ react_default.createElement("line", {
+  }), /* @__PURE__ */ React3.createElement("line", {
     x1: "15",
     y1: "1",
     x2: "15",
     y2: "4"
-  }), /* @__PURE__ */ react_default.createElement("line", {
+  }), /* @__PURE__ */ React3.createElement("line", {
     x1: "9",
     y1: "20",
     x2: "9",
     y2: "23"
-  }), /* @__PURE__ */ react_default.createElement("line", {
+  }), /* @__PURE__ */ React3.createElement("line", {
     x1: "15",
     y1: "20",
     x2: "15",
     y2: "23"
-  }), /* @__PURE__ */ react_default.createElement("line", {
+  }), /* @__PURE__ */ React3.createElement("line", {
     x1: "20",
     y1: "9",
     x2: "23",
     y2: "9"
-  }), /* @__PURE__ */ react_default.createElement("line", {
+  }), /* @__PURE__ */ React3.createElement("line", {
     x1: "20",
     y1: "14",
     x2: "23",
     y2: "14"
-  }), /* @__PURE__ */ react_default.createElement("line", {
+  }), /* @__PURE__ */ React3.createElement("line", {
     x1: "1",
     y1: "9",
     x2: "4",
     y2: "9"
-  }), /* @__PURE__ */ react_default.createElement("line", {
+  }), /* @__PURE__ */ React3.createElement("line", {
     x1: "1",
     y1: "14",
     x2: "4",
@@ -10086,9 +10046,9 @@ Cpu.propTypes = {
 Cpu.displayName = "Cpu";
 var cpu_default = Cpu;
 
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/download.js
-init_react();
+// ../node_modules/react-feather/dist/icons/download.js
 var import_prop_types4 = __toESM(require_prop_types());
+import React4, { forwardRef as forwardRef5 } from "react";
 function _extends4() {
   _extends4 = Object.assign || function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -10130,9 +10090,9 @@ function _objectWithoutPropertiesLoose4(source, excluded) {
   }
   return target;
 }
-var Download = forwardRef(function(_ref, ref) {
+var Download = forwardRef5(function(_ref, ref) {
   var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties4(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends4({
+  return /* @__PURE__ */ React4.createElement("svg", _extends4({
     ref,
     xmlns: "http://www.w3.org/2000/svg",
     width: size,
@@ -10143,11 +10103,11 @@ var Download = forwardRef(function(_ref, ref) {
     strokeWidth: "2",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("path", {
+  }, rest), /* @__PURE__ */ React4.createElement("path", {
     d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-  }), /* @__PURE__ */ react_default.createElement("polyline", {
+  }), /* @__PURE__ */ React4.createElement("polyline", {
     points: "7 10 12 15 17 10"
-  }), /* @__PURE__ */ react_default.createElement("line", {
+  }), /* @__PURE__ */ React4.createElement("line", {
     x1: "12",
     y1: "15",
     x2: "12",
@@ -10161,9 +10121,9 @@ Download.propTypes = {
 Download.displayName = "Download";
 var download_default = Download;
 
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/file-text.js
-init_react();
+// ../node_modules/react-feather/dist/icons/file-text.js
 var import_prop_types5 = __toESM(require_prop_types());
+import React5, { forwardRef as forwardRef6 } from "react";
 function _extends5() {
   _extends5 = Object.assign || function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -10205,9 +10165,9 @@ function _objectWithoutPropertiesLoose5(source, excluded) {
   }
   return target;
 }
-var FileText = forwardRef(function(_ref, ref) {
+var FileText = forwardRef6(function(_ref, ref) {
   var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties5(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends5({
+  return /* @__PURE__ */ React5.createElement("svg", _extends5({
     ref,
     xmlns: "http://www.w3.org/2000/svg",
     width: size,
@@ -10218,21 +10178,21 @@ var FileText = forwardRef(function(_ref, ref) {
     strokeWidth: "2",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("path", {
+  }, rest), /* @__PURE__ */ React5.createElement("path", {
     d: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-  }), /* @__PURE__ */ react_default.createElement("polyline", {
+  }), /* @__PURE__ */ React5.createElement("polyline", {
     points: "14 2 14 8 20 8"
-  }), /* @__PURE__ */ react_default.createElement("line", {
+  }), /* @__PURE__ */ React5.createElement("line", {
     x1: "16",
     y1: "13",
     x2: "8",
     y2: "13"
-  }), /* @__PURE__ */ react_default.createElement("line", {
+  }), /* @__PURE__ */ React5.createElement("line", {
     x1: "16",
     y1: "17",
     x2: "8",
     y2: "17"
-  }), /* @__PURE__ */ react_default.createElement("polyline", {
+  }), /* @__PURE__ */ React5.createElement("polyline", {
     points: "10 9 9 9 8 9"
   }));
 });
@@ -10243,9 +10203,9 @@ FileText.propTypes = {
 FileText.displayName = "FileText";
 var file_text_default = FileText;
 
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/filter.js
-init_react();
+// ../node_modules/react-feather/dist/icons/filter.js
 var import_prop_types6 = __toESM(require_prop_types());
+import React6, { forwardRef as forwardRef7 } from "react";
 function _extends6() {
   _extends6 = Object.assign || function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -10287,9 +10247,9 @@ function _objectWithoutPropertiesLoose6(source, excluded) {
   }
   return target;
 }
-var Filter = forwardRef(function(_ref, ref) {
+var Filter = forwardRef7(function(_ref, ref) {
   var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties6(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends6({
+  return /* @__PURE__ */ React6.createElement("svg", _extends6({
     ref,
     xmlns: "http://www.w3.org/2000/svg",
     width: size,
@@ -10300,7 +10260,7 @@ var Filter = forwardRef(function(_ref, ref) {
     strokeWidth: "2",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("polygon", {
+  }, rest), /* @__PURE__ */ React6.createElement("polygon", {
     points: "22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"
   }));
 });
@@ -10311,9 +10271,9 @@ Filter.propTypes = {
 Filter.displayName = "Filter";
 var filter_default3 = Filter;
 
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/git-branch.js
-init_react();
+// ../node_modules/react-feather/dist/icons/git-branch.js
 var import_prop_types7 = __toESM(require_prop_types());
+import React7, { forwardRef as forwardRef8 } from "react";
 function _extends7() {
   _extends7 = Object.assign || function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -10355,9 +10315,9 @@ function _objectWithoutPropertiesLoose7(source, excluded) {
   }
   return target;
 }
-var GitBranch = forwardRef(function(_ref, ref) {
+var GitBranch = forwardRef8(function(_ref, ref) {
   var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties7(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends7({
+  return /* @__PURE__ */ React7.createElement("svg", _extends7({
     ref,
     xmlns: "http://www.w3.org/2000/svg",
     width: size,
@@ -10368,20 +10328,20 @@ var GitBranch = forwardRef(function(_ref, ref) {
     strokeWidth: "2",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("line", {
+  }, rest), /* @__PURE__ */ React7.createElement("line", {
     x1: "6",
     y1: "3",
     x2: "6",
     y2: "15"
-  }), /* @__PURE__ */ react_default.createElement("circle", {
+  }), /* @__PURE__ */ React7.createElement("circle", {
     cx: "18",
     cy: "6",
     r: "3"
-  }), /* @__PURE__ */ react_default.createElement("circle", {
+  }), /* @__PURE__ */ React7.createElement("circle", {
     cx: "6",
     cy: "18",
     r: "3"
-  }), /* @__PURE__ */ react_default.createElement("path", {
+  }), /* @__PURE__ */ React7.createElement("path", {
     d: "M18 9a9 9 0 0 1-9 9"
   }));
 });
@@ -10392,9 +10352,9 @@ GitBranch.propTypes = {
 GitBranch.displayName = "GitBranch";
 var git_branch_default = GitBranch;
 
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/globe.js
-init_react();
+// ../node_modules/react-feather/dist/icons/globe.js
 var import_prop_types8 = __toESM(require_prop_types());
+import React8, { forwardRef as forwardRef9 } from "react";
 function _extends8() {
   _extends8 = Object.assign || function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -10436,9 +10396,9 @@ function _objectWithoutPropertiesLoose8(source, excluded) {
   }
   return target;
 }
-var Globe = forwardRef(function(_ref, ref) {
+var Globe = forwardRef9(function(_ref, ref) {
   var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties8(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends8({
+  return /* @__PURE__ */ React8.createElement("svg", _extends8({
     ref,
     xmlns: "http://www.w3.org/2000/svg",
     width: size,
@@ -10449,16 +10409,16 @@ var Globe = forwardRef(function(_ref, ref) {
     strokeWidth: "2",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("circle", {
+  }, rest), /* @__PURE__ */ React8.createElement("circle", {
     cx: "12",
     cy: "12",
     r: "10"
-  }), /* @__PURE__ */ react_default.createElement("line", {
+  }), /* @__PURE__ */ React8.createElement("line", {
     x1: "2",
     y1: "12",
     x2: "22",
     y2: "12"
-  }), /* @__PURE__ */ react_default.createElement("path", {
+  }), /* @__PURE__ */ React8.createElement("path", {
     d: "M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
   }));
 });
@@ -10469,9 +10429,9 @@ Globe.propTypes = {
 Globe.displayName = "Globe";
 var globe_default = Globe;
 
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/layers.js
-init_react();
+// ../node_modules/react-feather/dist/icons/layers.js
 var import_prop_types9 = __toESM(require_prop_types());
+import React9, { forwardRef as forwardRef10 } from "react";
 function _extends9() {
   _extends9 = Object.assign || function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -10513,9 +10473,9 @@ function _objectWithoutPropertiesLoose9(source, excluded) {
   }
   return target;
 }
-var Layers = forwardRef(function(_ref, ref) {
+var Layers = forwardRef10(function(_ref, ref) {
   var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties9(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends9({
+  return /* @__PURE__ */ React9.createElement("svg", _extends9({
     ref,
     xmlns: "http://www.w3.org/2000/svg",
     width: size,
@@ -10526,11 +10486,11 @@ var Layers = forwardRef(function(_ref, ref) {
     strokeWidth: "2",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("polygon", {
+  }, rest), /* @__PURE__ */ React9.createElement("polygon", {
     points: "12 2 2 7 12 12 22 7 12 2"
-  }), /* @__PURE__ */ react_default.createElement("polyline", {
+  }), /* @__PURE__ */ React9.createElement("polyline", {
     points: "2 17 12 22 22 17"
-  }), /* @__PURE__ */ react_default.createElement("polyline", {
+  }), /* @__PURE__ */ React9.createElement("polyline", {
     points: "2 12 12 17 22 12"
   }));
 });
@@ -10541,9 +10501,9 @@ Layers.propTypes = {
 Layers.displayName = "Layers";
 var layers_default = Layers;
 
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/play.js
-init_react();
+// ../node_modules/react-feather/dist/icons/play.js
 var import_prop_types10 = __toESM(require_prop_types());
+import React10, { forwardRef as forwardRef11 } from "react";
 function _extends10() {
   _extends10 = Object.assign || function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -10585,9 +10545,9 @@ function _objectWithoutPropertiesLoose10(source, excluded) {
   }
   return target;
 }
-var Play = forwardRef(function(_ref, ref) {
+var Play = forwardRef11(function(_ref, ref) {
   var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties10(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends10({
+  return /* @__PURE__ */ React10.createElement("svg", _extends10({
     ref,
     xmlns: "http://www.w3.org/2000/svg",
     width: size,
@@ -10598,7 +10558,7 @@ var Play = forwardRef(function(_ref, ref) {
     strokeWidth: "2",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("polygon", {
+  }, rest), /* @__PURE__ */ React10.createElement("polygon", {
     points: "5 3 19 12 5 21 5 3"
   }));
 });
@@ -10609,9 +10569,9 @@ Play.propTypes = {
 Play.displayName = "Play";
 var play_default = Play;
 
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/shield.js
-init_react();
+// ../node_modules/react-feather/dist/icons/shield.js
 var import_prop_types11 = __toESM(require_prop_types());
+import React11, { forwardRef as forwardRef12 } from "react";
 function _extends11() {
   _extends11 = Object.assign || function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -10653,9 +10613,9 @@ function _objectWithoutPropertiesLoose11(source, excluded) {
   }
   return target;
 }
-var Shield = forwardRef(function(_ref, ref) {
+var Shield = forwardRef12(function(_ref, ref) {
   var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties11(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends11({
+  return /* @__PURE__ */ React11.createElement("svg", _extends11({
     ref,
     xmlns: "http://www.w3.org/2000/svg",
     width: size,
@@ -10666,7 +10626,7 @@ var Shield = forwardRef(function(_ref, ref) {
     strokeWidth: "2",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("path", {
+  }, rest), /* @__PURE__ */ React11.createElement("path", {
     d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
   }));
 });
@@ -10677,9 +10637,9 @@ Shield.propTypes = {
 Shield.displayName = "Shield";
 var shield_default = Shield;
 
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/tag.js
-init_react();
+// ../node_modules/react-feather/dist/icons/tag.js
 var import_prop_types12 = __toESM(require_prop_types());
+import React12, { forwardRef as forwardRef13 } from "react";
 function _extends12() {
   _extends12 = Object.assign || function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -10721,9 +10681,9 @@ function _objectWithoutPropertiesLoose12(source, excluded) {
   }
   return target;
 }
-var Tag = forwardRef(function(_ref, ref) {
+var Tag = forwardRef13(function(_ref, ref) {
   var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties12(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends12({
+  return /* @__PURE__ */ React12.createElement("svg", _extends12({
     ref,
     xmlns: "http://www.w3.org/2000/svg",
     width: size,
@@ -10734,9 +10694,9 @@ var Tag = forwardRef(function(_ref, ref) {
     strokeWidth: "2",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("path", {
+  }, rest), /* @__PURE__ */ React12.createElement("path", {
     d: "M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
-  }), /* @__PURE__ */ react_default.createElement("line", {
+  }), /* @__PURE__ */ React12.createElement("line", {
     x1: "7",
     y1: "7",
     x2: "7.01",
@@ -10750,9 +10710,9 @@ Tag.propTypes = {
 Tag.displayName = "Tag";
 var tag_default = Tag;
 
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/terminal.js
-init_react();
+// ../node_modules/react-feather/dist/icons/upload.js
 var import_prop_types13 = __toESM(require_prop_types());
+import React13, { forwardRef as forwardRef14 } from "react";
 function _extends13() {
   _extends13 = Object.assign || function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -10794,9 +10754,9 @@ function _objectWithoutPropertiesLoose13(source, excluded) {
   }
   return target;
 }
-var Terminal = forwardRef(function(_ref, ref) {
+var Upload = forwardRef14(function(_ref, ref) {
   var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties13(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends13({
+  return /* @__PURE__ */ React13.createElement("svg", _extends13({
     ref,
     xmlns: "http://www.w3.org/2000/svg",
     width: size,
@@ -10807,25 +10767,27 @@ var Terminal = forwardRef(function(_ref, ref) {
     strokeWidth: "2",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("polyline", {
-    points: "4 17 10 11 4 5"
-  }), /* @__PURE__ */ react_default.createElement("line", {
+  }, rest), /* @__PURE__ */ React13.createElement("path", {
+    d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+  }), /* @__PURE__ */ React13.createElement("polyline", {
+    points: "17 8 12 3 7 8"
+  }), /* @__PURE__ */ React13.createElement("line", {
     x1: "12",
-    y1: "19",
-    x2: "20",
-    y2: "19"
+    y1: "3",
+    x2: "12",
+    y2: "15"
   }));
 });
-Terminal.propTypes = {
+Upload.propTypes = {
   color: import_prop_types13.default.string,
   size: import_prop_types13.default.oneOfType([import_prop_types13.default.string, import_prop_types13.default.number])
 };
-Terminal.displayName = "Terminal";
-var terminal_default = Terminal;
+Upload.displayName = "Upload";
+var upload_default = Upload;
 
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/trash-2.js
-init_react();
+// ../node_modules/react-feather/dist/icons/x.js
 var import_prop_types14 = __toESM(require_prop_types());
+import React14, { forwardRef as forwardRef15 } from "react";
 function _extends14() {
   _extends14 = Object.assign || function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -10867,9 +10829,9 @@ function _objectWithoutPropertiesLoose14(source, excluded) {
   }
   return target;
 }
-var Trash2 = forwardRef(function(_ref, ref) {
+var X = forwardRef15(function(_ref, ref) {
   var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties14(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends14({
+  return /* @__PURE__ */ React14.createElement("svg", _extends14({
     ref,
     xmlns: "http://www.w3.org/2000/svg",
     width: size,
@@ -10880,167 +10842,12 @@ var Trash2 = forwardRef(function(_ref, ref) {
     strokeWidth: "2",
     strokeLinecap: "round",
     strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("polyline", {
-    points: "3 6 5 6 21 6"
-  }), /* @__PURE__ */ react_default.createElement("path", {
-    d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
-  }), /* @__PURE__ */ react_default.createElement("line", {
-    x1: "10",
-    y1: "11",
-    x2: "10",
-    y2: "17"
-  }), /* @__PURE__ */ react_default.createElement("line", {
-    x1: "14",
-    y1: "11",
-    x2: "14",
-    y2: "17"
-  }));
-});
-Trash2.propTypes = {
-  color: import_prop_types14.default.string,
-  size: import_prop_types14.default.oneOfType([import_prop_types14.default.string, import_prop_types14.default.number])
-};
-Trash2.displayName = "Trash2";
-var trash_2_default = Trash2;
-
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/upload.js
-init_react();
-var import_prop_types15 = __toESM(require_prop_types());
-function _extends15() {
-  _extends15 = Object.assign || function(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-    return target;
-  };
-  return _extends15.apply(this, arguments);
-}
-function _objectWithoutProperties15(source, excluded) {
-  if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose15(source, excluded);
-  var key, i;
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-function _objectWithoutPropertiesLoose15(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-  return target;
-}
-var Upload = forwardRef(function(_ref, ref) {
-  var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties15(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends15({
-    ref,
-    xmlns: "http://www.w3.org/2000/svg",
-    width: size,
-    height: size,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: color2,
-    strokeWidth: "2",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("path", {
-    d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-  }), /* @__PURE__ */ react_default.createElement("polyline", {
-    points: "17 8 12 3 7 8"
-  }), /* @__PURE__ */ react_default.createElement("line", {
-    x1: "12",
-    y1: "3",
-    x2: "12",
-    y2: "15"
-  }));
-});
-Upload.propTypes = {
-  color: import_prop_types15.default.string,
-  size: import_prop_types15.default.oneOfType([import_prop_types15.default.string, import_prop_types15.default.number])
-};
-Upload.displayName = "Upload";
-var upload_default = Upload;
-
-// ../obieg-zero-plugins/node_modules/react-feather/dist/icons/x.js
-init_react();
-var import_prop_types16 = __toESM(require_prop_types());
-function _extends16() {
-  _extends16 = Object.assign || function(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-    return target;
-  };
-  return _extends16.apply(this, arguments);
-}
-function _objectWithoutProperties16(source, excluded) {
-  if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose16(source, excluded);
-  var key, i;
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-function _objectWithoutPropertiesLoose16(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-  return target;
-}
-var X = forwardRef(function(_ref, ref) {
-  var _ref$color = _ref.color, color2 = _ref$color === void 0 ? "currentColor" : _ref$color, _ref$size = _ref.size, size = _ref$size === void 0 ? 24 : _ref$size, rest = _objectWithoutProperties16(_ref, ["color", "size"]);
-  return /* @__PURE__ */ react_default.createElement("svg", _extends16({
-    ref,
-    xmlns: "http://www.w3.org/2000/svg",
-    width: size,
-    height: size,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: color2,
-    strokeWidth: "2",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, rest), /* @__PURE__ */ react_default.createElement("line", {
+  }, rest), /* @__PURE__ */ React14.createElement("line", {
     x1: "18",
     y1: "6",
     x2: "6",
     y2: "18"
-  }), /* @__PURE__ */ react_default.createElement("line", {
+  }), /* @__PURE__ */ React14.createElement("line", {
     x1: "6",
     y1: "6",
     x2: "18",
@@ -11048,18 +10855,19 @@ var X = forwardRef(function(_ref, ref) {
   }));
 });
 X.propTypes = {
-  color: import_prop_types16.default.string,
-  size: import_prop_types16.default.oneOfType([import_prop_types16.default.string, import_prop_types16.default.number])
+  color: import_prop_types14.default.string,
+  size: import_prop_types14.default.oneOfType([import_prop_types14.default.string, import_prop_types14.default.number])
 };
 X.displayName = "X";
 var x_default = X;
 
-// ../obieg-zero-plugins/playground/src/nodes.tsx
+// src/nodes.tsx
+import { Fragment as Fragment2, jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
 var ICONS = { upload: upload_default, embed: layers_default, extract: cpu_default, "extract-api": globe_default, graph: git_branch_default, filter: filter_default3, validate: shield_default, classify: tag_default };
 function Status({ status }) {
-  if (status === "running") return /* @__PURE__ */ jsx("span", { className: "loading loading-spinner loading-xs" });
-  if (status === "done") return /* @__PURE__ */ jsx(check_default, { size: 12, className: "text-success shrink-0" });
-  if (status === "error") return /* @__PURE__ */ jsx(alert_circle_default, { size: 12, className: "text-error shrink-0" });
+  if (status === "running") return /* @__PURE__ */ jsx2("span", { className: "loading loading-spinner loading-xs" });
+  if (status === "done") return /* @__PURE__ */ jsx2(check_default, { size: 12, className: "text-success shrink-0" });
+  if (status === "error") return /* @__PURE__ */ jsx2(alert_circle_default, { size: 12, className: "text-error shrink-0" });
   return null;
 }
 function BlockNode({ data }) {
@@ -11067,18 +10875,18 @@ function BlockNode({ data }) {
   const Icon = ICONS[bt] || file_text_default;
   const err = data.status === "error", done = data.status === "done";
   const sub = data.config?.docGroup || data.result;
-  return /* @__PURE__ */ jsxs("div", { className: "bg-base-200 rounded-lg px-4 py-3 min-w-40", children: [
-    /* @__PURE__ */ jsx(Handle, { type: "target", position: Position.Top }),
-    /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2", children: [
-      /* @__PURE__ */ jsx(Icon, { size: 14, className: done ? "text-success" : err ? "text-error" : "text-base-content/50" }),
-      /* @__PURE__ */ jsx("span", { className: "font-medium text-xs", children: data.label }),
-      /* @__PURE__ */ jsx(Status, { status: data.status })
+  return /* @__PURE__ */ jsxs2("div", { className: "bg-base-200 rounded-lg px-4 py-3 min-w-40", children: [
+    /* @__PURE__ */ jsx2(Handle, { type: "target", position: Position.Top }),
+    /* @__PURE__ */ jsxs2("div", { className: "flex items-center gap-2", children: [
+      /* @__PURE__ */ jsx2(Icon, { size: 14, className: done ? "text-success" : err ? "text-error" : "text-base-content/50" }),
+      /* @__PURE__ */ jsx2("span", { className: "font-medium text-xs", children: data.label }),
+      /* @__PURE__ */ jsx2(Status, { status: data.status })
     ] }),
-    /* @__PURE__ */ jsx("div", { className: "text-2xs mt-0.5 text-base-content/30", children: bt }),
-    sub && /* @__PURE__ */ jsx("div", { className: `text-2xs mt-0.5 truncate max-w-48 ${err ? "text-error" : "text-base-content/40"}`, children: sub }),
-    /* @__PURE__ */ jsx(Handle, { type: "source", position: Position.Bottom, id: "next" }),
-    /* @__PURE__ */ jsx(Handle, { type: "source", position: Position.Right, id: "data", style: { background: "color-mix(in oklch, var(--color-base-content) 30%, transparent)" } }),
-    /* @__PURE__ */ jsx(Handle, { type: "source", position: Position.Left, id: "data-left", style: { background: "color-mix(in oklch, var(--color-base-content) 30%, transparent)" } })
+    /* @__PURE__ */ jsx2("div", { className: "text-2xs mt-0.5 text-base-content/30", children: bt }),
+    sub && /* @__PURE__ */ jsx2("div", { className: `text-2xs mt-0.5 truncate max-w-48 ${err ? "text-error" : "text-base-content/40"}`, children: sub }),
+    /* @__PURE__ */ jsx2(Handle, { type: "source", position: Position.Bottom, id: "next" }),
+    /* @__PURE__ */ jsx2(Handle, { type: "source", position: Position.Right, id: "data", style: { background: "color-mix(in oklch, var(--color-base-content) 30%, transparent)" } }),
+    /* @__PURE__ */ jsx2(Handle, { type: "source", position: Position.Left, id: "data-left", style: { background: "color-mix(in oklch, var(--color-base-content) 30%, transparent)" } })
   ] });
 }
 function UploadNode({ id: id2, data }) {
@@ -11086,60 +10894,60 @@ function UploadNode({ id: id2, data }) {
   const Icon = ICONS.upload;
   const err = data.status === "error", done = data.status === "done";
   const group = data.config?.docGroup;
-  return /* @__PURE__ */ jsxs("div", { className: "bg-base-200 rounded-lg px-4 py-3 min-w-40", children: [
-    /* @__PURE__ */ jsx(Handle, { type: "target", position: Position.Top }),
-    /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2", children: [
-      /* @__PURE__ */ jsx(Icon, { size: 14, className: done ? "text-success" : err ? "text-error" : "text-base-content/50" }),
-      /* @__PURE__ */ jsx("span", { className: "font-medium text-xs", children: group || data.label }),
-      /* @__PURE__ */ jsx(Status, { status: data.status })
+  return /* @__PURE__ */ jsxs2("div", { className: "bg-base-200 rounded-lg px-4 py-3 min-w-40", children: [
+    /* @__PURE__ */ jsx2(Handle, { type: "target", position: Position.Top }),
+    /* @__PURE__ */ jsxs2("div", { className: "flex items-center gap-2", children: [
+      /* @__PURE__ */ jsx2(Icon, { size: 14, className: done ? "text-success" : err ? "text-error" : "text-base-content/50" }),
+      /* @__PURE__ */ jsx2("span", { className: "font-medium text-xs", children: group || data.label }),
+      /* @__PURE__ */ jsx2(Status, { status: data.status })
     ] }),
-    "result" in data && data.result ? /* @__PURE__ */ jsx("div", { className: `text-2xs mt-1 ${err ? "text-error" : "text-base-content/40"}`, children: String(data.result) }) : null,
-    /* @__PURE__ */ jsxs("label", { className: `flex items-center justify-center gap-2 rounded-md px-3 py-2 mt-2 cursor-pointer transition-colors
+    "result" in data && data.result ? /* @__PURE__ */ jsx2("div", { className: `text-2xs mt-1 ${err ? "text-error" : "text-base-content/40"}`, children: String(data.result) }) : null,
+    /* @__PURE__ */ jsxs2("label", { className: `flex items-center justify-center gap-2 rounded-md px-3 py-2 mt-2 cursor-pointer transition-colors
         ${data._fileNames ? "bg-base-300" : "bg-base-300/50 border border-dashed border-base-300 hover:bg-base-300"}`, children: [
-      data._fileNames ? /* @__PURE__ */ jsxs(Fragment2, { children: [
-        /* @__PURE__ */ jsx(file_text_default, { size: 12, className: "shrink-0 text-base-content/40" }),
-        /* @__PURE__ */ jsx("span", { className: "text-xs text-base-content/50 truncate max-w-40", children: data._fileNames })
-      ] }) : /* @__PURE__ */ jsxs(Fragment2, { children: [
-        /* @__PURE__ */ jsx(upload_default, { size: 12, className: "text-base-content/30" }),
-        /* @__PURE__ */ jsx("span", { className: "text-2xs text-base-content/30", children: "wybierz pliki" })
+      data._fileNames ? /* @__PURE__ */ jsxs2(Fragment2, { children: [
+        /* @__PURE__ */ jsx2(file_text_default, { size: 12, className: "shrink-0 text-base-content/40" }),
+        /* @__PURE__ */ jsx2("span", { className: "text-xs text-base-content/50 truncate max-w-40", children: data._fileNames })
+      ] }) : /* @__PURE__ */ jsxs2(Fragment2, { children: [
+        /* @__PURE__ */ jsx2(upload_default, { size: 12, className: "text-base-content/30" }),
+        /* @__PURE__ */ jsx2("span", { className: "text-2xs text-base-content/30", children: "wybierz pliki" })
       ] }),
-      /* @__PURE__ */ jsx("input", { type: "file", accept: ".pdf,.csv,.tsv,.txt,.json", multiple: true, hidden: true, onChange: (e) => {
+      /* @__PURE__ */ jsx2("input", { type: "file", accept: ".pdf,.csv,.tsv,.txt,.json", multiple: true, hidden: true, onChange: (e) => {
         const f = Array.from(e.target.files || []);
         if (f.length) updateNodeData(id2, { _files: f, _fileNames: f.map((x) => x.name).join(", ") });
       } })
     ] }),
-    /* @__PURE__ */ jsx(Handle, { type: "source", position: Position.Bottom, id: "next" }),
-    /* @__PURE__ */ jsx(Handle, { type: "source", position: Position.Right, id: "data", style: { background: "color-mix(in oklch, var(--color-base-content) 30%, transparent)" } }),
-    /* @__PURE__ */ jsx(Handle, { type: "source", position: Position.Left, id: "data-left", style: { background: "color-mix(in oklch, var(--color-base-content) 30%, transparent)" } })
+    /* @__PURE__ */ jsx2(Handle, { type: "source", position: Position.Bottom, id: "next" }),
+    /* @__PURE__ */ jsx2(Handle, { type: "source", position: Position.Right, id: "data", style: { background: "color-mix(in oklch, var(--color-base-content) 30%, transparent)" } }),
+    /* @__PURE__ */ jsx2(Handle, { type: "source", position: Position.Left, id: "data-left", style: { background: "color-mix(in oklch, var(--color-base-content) 30%, transparent)" } })
   ] });
 }
 function DataNode({ data }) {
-  return /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2 bg-base-300 rounded-md px-3 py-2 w-48 overflow-hidden", children: [
-    /* @__PURE__ */ jsx(Handle, { type: "target", position: Position.Left, id: "left" }),
-    /* @__PURE__ */ jsx(Handle, { type: "target", position: Position.Right, id: "right" }),
-    /* @__PURE__ */ jsx(file_text_default, { size: 12, className: "shrink-0 text-base-content/40" }),
-    /* @__PURE__ */ jsx("span", { className: "text-xs truncate flex-1 min-w-0", children: data.label }),
-    "detail" in data && data.detail ? /* @__PURE__ */ jsx("span", { className: "text-2xs text-base-content/30 truncate max-w-20", children: String(data.detail) }) : null
+  return /* @__PURE__ */ jsxs2("div", { className: "flex items-center gap-2 bg-base-300 rounded-md px-3 py-2 w-48 overflow-hidden", children: [
+    /* @__PURE__ */ jsx2(Handle, { type: "target", position: Position.Left, id: "left" }),
+    /* @__PURE__ */ jsx2(Handle, { type: "target", position: Position.Right, id: "right" }),
+    /* @__PURE__ */ jsx2(file_text_default, { size: 12, className: "shrink-0 text-base-content/40" }),
+    /* @__PURE__ */ jsx2("span", { className: "text-xs truncate flex-1 min-w-0", children: data.label }),
+    "detail" in data && data.detail ? /* @__PURE__ */ jsx2("span", { className: "text-2xs text-base-content/30 truncate max-w-20", children: String(data.detail) }) : null
   ] });
 }
 function EntityNode({ data }) {
   const shared = data.shared;
-  return /* @__PURE__ */ jsxs("div", { className: `flex items-center gap-2 rounded-md px-3 py-2 w-56 overflow-hidden ${shared ? "bg-primary/15 ring-1 ring-primary/30" : "bg-base-300"}`, children: [
-    /* @__PURE__ */ jsx(Handle, { type: "target", position: Position.Left, id: "left" }),
-    /* @__PURE__ */ jsx(Handle, { type: "target", position: Position.Right, id: "right" }),
-    /* @__PURE__ */ jsx("span", { className: `w-2 h-2 rounded-full shrink-0 ${shared ? "bg-primary" : "bg-base-content/20"}` }),
-    /* @__PURE__ */ jsx("span", { className: "text-xs truncate flex-1 min-w-0", children: data.label }),
-    /* @__PURE__ */ jsx("span", { className: "text-2xs text-base-content/30 truncate max-w-24", children: data.detail })
+  return /* @__PURE__ */ jsxs2("div", { className: `flex items-center gap-2 rounded-md px-3 py-2 w-56 overflow-hidden ${shared ? "bg-primary/15 ring-1 ring-primary/30" : "bg-base-300"}`, children: [
+    /* @__PURE__ */ jsx2(Handle, { type: "target", position: Position.Left, id: "left" }),
+    /* @__PURE__ */ jsx2(Handle, { type: "target", position: Position.Right, id: "right" }),
+    /* @__PURE__ */ jsx2("span", { className: `w-2 h-2 rounded-full shrink-0 ${shared ? "bg-primary" : "bg-base-content/20"}` }),
+    /* @__PURE__ */ jsx2("span", { className: "text-xs truncate flex-1 min-w-0", children: data.label }),
+    /* @__PURE__ */ jsx2("span", { className: "text-2xs text-base-content/30 truncate max-w-24", children: data.detail })
   ] });
 }
 function DocNode({ data }) {
-  return /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2 bg-base-200 ring-1 ring-base-300 rounded-md px-3 py-2 w-48 overflow-hidden", children: [
-    /* @__PURE__ */ jsx(Handle, { type: "source", position: Position.Right, id: "right" }),
-    /* @__PURE__ */ jsx(file_text_default, { size: 12, className: "shrink-0 text-base-content/40" }),
-    /* @__PURE__ */ jsx("span", { className: "text-xs font-medium truncate flex-1 min-w-0", children: data.label })
+  return /* @__PURE__ */ jsxs2("div", { className: "flex items-center gap-2 bg-base-200 ring-1 ring-base-300 rounded-md px-3 py-2 w-48 overflow-hidden", children: [
+    /* @__PURE__ */ jsx2(Handle, { type: "source", position: Position.Right, id: "right" }),
+    /* @__PURE__ */ jsx2(file_text_default, { size: 12, className: "shrink-0 text-base-content/40" }),
+    /* @__PURE__ */ jsx2("span", { className: "text-xs font-medium truncate flex-1 min-w-0", children: data.label })
   ] });
 }
-var mk = (bt) => (props) => /* @__PURE__ */ jsx(BlockNode, { ...props, data: { ...props.data, _blockType: bt } });
+var mk = (bt) => (props) => /* @__PURE__ */ jsx2(BlockNode, { ...props, data: { ...props.data, _blockType: bt } });
 var nodeTypes = {
   upload: UploadNode,
   embed: mk("embed"),
@@ -11154,16 +10962,18 @@ var nodeTypes = {
   doc: DocNode
 };
 
-// ../obieg-zero-plugins/playground/src/index.tsx
+// src/index.tsx
+import { Fragment as Fragment3, jsx as jsx3, jsxs as jsxs3 } from "react/jsx-runtime";
 var _host;
 var Box;
 var Cell;
-var Bar;
 var ListItem;
 var Field;
 var Tabs;
 var doAction;
 var getProvider;
+var sdkLog;
+var sdkClearLog;
 var execPipeline;
 var BIELIK = "https://huggingface.co/obieg-zero/Bielik-1.5B-v3.0-Instruct-GGUF/resolve/main/Bielik-1.5B-v3.0-Instruct.Q4_K_M.gguf";
 var PALETTE = [
@@ -11176,12 +10986,12 @@ var PALETTE = [
   { type: "validate", label: "Validate", icon: shield_default, config: { minConfidence: "0.8", onFail: "mark" } },
   { type: "graph", label: "Graph", icon: git_branch_default, config: {} }
 ];
-var Ctx = createContext(null);
-var use = () => useContext(Ctx);
+var Ctx = createContext2(null);
+var use = () => useContext2(Ctx);
 function SettingField({ label, settingKey }) {
-  const [value, setValue] = useState("");
-  const [loaded, setLoaded] = useState(false);
-  useEffect(() => {
+  const [value, setValue] = useState2("");
+  const [loaded, setLoaded] = useState2(false);
+  useEffect2(() => {
     _host.db.getSetting(settingKey).then((v) => {
       setValue(v || "");
       setLoaded(true);
@@ -11193,10 +11003,10 @@ function SettingField({ label, settingKey }) {
     _host.db.setSetting(settingKey, v);
   };
   const isPassword = label.toLowerCase().includes("key") || label.toLowerCase().includes("secret");
-  return /* @__PURE__ */ jsx(Field, { label: /* @__PURE__ */ jsxs(Fragment2, { children: [
-    /* @__PURE__ */ jsx("span", { className: "badge badge-xs badge-info mr-1", children: "setting" }),
+  return /* @__PURE__ */ jsx3(Field, { label: /* @__PURE__ */ jsxs3(Fragment3, { children: [
+    /* @__PURE__ */ jsx3("span", { className: "badge badge-xs badge-info mr-1", children: "setting" }),
     label
-  ] }), children: /* @__PURE__ */ jsx(
+  ] }), children: /* @__PURE__ */ jsx3(
     "input",
     {
       type: isPassword ? "password" : "text",
@@ -11211,10 +11021,10 @@ function LeftSidebar() {
   const { s, a } = use();
   const pApi = getProvider("projects");
   const { current: project } = pApi.useProjects();
-  return /* @__PURE__ */ jsxs(Fragment2, { children: [
-    /* @__PURE__ */ jsx(Box, { header: /* @__PURE__ */ jsx(Cell, { label: true, children: "Projekty" }), body: /* @__PURE__ */ jsx(pApi.ProjectList, {}) }),
-    project && /* @__PURE__ */ jsx(Box, { grow: true, header: /* @__PURE__ */ jsx(Cell, { label: true, children: "Schemat" }), body: /* @__PURE__ */ jsxs(Fragment2, { children: [
-      /* @__PURE__ */ jsx(
+  return /* @__PURE__ */ jsxs3(Fragment3, { children: [
+    /* @__PURE__ */ jsx3(Box, { header: /* @__PURE__ */ jsx3(Cell, { label: true, children: "Projekty" }), body: /* @__PURE__ */ jsx3(pApi.ProjectList, {}) }),
+    project && /* @__PURE__ */ jsx3(Box, { grow: true, header: /* @__PURE__ */ jsx3(Cell, { label: true, children: "Schemat" }), body: /* @__PURE__ */ jsxs3(Fragment3, { children: [
+      /* @__PURE__ */ jsx3(
         Tabs,
         {
           active: s.leftTab,
@@ -11222,7 +11032,7 @@ function LeftSidebar() {
           items: [{ id: "templates", label: "Szablony" }, { id: "blocks", label: "Bloki" }]
         }
       ),
-      s.leftTab === "templates" ? /* @__PURE__ */ jsx(Fragment2, { children: s.templates.map((t) => /* @__PURE__ */ jsx(
+      s.leftTab === "templates" ? /* @__PURE__ */ jsx3(Fragment3, { children: s.templates.map((t) => /* @__PURE__ */ jsx3(
         ListItem,
         {
           label: t.name,
@@ -11234,9 +11044,9 @@ function LeftSidebar() {
           }
         },
         t.id
-      )) }) : /* @__PURE__ */ jsx("div", { className: "grid grid-cols-3 gap-1 w-full", children: PALETTE.map((p) => {
+      )) }) : /* @__PURE__ */ jsx3("div", { className: "grid grid-cols-3 gap-1 w-full", children: PALETTE.map((p) => {
         const I = p.icon;
-        return /* @__PURE__ */ jsxs(
+        return /* @__PURE__ */ jsxs3(
           "div",
           {
             draggable: true,
@@ -11246,8 +11056,8 @@ function LeftSidebar() {
             },
             className: "flex flex-col items-center justify-center h-16 rounded-md hover:bg-base-200 cursor-grab transition-colors",
             children: [
-              /* @__PURE__ */ jsx(I, { size: 14, className: "text-base-content/50 mb-1" }),
-              /* @__PURE__ */ jsx("span", { className: "text-2xs text-base-content/40", children: p.label })
+              /* @__PURE__ */ jsx3(I, { size: 14, className: "text-base-content/50 mb-1" }),
+              /* @__PURE__ */ jsx3("span", { className: "text-2xs text-base-content/40", children: p.label })
             ]
           },
           p.type
@@ -11268,14 +11078,14 @@ function RightPanel() {
   const onLabel = (v) => {
     a.setNodes((ns) => ns.map((n) => n.id === node.id ? { ...n, data: { ...n.data, label: v } } : n));
   };
-  return /* @__PURE__ */ jsx(Box, { header: /* @__PURE__ */ jsxs(Fragment2, { children: [
-    /* @__PURE__ */ jsxs(Cell, { label: true, children: [
-      /* @__PURE__ */ jsx("span", { className: "badge badge-xs badge-ghost mr-2", children: node.type }),
+  return /* @__PURE__ */ jsx3(Box, { header: /* @__PURE__ */ jsxs3(Fragment3, { children: [
+    /* @__PURE__ */ jsxs3(Cell, { label: true, children: [
+      /* @__PURE__ */ jsx3("span", { className: "badge badge-xs badge-ghost mr-2", children: node.type }),
       node.data.label
     ] }),
-    /* @__PURE__ */ jsx(Cell, { onClick: () => a.setSelectedId(null), children: /* @__PURE__ */ jsx(x_default, { size: 12 }) })
-  ] }), body: /* @__PURE__ */ jsxs(Fragment2, { children: [
-    /* @__PURE__ */ jsx(Field, { label: "label", children: /* @__PURE__ */ jsx(
+    /* @__PURE__ */ jsx3(Cell, { onClick: () => a.setSelectedId(null), children: /* @__PURE__ */ jsx3(x_default, { size: 12 }) })
+  ] }), body: /* @__PURE__ */ jsxs3(Fragment3, { children: [
+    /* @__PURE__ */ jsx3(Field, { label: "label", children: /* @__PURE__ */ jsx3(
       "input",
       {
         type: "text",
@@ -11284,7 +11094,7 @@ function RightPanel() {
         className: "input input-bordered input-sm w-full text-xs"
       }
     ) }),
-    cfg.map(([k, v]) => /* @__PURE__ */ jsx(Field, { label: k, children: String(v).includes("\n") || k === "questions" ? /* @__PURE__ */ jsx(
+    cfg.map(([k, v]) => /* @__PURE__ */ jsx3(Field, { label: k, children: String(v).includes("\n") || k === "questions" ? /* @__PURE__ */ jsx3(
       "textarea",
       {
         value: String(v),
@@ -11292,7 +11102,7 @@ function RightPanel() {
         onChange: (e) => onCfg(k, e.target.value),
         className: "textarea textarea-bordered textarea-sm font-mono w-full"
       }
-    ) : /* @__PURE__ */ jsx(
+    ) : /* @__PURE__ */ jsx3(
       "input",
       {
         type: k === "apiKey" ? "password" : "text",
@@ -11302,56 +11112,38 @@ function RightPanel() {
         className: "input input-bordered input-sm w-full text-xs font-mono"
       }
     ) }, k)),
-    settings.length > 0 && settings.map(([k, ref]) => /* @__PURE__ */ jsx(SettingField, { label: k, settingKey: ref }, `s:${k}`))
+    settings.length > 0 && settings.map(([k, ref]) => /* @__PURE__ */ jsx3(SettingField, { label: k, settingKey: ref }, `s:${k}`))
   ] }) });
 }
 function FooterPanel() {
   const { s, a } = use();
-  const logRef = useRef(null);
-  useEffect(() => {
-    logRef.current?.scrollTo(0, logRef.current.scrollHeight);
-  }, [s.log]);
   if (!s.project) return null;
-  return /* @__PURE__ */ jsx("div", { children: s.running || s.log?.length > 0 ? /* @__PURE__ */ jsxs("div", { className: "flex flex-col", style: { maxHeight: "33vh" }, children: [
-    /* @__PURE__ */ jsxs(Bar, { children: [
-      s.running && /* @__PURE__ */ jsx("span", { className: "loading loading-spinner loading-xs text-warning mr-2" }),
-      /* @__PURE__ */ jsxs(Cell, { label: true, children: [
-        /* @__PURE__ */ jsx(terminal_default, { size: 12, className: "mr-2" }),
-        "Dziennik"
-      ] }),
-      !s.running && /* @__PURE__ */ jsx(Cell, { onClick: () => a.setLog([]), children: /* @__PURE__ */ jsx(trash_2_default, { size: 12 }) })
-    ] }),
-    /* @__PURE__ */ jsx("pre", { ref: logRef, className: "flex-1 overflow-y-auto px-3 pb-4 font-mono text-2xs whitespace-pre-wrap break-all text-base-content/40 leading-relaxed", children: (s.log || []).join("\n") })
-  ] }) : /* @__PURE__ */ jsxs("div", { className: "p-3 flex gap-2", children: [
-    /* @__PURE__ */ jsxs("button", { onClick: () => {
+  return /* @__PURE__ */ jsxs3("div", { className: "p-3 flex gap-2", children: [
+    /* @__PURE__ */ jsxs3("button", { onClick: () => {
       a.runPipeline();
       doAction("shell:close-left");
     }, disabled: s.running, className: "btn btn-primary btn-sm flex-1 gap-2", children: [
-      /* @__PURE__ */ jsx(play_default, { size: 14 }),
+      /* @__PURE__ */ jsx3(play_default, { size: 14 }),
       "Analizuj"
     ] }),
-    /* @__PURE__ */ jsx("button", { onClick: a.exportPipeline, className: "btn btn-ghost btn-sm btn-square", title: "Eksportuj pipeline JSON", children: /* @__PURE__ */ jsx(download_default, { size: 14 }) })
-  ] }) });
+    /* @__PURE__ */ jsx3("button", { onClick: a.exportPipeline, className: "btn btn-ghost btn-sm btn-square", title: "Eksportuj pipeline JSON", children: /* @__PURE__ */ jsx3(download_default, { size: 14 }) })
+  ] });
 }
 function PlaygroundProvider({ children: children2 }) {
-  const [nodes, setNodes] = useState([]);
-  const [edges, setEdges] = useState([]);
-  const [log, setLog] = useState([]);
-  const [running, setRunning] = useState(false);
-  const [leftTab, setLeftTab] = useState("templates");
-  const [selectedId, setSelectedId] = useState(null);
-  const [templates, setTemplates] = useState([]);
-  const rfInstance = useRef(null);
-  const dataNodeSide = useRef(0);
+  const [nodes, setNodes] = useState2([]);
+  const [edges, setEdges] = useState2([]);
+  const [running, setRunning] = useState2(false);
+  const [leftTab, setLeftTab] = useState2("templates");
+  const [selectedId, setSelectedId] = useState2(null);
+  const [templates, setTemplates] = useState2([]);
+  const rfInstance = useRef2(null);
+  const dataNodeSide = useRef2(0);
   const host = _host;
   const project = getProvider("projects").useProjects().current;
-  const addLog = useCallback((msg) => {
-    setLog((p) => [...p, `${(/* @__PURE__ */ new Date()).toLocaleTimeString()} ${msg}`]);
-  }, []);
-  useEffect(() => {
+  useEffect2(() => {
     host.db.listTemplates().then(setTemplates);
   }, []);
-  useEffect(() => {
+  useEffect2(() => {
     if (!project) {
       setNodes([]);
       setEdges([]);
@@ -11361,18 +11153,17 @@ function PlaygroundProvider({ children: children2 }) {
       p ? (setNodes(p.nodes), setEdges(p.edges)) : (setNodes([]), setEdges([]));
       setTimeout(() => rfInstance.current?.fitView({ padding: 0.2 }), 50);
     });
-    setLog([]);
     setSelectedId(null);
   }, [project]);
-  useEffect(() => {
+  useEffect2(() => {
     if (!project) return;
     const pipe = nodes.filter((x) => x.type !== "data" && x.type !== "entity" && x.type !== "doc");
     const ids = new Set(pipe.map((x) => x.id));
     host.db.savePipeline({ id: `pipeline:${project}`, projectId: project, name: project, nodes: pipe, edges: edges.filter((x) => ids.has(x.source) && ids.has(x.target)) });
   }, [project, nodes, edges]);
-  const onNodesChange = useCallback((ch) => setNodes((n) => applyNodeChanges(ch, n)), []);
-  const onEdgesChange = useCallback((ch) => setEdges((e) => applyEdgeChanges(ch, e)), []);
-  const onConnect = useCallback((c) => setEdges((e) => addEdge(c, e)), []);
+  const onNodesChange = useCallback2((ch) => setNodes((n) => applyNodeChanges(ch, n)), []);
+  const onEdgesChange = useCallback2((ch) => setEdges((e) => applyEdgeChanges(ch, e)), []);
+  const onConnect = useCallback2((c) => setEdges((e) => addEdge(c, e)), []);
   function loadTemplate(id2) {
     const t = templates.find((t2) => t2.id === id2);
     if (!t || !project) return;
@@ -11426,7 +11217,7 @@ function PlaygroundProvider({ children: children2 }) {
     }))]);
   }
   async function runPipeline() {
-    if (!project) return addLog("Wybierz projekt");
+    if (!project) return sdkLog("Wybierz projekt");
     const posMap = new Map(nodes.map((n) => [n.id, n.position]));
     const pipeNodes = nodes.filter((n) => n.type !== "data" && n.type !== "entity" && n.type !== "doc");
     const pipeEdgeIds = new Set(pipeNodes.map((n) => n.id));
@@ -11434,12 +11225,12 @@ function PlaygroundProvider({ children: children2 }) {
     dataNodeSide.current = 0;
     setRunning(true);
     doAction("shell:progress", true);
-    setLog([]);
+    sdkClearLog();
     setSelectedId(null);
-    addLog(`=== ${project} ===`);
+    sdkLog(`=== ${project} ===`);
     setNodes((n) => n.filter((x) => x.type !== "data" && x.type !== "entity" && x.type !== "doc"));
     setEdges((e) => e.filter((x) => !x.id.startsWith("viz:")));
-    await execPipeline(host, project, pipeNodes, pipeEdges, [], addLog, (id2, status, result, meta) => {
+    await execPipeline(host, project, pipeNodes, pipeEdges, [], (msg) => sdkLog(msg), (id2, status, result, meta) => {
       setNodeResult(id2, status, result);
       if (status !== "done" || !meta) return;
       const pos = posMap.get(id2);
@@ -11451,7 +11242,7 @@ function PlaygroundProvider({ children: children2 }) {
       if (meta.chunks) addDataNodes(id2, meta.chunks.slice(0, 6).map((ch, i) => ({ id: `viz:${id2}:c${i}`, label: `chunk ${i}`, detail: ch.text.slice(0, 40) + "..." })), pos);
       if (meta.graph) addGraphNodes(id2, meta.graph, pos);
     });
-    addLog("--- done ---");
+    sdkLog("--- done ---", "ok");
     setRunning(false);
     doAction("shell:progress", false);
   }
@@ -11467,14 +11258,12 @@ function PlaygroundProvider({ children: children2 }) {
     a2.click();
     URL.revokeObjectURL(a2.href);
   }
-  const s = { nodes, edges, project, log, running, leftTab, selectedId, templates };
+  const s = { nodes, edges, project, running, leftTab, selectedId, templates };
   const a = {
     setNodes,
     setEdges,
-    setLog,
     setLeftTab,
     setSelectedId,
-    addLog,
     loadTemplate,
     runPipeline,
     exportPipeline,
@@ -11484,25 +11273,25 @@ function PlaygroundProvider({ children: children2 }) {
     onDrop,
     rfInstance
   };
-  return /* @__PURE__ */ jsx(Ctx.Provider, { value: { s, a }, children: children2 });
+  return /* @__PURE__ */ jsx3(Ctx.Provider, { value: { s, a }, children: children2 });
 }
 function CenterCanvas() {
   const { s: { nodes, edges, project }, a } = use();
-  return /* @__PURE__ */ jsx(Fragment2, { children: !project ? /* @__PURE__ */ jsx("div", { className: "hero flex-1", children: /* @__PURE__ */ jsx("div", { className: "hero-content text-center", children: /* @__PURE__ */ jsxs("div", { className: "max-w-lg space-y-5", children: [
-    /* @__PURE__ */ jsxs("div", { children: [
-      /* @__PURE__ */ jsx("h1", { className: "text-2xl font-black text-primary tracking-tight", children: "OBIEG-ZERO" }),
-      /* @__PURE__ */ jsx("p", { className: "text-xs text-base-content/50 mt-2", children: "50\xA0um\xF3w, 8\xA0pyta\u0144 do\xA0ka\u017Cdej \u2014 wyniki w\xA0tabelce, nie w\xA0chacie." }),
-      /* @__PURE__ */ jsx("p", { className: "text-xs text-base-content/50", children: "Otwarty model, Twoja przegl\u0105darka. Dane nie zasilaj\u0105 BigTech." })
+  return /* @__PURE__ */ jsx3(Fragment3, { children: !project ? /* @__PURE__ */ jsx3("div", { className: "hero flex-1", children: /* @__PURE__ */ jsx3("div", { className: "hero-content text-center", children: /* @__PURE__ */ jsxs3("div", { className: "max-w-lg space-y-5", children: [
+    /* @__PURE__ */ jsxs3("div", { children: [
+      /* @__PURE__ */ jsx3("h1", { className: "text-2xl font-black text-primary tracking-tight", children: "OBIEG-ZERO" }),
+      /* @__PURE__ */ jsx3("p", { className: "text-xs text-base-content/50 mt-2", children: "50\xA0um\xF3w, 8\xA0pyta\u0144 do\xA0ka\u017Cdej \u2014 wyniki w\xA0tabelce, nie w\xA0chacie." }),
+      /* @__PURE__ */ jsx3("p", { className: "text-xs text-base-content/50", children: "Otwarty model, Twoja przegl\u0105darka. Dane nie zasilaj\u0105 BigTech." })
     ] }),
-    /* @__PURE__ */ jsxs("div", { className: "inline-flex items-center gap-2 bg-success/10 text-success rounded-full px-4 py-1.5", children: [
-      /* @__PURE__ */ jsx("span", { className: "w-2 h-2 rounded-full bg-success animate-pulse" }),
-      /* @__PURE__ */ jsx("span", { className: "text-xs font-medium", children: "100% prywatnie \u2014 dane nie opuszczaj\u0105 tego urz\u0105dzenia" })
+    /* @__PURE__ */ jsxs3("div", { className: "inline-flex items-center gap-2 bg-success/10 text-success rounded-full px-4 py-1.5", children: [
+      /* @__PURE__ */ jsx3("span", { className: "w-2 h-2 rounded-full bg-success animate-pulse" }),
+      /* @__PURE__ */ jsx3("span", { className: "text-xs font-medium", children: "100% prywatnie \u2014 dane nie opuszczaj\u0105 tego urz\u0105dzenia" })
     ] }),
-    /* @__PURE__ */ jsxs("div", { className: "space-y-1", children: [
-      /* @__PURE__ */ jsx("p", { className: "text-2xs text-base-content/30", children: "Jak zacz\u0105\u0107:" }),
-      /* @__PURE__ */ jsx("p", { className: "text-2xs text-base-content/20", children: "1. Utw\xF3rz projekt w\xA0sidebarze \xA02. Wybierz szablon (np. Umowy kredytowe, Faktura za\xA0gaz) \xA03. Wrzu\u0107 pliki i\xA0kliknij Analizuj" })
+    /* @__PURE__ */ jsxs3("div", { className: "space-y-1", children: [
+      /* @__PURE__ */ jsx3("p", { className: "text-2xs text-base-content/30", children: "Jak zacz\u0105\u0107:" }),
+      /* @__PURE__ */ jsx3("p", { className: "text-2xs text-base-content/20", children: "1. Utw\xF3rz projekt w\xA0sidebarze \xA02. Wybierz szablon (np. Umowy kredytowe, Faktura za\xA0gaz) \xA03. Wrzu\u0107 pliki i\xA0kliknij Analizuj" })
     ] })
-  ] }) }) }) : /* @__PURE__ */ jsx("div", { className: "flex-1 min-h-0", children: /* @__PURE__ */ jsx(
+  ] }) }) }) : /* @__PURE__ */ jsx3("div", { className: "flex-1 min-h-0", children: /* @__PURE__ */ jsx3(
     index,
     {
       nodes,
@@ -11530,8 +11319,10 @@ function CenterCanvas() {
 }
 var playgroundPlugin = (deps) => {
   _host = deps.host;
-  ({ Box, Cell, Bar, ListItem, Field, Tabs } = deps.ui);
+  ({ Box, Cell, ListItem, Field, Tabs } = deps.ui);
   ({ doAction, getProvider } = deps.sdk);
+  sdkLog = deps.sdk.log;
+  sdkClearLog = deps.sdk.clearLog;
   execPipeline = deps.blocks.runPipeline;
   return {
     id: "playground",

@@ -2,7 +2,7 @@
   "id": "manager",
   "label": "Pluginy",
   "description": "Katalog i instalacja pluginow",
-  "version": "0.1.17",
+  "version": "0.1.19",
   "author": "obieg-zero",
   "entry": "index.mjs"
 }
