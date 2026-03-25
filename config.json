@@ -18,6 +18,9 @@
     }
   },
   {
+    "pluginUri": "obieg-zero/plugin-wibor-calc@main"
+  },
+  {
     "pluginUri": "obieg-zero/plugin-data@main"
   }
 ]
