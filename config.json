@@ -1,0 +1,11 @@
+[
+  {
+    "pluginUri": "obieg-zero/plugin-manager@main"
+  },
+  {
+    "pluginUri": "obieg-zero/plugin-darkmode@main",
+    "defaultOptions": {
+      "theme": "dracula"
+    }
+  }
+]
