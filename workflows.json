@@ -1,0 +1,56 @@
+[
+  { "type": "workflow", "data": { "wfId": "wibor-simple", "name": "WIBOR — uproszczony", "stages": [
+    { "id": "klient", "label": "1. Dane klienta", "color": "#3b82f6", "description": "Wprowadź dane klienta", "view": "form", "recordType": "client", "fields": [
+      { "key": "name", "label": "Imię i nazwisko", "required": true },
+      { "key": "phone", "label": "Telefon", "inputType": "tel" },
+      { "key": "email", "label": "Email", "inputType": "email" }
+    ] },
+    { "id": "kalkulacja", "label": "2. Kalkulator", "color": "#8b5cf6", "description": "Oblicz nadpłaty WIBOR", "view": "calc-redirect",
+      "targetPlugin": "plugin-wibor-calc"
+    },
+    { "id": "podsumowanie", "label": "3. Podsumowanie", "color": "#22c55e", "description": "Przegląd sprawy i raport PDF", "view": "summary-report" }
+  ], "branches": [] } },
+  { "type": "workflow", "data": { "wfId": "wibor-docs", "name": "WIBOR — dokumenty", "stages": [
+    { "id": "umowa", "label": "1. Umowa", "color": "#3b82f6", "description": "Wgraj umowę kredytu — AI wyciągnie dane klienta i kredytu", "view": "upload",
+      "checklist": [{ "text": "Umowa kredytu", "type": "upload" }],
+      "pipeline": {
+        "ocr": { "language": "pol" },
+        "embed": [{ "group": "umowa", "docs": ["*"], "chunkSize": 512 }],
+        "extract": {
+          "from": "umowa",
+          "method": "api",
+          "questions": {
+            "clientName": "Jak nazywa się kredytobiorca (osoba fizyczna)? Podaj TYLKO imię i nazwisko.",
+            "opponent": "Jaki bank udzielił tego kredytu? Podaj TYLKO nazwę banku.",
+            "loanNumber": "Jaki jest numer umowy kredytowej? Podaj TYLKO numer.",
+            "loanAmount": "Jaka jest kwota kredytu w PLN? Podaj TYLKO liczbę bez waluty.",
+            "loanDate": "Jaka jest data zawarcia umowy kredytowej? Podaj w formacie YYYY-MM-DD."
+          }
+        }
+      }
+    },
+    { "id": "zaswiadczenie", "label": "2. Zaświadczenie", "color": "#3b82f6", "description": "Wgraj zaświadczenie bankowe — OCR wyciągnie historię spłat", "view": "upload",
+      "checklist": [{ "text": "Zaświadczenie bankowe", "type": "upload" }],
+      "pipeline": {
+        "ocr": { "language": "pol" },
+        "parse": {
+          "type": "payment-history",
+          "section": "Historia spłat",
+          "columns": [
+            { "key": "date", "label": "Data" },
+            { "key": "description", "label": "Opis" },
+            { "key": "amount", "label": "Kwota" },
+            { "key": "principal", "label": "Kapitał" },
+            { "key": "interest", "label": "Odsetki" },
+            { "key": "penaltyInterest", "label": "Odsetki karne" },
+            { "key": "fees", "label": "Opłaty" },
+            { "key": "overpayment", "label": "Nadpłata" }
+          ]
+        }
+      }
+    },
+    { "id": "kalkulacja", "label": "3. Kalkulacja", "color": "#8b5cf6", "description": "Oblicz nadpłaty WIBOR na podstawie historii spłat", "view": "calc-redirect",
+      "targetPlugin": "plugin-wibor-calc"
+    }
+  ], "branches": [] } }
+]
